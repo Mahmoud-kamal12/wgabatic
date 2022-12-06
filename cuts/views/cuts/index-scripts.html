@@ -1,0 +1,77 @@
+<!-- plugins -->
+<script src="../public/js/plugins/vegas.js"></script>
+<script src="../public/js/plugins/jquery.nice-select.js"></script>
+
+<!-- main scripts --> 
+<script>
+
+$(window).on('load', function () {
+        $('#preloader-active').delay(1050).fadeOut('slow');
+        $('body').delay(850).css({
+          'overflow': 'visible'
+        });
+      });
+
+
+
+// //////////////////////////////////
+$('#header').vegas({
+  overlay: true,
+  transition: 'fade', 
+  transitionDuration: 4000,
+  delay: 3000,
+  cover:true,
+  color: '#000',
+  animation: 'random',
+  animationDuration: 5000,
+  slides: [
+  // { src: 'photos/24044795.jpg'},
+  // { src: 'photos/banner (1).jpg'},
+  // { src: 'photos/banner (2).jpg'},
+  // { src: 'photos/banner (3).jpg'},
+  { src: '../public/photos/imgs/bg_img2.jpg'}
+  
+  ]
+});
+// ////////////////////////////////////////////////////
+
+var theMaxHeight = 0;
+$('.same-height .card-body').each(function () {
+  
+  if ($(this).height() > theMaxHeight) {
+    theMaxHeight = $(this).height();
+  }
+
+});
+$('.same-height  .card-body').height(theMaxHeight);
+
+// //////////////////////////////////////////
+        const Ourservices = document.querySelector(".our-services");
+        const servicesBox = document.querySelectorAll(".services-inner");
+        const serviceText = document.querySelectorAll(".serviceText");
+        
+        
+        servicesBox.forEach(el => {
+            el.addEventListener("mouseover" , () => {
+                let bg = el.getAttribute("data-bg");
+                Ourservices.style.background = `url(${bg}) no-repeat center / cover`;
+              });
+        });
+
+
+        // var cursor = document.getElementById('cursor');
+        //             document.addEventListener('mousemove' , function (e) {
+        //                 var x = e.clientX;
+        //                 var y = e.clientY;
+        //                 cursor.style.left = x + 'px';
+        //                 cursor.style.top  = y + 'px';
+        //             });
+
+
+
+
+
+</script>
+
+
+<script src="../public/js/custom.js"></script>

@@ -1,0 +1,35 @@
+body{
+    position: relative;
+    min-height: 100vh;
+    transition: all .5s ease-in-out;
+    background:linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)),
+    url(../photos/menu/New/1.jpg) no-repeat center / cover ;
+    /* background-size: cover; */
+    text-decoration: none!important;
+}
+
+ul{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+ul li  {
+    list-style: none;
+}
+
+ul li a {
+    font-size: 3rem;
+    text-decoration: none!important;
+    font-weight: 700;
+    color: #f30928;
+}
+
+
+ul:hover li a {
+ color: rgba(255, 255, 255, 0.295);
+}
+
+ul li:hover a {
+    color: white;
+  }
