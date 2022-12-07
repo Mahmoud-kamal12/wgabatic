@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\WebController;
 use \App\Http\Controllers\AuthController;
+use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\MealController;
+use \App\Http\Controllers\ResturantController;
+use \App\Http\Controllers\OrdertController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +19,16 @@ use \App\Http\Controllers\AuthController;
 |
 */
 
+//Route::get('/testt', function (){
+////    $or = \App\Models\Order::insert([
+////        "user_id" => 1,
+////        "resturant_id" => 1,
+////        "total" => 520.2
+////    ]);
+//    $or = \App\Models\Order::find(1);
+//    dd(auth()->user()->orders);
+//});
+
 
 Route::name('web.')->group(function(){
     Route::get('/about', [WebController::class , 'about'])->name('about');
@@ -23,17 +38,22 @@ Route::name('web.')->group(function(){
     Route::get('/faqs', [WebController::class , 'faqs'])->name('faqs');
     Route::get('/how-it-work', [WebController::class , 'howItWork'])->name('howItWork');
 
-    Route::get('/test', function (){
-        dd("ddd");
-    })->middleware(['auth:restaurant']);
-
-    Route::get('/test', function (){
-        dd("ddd");
-    })->middleware(['auth:web']);
 
 
-    Route::get('/logout', [ AuthController::class ,'logout'])->name('logout');
-    Route::get('/logoutr', [ AuthController::class ,'logoutr'])->name('logoutr');
+    Route::group(["middleware" => "auth:web"],function (){
+        Route::get('/logout', [ AuthController::class ,'logout'])->name('logout');
+        Route::get('/user-profile', [ UserController::class ,'userProfile'])->name('userProfile');
+
+    });
+
+    Route::group(["middleware" => "auth:restaurant"],function (){
+        Route::get('/logoutr', [ AuthController::class ,'logoutr'])->name('logoutr');
+        Route::get('/restaurant-profile', [ ResturantController::class ,'restaurantProfile'])->name('restaurantProfile');
+
+        Route::resource('/meal', MealController::class);
+
+    });
+
 
 
     Route::group(['middleware' => ['guest' , 'guesResturant']],function (){

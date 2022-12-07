@@ -43,27 +43,7 @@
 
 
 <section class="about-page-howto">
-    <nav class=" col-lg-12 navbar navbar-expand-lg navbar-dark ftco_navbar p-2  position-fixed ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="{{route('web.home')}}"><img src="/assets/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class=""> <i class="fa fa-bars"></i> </span>
-            </button>
-            <div class="collapse navbar-collapse ml-auto" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="{{route('web.home')}}" class="nav-link ">Home</a></li>
-                    <li class="nav-item"><a href="{{route('web.about')}}" class="nav-link ">about us</a></li>
-                    <li class="nav-item"><a href="{{route('web.howItWork')}}" class="nav-link activelink ">How It Works</a></li>
-                    <li class="nav-item"><a href="{{route('web.faqs')}}" class="nav-link ">FAQS</a></li>
-                    <li class="nav-item"><a href="{{route('web.contact')}}" class="nav-link  ">Contact us</a></li>
-                    <li class="nav-item"><a href="{{route('web.login')}}" class="nav-link  "> logIn/signUp </a></li>
-
-                    <li class="nav-item ml-5 ">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('web.nav')
 
 
     <div>

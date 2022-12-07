@@ -11,7 +11,7 @@ class Restaurant extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = ['name', 'email', 'phone', 'm_name', 'm_phone', 'contact_email', 'password'];
+    protected $fillable = ['name', 'email', 'phone', 'm_name', 'm_phone', 'contact_email', 'password' , 'cover','logo' , 'pickup_fee','pickup_time','country','city','Latitude','Longitude'];
 
     protected $hidden = [
         'password',
@@ -25,5 +25,9 @@ class Restaurant extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }

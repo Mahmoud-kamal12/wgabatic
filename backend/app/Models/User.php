@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
+        'logo',
     ];
 
     /**
@@ -47,6 +48,11 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 
 }

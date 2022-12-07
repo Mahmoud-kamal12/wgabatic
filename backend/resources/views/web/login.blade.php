@@ -81,10 +81,10 @@
                                         <!-- ////////////////////////// -->
                                         <div class="  ">
                                             <div class="col-md-12 p-4  ">
-                                                <input type="email" name="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder=" USER EMAIL ">
+                                                <input type="email" name="email" class="col-lg-12 p-2" id="validationCustom" value="admin@gmail.com" required placeholder=" USER EMAIL ">
                                             </div>
                                             <div class="col-md-12 p-4">
-                                                <input type="password" name="password" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="USER PASSWORD">
+                                                <input type="password" name="password" class="col-lg-12 p-2 mb-3" id="validationCustom" value="123456789" required placeholder="USER PASSWORD">
                                                 <span class="" > <input type="checkbox"> remember me</span>
                                             </div>
 
@@ -112,10 +112,10 @@
                                         <!-- ////////////////////////// -->
                                         <div class=" mt-5 ">
                                             <div class="col-md-12 p-4  ">
-                                                <input type="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder=" RESTAURANT EMAIL" name="email">
+                                                <input type="email" class="col-lg-12 p-2" id="validationCustom" value="restaurant@gmail.com" required placeholder=" RESTAURANT EMAIL" name="email">
                                             </div>
                                             <div class="col-md-12 p-4">
-                                                <input type="password" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="RESTAURANT PASSWORD" name="password">
+                                                <input type="password" class="col-lg-12 p-2 mb-3" id="validationCustom" value="123456789" required placeholder="RESTAURANT PASSWORD" name="password">
                                                 <span class="" > <input type="checkbox" name="readMy"> remember me</span>
                                             </div>
 
