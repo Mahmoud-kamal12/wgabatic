@@ -50,7 +50,9 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-12 col-sm-12 text-center welcomeTexte">
-
+                    <div class=" text-white text-center mt-5 ">
+                        <h2 class="display-3"> Welcome Mostafa  </h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,6 +91,9 @@
                     <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
+                    <hr class="p-0 m-0">
+                     <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#change_password" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <span class=" text-dark font-weight-bold small text-uppercase" id="click_password" ><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
                     <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i>  delete profile</span></a>
@@ -144,13 +149,13 @@
                         <div class="row tab-text  cart-list">
                             <table class="table">
                                 <thead class="thead-dark">
-                                <tr>
+                                
                                     <th scope="col">#</th>
                                     <th scope="col">Resturant name</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">status</th>
                                     <th scope="col">details</th>
-                                </tr>
+                               
                                 </thead>
                                 <tbody>
                                 <tr>
@@ -159,6 +164,7 @@
                                     <td>january 5,2021</td>
                                     <td class="processing"> <span>processing</span> </td>
                                     <td><button  type="button" data-toggle="modal" data-target="#exampleModal-order-1"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                                </tr>   
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal-order-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -207,136 +213,12 @@
 
 
                                                 </div>
-
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
                                             </div>
                                         </div>
                                     </div>
-
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>MCDONALDS</td>
-                                    <td>january 5,2021</td>
-                                    <td class="processing"> <span>processing</span> </td>
-                                    <td><button  type="button" data-toggle="modal" data-target="#exampleModal-order-2"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal-order-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-uppercase " id="exampleModalLabel">Booking Details</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">Booking date :</span>
-                                                            <span class="ml-1 second-span">((date and time))</span>
-                                                        </li >
-                                                    </ul>
-
-
-                                                    <hr>
-                                                    <h4 class=" model-name text-uppercase mt-2" >Customer Deatil</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">FIRST NAME:</span>
-                                                            <span class="ml-1 second-span">((the first person name))</span>
-                                                        </li >
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">LAST NAME:</span>
-                                                            <span class="ml-1 second-span">((the last name))</span>
-                                                        </li >
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span"> EMAIL:</span>
-                                                            <span class="ml-1 second-span">((the Email EX :cashitebay@gmail.com ))</span>
-                                                        </li >
-                                                    </ul>
-
-                                                    <div class="text-center mt-5 ">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>MCDONALS</td>
-                                    <td>january 5,2021</td>
-                                    <td class="processing"> <span>processing</span> </td>
-                                    <td><button  type="button" data-toggle="modal" data-target="#exampleModal-order-3"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal-order-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-uppercase " id="exampleModalLabel">Booking Details</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">Booking date :</span>
-                                                            <span class="ml-1 second-span">((date and time))</span>
-                                                        </li >
-                                                    </ul>
-
-
-                                                    <hr>
-                                                    <h4 class=" model-name text-uppercase mt-2" >Customer Deatil</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">FIRST NAME:</span>
-                                                            <span class="ml-1 second-span">((the first person name))</span>
-                                                        </li >
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">LAST NAME:</span>
-                                                            <span class="ml-1 second-span">((the last name))</span>
-                                                        </li >
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span"> EMAIL:</span>
-                                                            <span class="ml-1 second-span">((the Email EX :cashitebay@gmail.com ))</span>
-                                                        </li >
-                                                    </ul>
-
-                                                    <div class="text-center mt-5 ">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </tr>
-
+                       
+  
                                 </tbody>
                             </table>
 
@@ -584,226 +466,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- //////////////////////////////////////////// -->
-                        <!-- //////////////////////////////////////////// -->
-                        <!-- //////////////////////////////////////////// -->
-                        <!-- //////////////////////////////////////////// -->
-                        <!-- //////////////////////////////////////////// -->
-
-                        <div class="row">
-                            <div class="col-lg-6 p-3">
-                                <div class=" p-3 order-border">
-                                    <div class="d-flex">
-                                        <div class=""><img class=" " src="/assets/photos/imgs/hardees-1-1.png" width="50px" height="50px" alt=""></div>
-                                        <div class="ml-3 mt-1"><strong> hardees </strong>  <br> <p class="p-in-order"> lunch-takeaway </p></div>
-                                        <div class=" text-danger"><p class="ml-5"> $54.16 </p></div>
-                                    </div>
-
-                                    <hr>
-                                    <div class="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
-                                        <p class="p-in-review">jan 11,2021 12:32 AM</p>
-                                    </div>
-                                    <button  type="button" data-toggle="modal" data-target="#staticBackdrop3" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
-                                    <!-- Button trigger modal -->
-
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop3" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content orderD-modal-content ">
-                                                <div class="modal-header">
-                                                    <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <hr>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                                <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id EX 25543))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PICK UP TIME :</span>
-                                                            <span class="ml-1 second-span">((time of preparing order Ex :40 Minutes   ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">DELIVERY DATE :</span>
-                                                            <span class="ml-1 second-span">((date and time EX Mar 19, 2021 04:15 PM ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PAYMENT STATUS :</span>
-                                                            <span class="ml-1 second-span">((state of order price Ex Pending ))</span>
-                                                        </li >
-                                                    </ul>
-
-                                                    <div class="text-left mt-5 w-100">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                                    </div>
-
-                                                    <hr>
-
-                                                    <h4 class="  model-name text-uppercase mt-2" >Food Menu</h4>
-                                                    <table class="table ">
-                                                        <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">PRODUCTS</th>
-                                                            <th scope="col">PRICE PER</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <span class="font-weight-bolder">Pizza</span>
-                                                                <ul>
-                                                                    <li>Foodbakery Special Pizza</li>
-                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> £3.00 </span> </li>
-                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li>
-                                                                </ul>
-                                                            </td>
-                                                            <td class="font-weight-bolder">50$</td>
-
-                                                        </tr>
-
-
-                                                        </tbody>
-                                                    </table>
-
-                                                    <hr>
-                                                    <div class="mt-4">
-                                                        <h5 class="text-uppercase">Order Total</h5>
-                                                        <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //////////////////////////////////////////// -->
-                            <!-- //////////////////////////////////////////// -->
-                            <!-- //////////////////////////////////////////// -->
-                            <!-- //////////////////////////////////////////// -->
-                            <!-- //////////////////////////////////////////// -->
-                            <!-- //////////////////////////////////////////// -->
-                            <div class="col-lg-6 p-3">
-                                <div class=" p-3 order-border">
-                                    <div class="d-flex">
-                                        <div class=""><img class=" " src="/assets/photos/imgs/domino-1-1.png" width="50px" height="50px" alt=""></div>
-                                        <div class="ml-3 mt-1"><strong> domino </strong>  <br> <p class="p-in-order"> pizza-takeaway </p></div>
-                                        <div class=" text-danger"><p class="ml-5"> $44.00 </p></div>
-                                    </div>
-
-                                    <hr>
-                                    <div class="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
-                                        <p class="p-in-review">jan 17,2021 2:44 PM</p>
-                                    </div>
-                                    <button  type="button" data-toggle="modal" data-target="#staticBackdrop4" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
-                                    <!-- Button trigger modal -->
-
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop4" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content orderD-modal-content ">
-                                                <div class="modal-header">
-                                                    <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <hr>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                                <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id EX 25543))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PICK UP TIME :</span>
-                                                            <span class="ml-1 second-span">((time of preparing order Ex :40 Minutes   ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">DELIVERY DATE :</span>
-                                                            <span class="ml-1 second-span">((date and time EX Mar 19, 2021 04:15 PM ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PAYMENT STATUS :</span>
-                                                            <span class="ml-1 second-span">((state of order price Ex Pending ))</span>
-                                                        </li >
-                                                    </ul>
-
-                                                    <div class="text-left mt-5 w-100">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                                    </div>
-
-                                                    <hr>
-
-                                                    <h4 class="  model-name text-uppercase mt-2" >Food Menu</h4>
-                                                    <table class="table ">
-                                                        <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">PRODUCTS</th>
-                                                            <th scope="col">PRICE PER</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <span class="font-weight-bolder">Pizza</span>
-                                                                <ul>
-                                                                    <li>Foodbakery Special Pizza</li>
-                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> £3.00 </span> </li>
-                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li>
-                                                                </ul>
-                                                            </td>
-                                                            <td class="font-weight-bolder">50$</td>
-
-                                                        </tr>
-
-
-                                                        </tbody>
-                                                    </table>
-
-                                                    <hr>
-                                                    <div class="mt-4">
-                                                        <h5 class="text-uppercase">Order Total</h5>
-                                                        <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
 
@@ -896,34 +558,46 @@
                                 </div>
                             </div>
 
-                            <script>
 
-                            </script>
-
-
-                            <h5 class=" text-capitalize mt-3"> CHANGE PASSWORD </h5>
-                            <div class="row">
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control col-lg-12" id="exampleInputPassword2" placeholder="new password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control col-lg-12" id="exampleInputPassword3" placeholder="confirm password" required>
-                                    </div>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Submit</button>
-
-                            </div>
                         </form>
                     </div>
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
+           <!-- ///// ////////////////////////////////////////////////////////// -->
+           <!-- /////////////////////////////////////////////////////////////// -->
+           <!-- /////////////////////////////////////////////////////////////// -->
+         
+           <div class="tab-pane fade shadow rounded bg-white show  p-5" id="change_password" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h5>CHANGE PASSWORD</h5>
+         
+            <div id="myF" class="row">
+              <form  onSubmit="return checkform_password();" id="myForm2" action="/changePassword" method="POST">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="Old Password" >
+                  
+                    <h4 class="mt-3" id="server_err_password" style="text-align: center;">  </h4>
+                    
+              </div>
+              <div class="form-group">
+                
+                <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="New Password">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="Confirm Password" >
+              </div>
+            </div>
+            <p id="warning_password"></p>
+              <button type="submit" class="btn btn-danger ml-3">Submit</button>
+
+            </div>
+          </form>
+          </form>
+          </div>
+          <!-- /////////////////////////////////////////////////////////////// -->
+          <!-- /////////////////////////////////////////////////////////////// -->
+          <!-- /////////////////////////////////////////////////////////////// -->
 
 
 
@@ -978,7 +652,7 @@
         <div class="row row-30">
             <div class="col-lg-3 col-md-6 col-sm-12 ">
 
-                <div class="pr-xl-4"><a class="footer-brand" href="index.html"><h1 style="color: #ffffff;">TAKE AWAY</h1></a>
+                <div class="pr-xl-4"><a class="footer-brand" href="index.html"><h1 style="color: #ffffff;">Wagabat</h1></a>
                     <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
                     <img class="img-fluid img-responsive" src="/assets/photos/footer-img-300x134.png" alt="">
                     <div class=" mr-3 social">
@@ -1000,7 +674,7 @@
                     <li><a href="#">the red sea</a></li>
                 </ul>
                 <a class="about-link " href="index.html">
-                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> TAKE AWAY </h3>
+                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> Wagabat </h3>
                 </a>
 
             </div>

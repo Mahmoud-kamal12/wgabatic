@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="/assets/css/colors/color.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/new-preloader.css">
-    <title> TAKE AWAY  </title>
+    <title> Wagabat  </title>
 
 </head>
 <body>
@@ -56,7 +56,7 @@
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-12 col-sm-12 text-center welcomeText">
-                        <h1>WELCOME TO TAKE AWAY</h1>
+                        <h1>WELCOME TO WAGABAT</h1>
                         <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
 
                         <button class="btn text-light submitBtn p-2 col-md-2"> search </button>                        
@@ -86,7 +86,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
                 <a href="#!">
                     <i class="flaticon-take-away-1"></i>
-                    <h5>TAKE AWAY</h5>
+                    <h5>Take aWAGABATway</h5>
                 </a>
             </div>
             <!-- /////////////////////////////////////////// -->
@@ -157,12 +157,12 @@
             <!-- //////////////// -->
             <div class="col-lg-6 pl-5  about-text">
                 <br><br>
-                <h2>About take away </h2>
+                <h2>About Wagabat </h2>
                 <h4>our mission :</h4>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sapiente natus autem cupiditate aut repudiandae dolor quia laboriosam, quisquam inventore ipsa ratione, ullam odio consectetur blanditiis officia deserunt, in at!</p>
-                <button class=" about-btun ">  ABOUT TAKE AWAY  </button>
+                <button class=" about-btun ">  ABOUT Wagabat  </button>
                 <br><br><br>
-                <a class="about-link" href="{{route('web.home')}}"> <h3 style="font-family: 'La Belle Aurore', cursive!important;"> TAKE_AWAY.COM </h3> </a>
+                <a class="about-link" href="{{route('web.home')}}"> <h3 style="font-family: 'La Belle Aurore', cursive!important;"> WAGABAT.COM </h3> </a>
             </div>
             <!-- //////////////// -->
         </div>
@@ -941,7 +941,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path  fill="#6ba1e3" fill-opacity="1" d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+    <path  fill="#eb102d" fill-opacity="1" d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
 </svg>
 <footer class="pt-4 section footer-classic context-dark bg-image p-5">
 
@@ -949,7 +949,7 @@
         <div class="row row-30">
             <div class="col-lg-3 col-md-6 col-sm-12 ">
 
-                <div class="pr-xl-4"><a class="footer-brand" href="{{route('web.home')}}"><h1 style="color: #ffffff;">TAKE AWAY</h1></a>
+                <div class="pr-xl-4"><a class="footer-brand" href="{{route('web.home')}}"><h1 style="color: #ffffff;">Wagabat</h1></a>
                     <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
                     <img class="img-fluid img-responsive" src="/assets/photos/footer-img-300x134.png" alt="">
                     <div class=" mr-3 social">
@@ -971,7 +971,7 @@
                     <li><a href="#">the red sea</a></li>
                 </ul>
                 <a class="about-link " href="{{route('web.home')}}">
-                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> TAKE AWAY </h3>
+                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> Wagabat </h3>
                 </a>
 
             </div>

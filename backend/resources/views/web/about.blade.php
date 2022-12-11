@@ -93,7 +93,7 @@
             <!-- //////////////// -->
             <div class="col-lg-7 pl-5  about-text-about">
                 <br><br>
-                <h2 class="about-text-title">About take away </h2>
+                <h2 class="about-text-title">About Wagabat </h2>
                 <p class="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     Lorem Ipsum has been the industry's standard dummy.</p>
                 <p>It is a long established fact that a reader will be distracted
@@ -499,7 +499,7 @@
         <div class="row row-30">
             <div class="col-lg-3 col-md-6 col-sm-12 ">
 
-                <div class="pr-xl-4"><a class="footer-brand" href="{{route('web.home')}}"><h1 style="color: #ffffff;">TAKE AWAY</h1></a>
+                <div class="pr-xl-4"><a class="footer-brand" href="{{route('web.home')}}"><h1 style="color: #ffffff;">Wagabat</h1></a>
                     <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
                     <img class="img-fluid img-responsive" src="/assets/photos/footer-img-300x134.png" alt="">
                     <div class=" mr-3 social">
@@ -521,7 +521,7 @@
                     <li><a href="#">the red sea</a></li>
                 </ul>
                 <a class="about-link " href="{{route('web.home')}}">
-                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> TAKE AWAY </h3>
+                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> Wagabat </h3>
                 </a>
 
             </div>
