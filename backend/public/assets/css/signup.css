@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none!important;
-    text-transform: capitalize!important;  
+    text-transform: none!important;  
     outline: none!important;
     font-family: 'Reem Kufi', sans-serif;
 }

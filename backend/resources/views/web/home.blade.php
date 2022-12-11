@@ -59,43 +59,7 @@
                         <h1>WELCOME TO TAKE AWAY</h1>
                         <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
 
-                        <div class="cursor"></div>
-                        <div class="cursor2"></div>
-
-
-                        <!-- <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, expedita.</p> -->
-                        <!-- <a class="btn btn-success pl-3 pr-3 mr-3 rounded shadow" href=""> LOG IN </a>
-                        <a class="btn btn-success pl-3 pr-3  rounded shadow" href="">  BOOK A DOCTOR</a> -->
-                        <form class="text-center">
-                            <!-- ////////////////////////// -->
-                            <div class="form-row justify-content-center align-items-center">
-                                <div class="col-md-3 col-sm-5 col-xs-5 mb-3">
-                                    <select>
-                                        <option data-display="Select resturant">Nothing</option>
-                                        <option value="1">Some option</option>
-                                        <option value="2">Another option</option>
-                                        <option value="3" disabled>A disabled option</option>
-                                        <option value="4">Potato</option>
-                                    </select>
-                                </div>
-                                <!-- //////////////////////////////////// -->
-                                <div class="col-md-3 col-sm-5 col-xs-5 mb-3">
-                                    <select>
-                                        <option data-display="Select location">Nothing</option>
-                                        <option value="1">Some option</option>
-                                        <option value="2">Another option</option>
-                                        <option value="3" disabled>A disabled option</option>
-                                        <option value="4">Potato</option>
-                                    </select>
-                                </div>
-                                <!-- //////////////////////////////// -->
-                                <div class="col-md-2 col-sm-2 col-xs-2 mb-3">
-                                    <input class="btn text-light submitBtn p-2 col-md-12" type="submit" value="search">
-                                    <!-- <button class="btn  submitBtn p-2 col-md-12" type="submit">search</button> -->
-                                </div>
-                            </div>
-                            <!-- ////////////////////////// -->
-                        </form>
+                        <button class="btn text-light submitBtn p-2 col-md-2"> search </button>                        
                     </div>
                 </div>
             </div>
@@ -977,7 +941,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path  fill="#eb102d" fill-opacity="1" d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+    <path  fill="#6ba1e3" fill-opacity="1" d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
 </svg>
 <footer class="pt-4 section footer-classic context-dark bg-image p-5">
 

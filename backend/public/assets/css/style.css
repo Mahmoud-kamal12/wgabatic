@@ -5,6 +5,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+
+:root{
+    --main-color:#4F81BD;
+    --sec-color:#6ba1e3;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -109,7 +116,7 @@ nav.sticky .navbar-brand img{
 
 }
 .submitBtn{
-    background-color: #eb102d;
+    background-color: var(--main-color);
     color: #fff;
 }
 
@@ -119,7 +126,7 @@ nav.sticky .navbar-brand img{
     height: 60px;
     background: transparent;
     z-index: 11111;
-    border: 6px solid rgba(146, 73, 73, 0.9);
+    border: 6px solid var(--sec-color);
     
     }
     
@@ -262,7 +269,7 @@ bottom: 35px;
     padding: 10px;
     font-size: 17px;
     color: white;
-    border: 1.5px solid #60d16d;
+    border: 1.5px solid var(--sec-color);
     border-radius: 5px;
     outline: none!important;
 }
@@ -291,6 +298,7 @@ bottom: 35px;
     height: 40px;
     border-radius: 50%!important;
     line-height: 36px;
+    border:1px solid var(--sec-color);
     
 }
 .fa-arrow-right{font-size: 40px;}
@@ -466,7 +474,7 @@ bottom: 35px;
 .resto-butn{
     margin-top: 8px!important;
     transition: all 0.6s ease-out;
-    border: 1px solid #eb102d;
+    border: 1px solid var(--sec-color);
     line-height: 25px;
 }
 .resto-butn:hover{
@@ -514,11 +522,11 @@ footer h5 {
     color: #fff!important;
 }
 .context-dark, .bg-gray-dark, .bg-primary {
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
 }
 
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
-    color: #f3d6d6;
+    color: #fff;
 }
 .nav-list li {
     padding-top: 5px;

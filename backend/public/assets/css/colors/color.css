@@ -1,3 +1,8 @@
+:root{
+    --main-color:#4F81BD;
+    --sec-color:#6ba1e3;
+}
+
 body
 {
     background-color: #fff!important;
@@ -30,7 +35,7 @@ body
 .single-menu h4 span,
 .department .nav-link:focus,
 .extra_order_Price
-{color: #f30928!important;}
+{color: var(--main-color)!important;}
 
 /* ////////////// */
 
@@ -43,7 +48,7 @@ body
 footer,
 .dashbord-bac,
 .services-box:hover
-{background-color:#eb102d ;}
+{background-color:var(--sec-color) ;}
 
 /* ///////////// */
 
