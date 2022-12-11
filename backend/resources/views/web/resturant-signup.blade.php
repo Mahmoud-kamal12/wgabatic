@@ -45,10 +45,10 @@
                                 <img src="/assets/photos/imgs/takeaway-catering-logo-large.png" width="100" height="100" alt="">
                             </div>
 
-                            <form action="{{route('web.resturantSignUpReq')}}" method="POST" >
+                            <form class="form-signup action="{{route('web.resturantSignUpReq')}}" method="POST" >
                                 @csrf
                                 @method("POST")
-                                <div class=" text-center ">
+                                <div style="    text-transform: none!important;" class=" text-center ">
                                     <div class=" form-row mt-3 ">
                                         <!-- ////////////////////////// -->
                                         <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
@@ -80,25 +80,29 @@
                                         </div>
                                         <!-- ////////////////////////// -->
 
-
                                         <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
                                             <input type="email" class="col-lg-12 p-2 " id="validationCustom" value="" required placeholder="Contact Email *" name="contact_email">
                                         </div>
                                         <!-- ////////////////////////// -->
+
                                         <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
                                             <input type="password" class="col-lg-12 p-2  " id="validationCustom" value="" required placeholder="password *" name="password">
                                         </div>
+                                        <!-- ////////////////////////// -->
+
+                                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
+                                            <input type="password" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="retype password  *" name="password_confirmation">
+                                        </div>
+
                                     </div>
                                     <!-- ////////////////////////////////////////// -->
 
-                                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                                        <input type="password" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="retype password  *" name="password_confirmation">
-                                    </div>
-
+                                   
                                     <div class=" text-left col-lg-12 col-md-12 col-sm-12 p-2  ">
                                         <input type="checkbox" class=""  value="" required >
                                         <span>By Registering You Confirm That You Accept The Terms & Conditions And Privacy Policy</span>
                                     </div>
+
                                 </div>
 
                                 <button class="btn btn-danger signup-btun  p-1 col-lg-2 col-md-2 col-sm-2 mb-3" type="submit">Submit</button>

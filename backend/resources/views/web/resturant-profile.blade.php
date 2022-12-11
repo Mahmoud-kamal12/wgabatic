@@ -190,7 +190,6 @@
                         <div class="row tab-text  cart-list">
                             <table class="table scroll-x-table text-center">
                                 <thead class="thead-light">
-                                <tr>
                                     <th scope="col"> ORDER ID</th>
                                     <th scope="col">DATE</th>
                                     <th scope="col">TOTAL PRICE</th>
@@ -198,7 +197,6 @@
                                     <th scope="col">RECEIVED</th>
                                     <th scope="col">STATUS</th>
                                     <th scope="col">DETAIL</th>
-                                </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
@@ -278,173 +276,7 @@
                                     </div>
                         </div>
                         </tr>
-                        <!-- /////////////////////////////////////////////////////////////////////// -->
-                        <!-- /////////////////////////////////////////////////////////////////////// -->
-                        <!-- /////////////////////////////////////////////////////////////////////// -->
-                        <!-- /////////////////////////////////////////////////////////////////////// -->
-                        <!-- /////////////////////////////////////////////////////////////////////// -->
-                        <!-- /////////////////////////////////////////////////////////////////////// -->
-                        <tr>
-                            <td>2</td>
-                            <td>12-3-2020</td>
-                            <td>£77.97</td>
-                            <td>£7.80	</td>
-                            <td>£70.17</td>
-                            <td class="processing"> <span>Awaiting Payment</span> </td>
-                            <td><button  type="button" data-toggle="modal" data-target="#RECENT_ORDERS2"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                            <!-- Modal -->
-                            <div class="modal fade" id="RECENT_ORDERS2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content modal-style">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="d-flex">
-                                                <ul class="Extra-category-name">
-                                                    <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                    <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                                </ul>
-                                                <ul class="ml-auto mr-150">
-                                                    <h5 class="font-weight-bold">Customer Detail</h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                            <!-- //////////////////////////////////////////////////////////// -->
-                                            <div class="d-flex order-state">
-                                                <div class="col-lg-3">
-                                                    <h5 class="font-weight-bold">Order Status
-                                                    </h5>
-                                                </div>
-                                                <!-- ////////////////////////////// -->
-                                                <div class="col-lg-9 ">
-                                                    <form class="col-lg-12" action="" method="">
-                                                        <select class="col-lg-12" name="" id="">
-                                                            <option > Processing </option>
-                                                            <option > Cancelled </option>
-                                                            <option > Completed </option>
-                                                            <option > Awaiting Payment </option>
-                                                            <option > Payment Received </option>
-                                                            <option > Expired </option>
-                                                            <option > Awaiting Pickup </option>
-                                                            <option > Dispatched </option>
-                                                            <option > Shipped </option>
-                                                        </select>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- //////////////////////////////////////////////////// -->
-                                            <hr>
-                                            <div class="mt-4 font-weight-bolder">
-                                                <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                                <ul>
-                                                    <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                    <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                    <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                    <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                                </ul>
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    </tr>
-
-                    <!-- /////////////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////////////// -->
-                    <tr>
-                        <td>3</td>
-                        <td>12-3-2020</td>
-                        <td>£77.97</td>
-                        <td>£7.80	</td>
-                        <td>£70.17</td>
-                        <td class="processing"> <span>Cancelled</span> </td>
-                        <td><button  type="button" data-toggle="modal" data-target="#RECENT_ORDERS3"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                        <!-- Modal -->
-                        <div class="modal fade" id="RECENT_ORDERS3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content modal-style">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="d-flex">
-                                            <ul class="Extra-category-name">
-                                                <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                            </ul>
-                                            <ul class="ml-auto mr-150">
-                                                <h5 class="font-weight-bold">Customer Detail</h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                            </ul>
-                                        </div>
-                                        <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                        <div class="d-flex order-state">
-                                            <div class="col-lg-3">
-                                                <h5 class="font-weight-bold">Order Status
-                                                </h5>
-                                            </div>
-                                            <!-- ////////////////////////////// -->
-                                            <div class="col-lg-9 ">
-                                                <form class="col-lg-12" action="" method="">
-                                                    <select class="col-lg-12" name="" id="">
-                                                        <option > Processing </option>
-                                                        <option > Cancelled </option>
-                                                        <option > Completed </option>
-                                                        <option > Awaiting Payment </option>
-                                                        <option > Payment Received </option>
-                                                        <option > Expired </option>
-                                                        <option > Awaiting Pickup </option>
-                                                        <option > Dispatched </option>
-                                                        <option > Shipped </option>
-                                                    </select>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!-- //////////////////////////////////////////////////// -->
-                                        <hr>
-                                        <div class="mt-4 font-weight-bolder">
-                                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                            <ul>
-                                                <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                </tr>
                 </tbody>
                 </table>
             </div>
@@ -452,13 +284,6 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="MY_RESTAURANT" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -548,7 +373,7 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <h6 class="p-2"> if you need to find the addres of your resturant with Longitude and   Latitude click here <a class="text-danger" href="https://www.latlong.net/convert-address-to-lat-long.html"> LatLong.net  </a> </h6>
-                    <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
                         <label for="">Specials</label>
                         <br>
                         <select id="select-cat" style="width: 80%!important;color: #9097a1;" class="mul-select p-3 mt-1 mb-3" multiple="true">
@@ -559,7 +384,7 @@
                             <option value="4">order 3 to get 1 free</option>
                             <option value="5">half price </option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <!-- ////////////////////////////////////////// -->
 
@@ -881,161 +706,11 @@
                         </div>
 
                     </tr>
-                    <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-                    <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+                  
 
-                    <tr>
-                        <td>Order-25567</td>
-                        <td>	March 27, 2021</td>
-                        <td>£75.71</td>
-                        <td>£7.57</td>
-                        <td>£68.14</td>
-                        <td class="processing" ><span>Processing</span></td>
-                        <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS2"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                        <!-- Modal -->
-                        <div class="modal fade" id="all_ORDERS2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content modal-style">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="d-flex">
-                                            <ul class="Extra-category-name">
-                                                <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                            </ul>
-                                            <ul class="ml-auto mr-150">
-                                                <h5 class="font-weight-bold">Customer Detail</h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                            </ul>
-                                        </div>
-                                        <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                        <div class="d-flex order-state">
-                                            <div class="col-lg-3">
-                                                <h5 class="font-weight-bold">Order Status
-                                                </h5>
-                                            </div>
-                                            <!-- ////////////////////////////// -->
-                                            <div class="col-lg-9 ">
-                                                <form class="col-lg-12" action="" method="">
-                                                    <select class="col-lg-12" name="" id="">
-                                                        <option > Processing </option>
-                                                        <option > Cancelled </option>
-                                                        <option > Completed </option>
-                                                        <option > Awaiting Payment </option>
-                                                        <option > Payment Received </option>
-                                                        <option > Expired </option>
-                                                        <option > Awaiting Pickup </option>
-                                                        <option > Dispatched </option>
-                                                        <option > Shipped </option>
-                                                    </select>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!-- //////////////////////////////////////////////////// -->
-                                        <hr>
-                                        <div class="mt-4 font-weight-bolder">
-                                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                            <ul>
-                                                <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                            </ul>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                     </tr>
-                    <tr>
-                        <td>Order-25567</td>
-                        <td>	March 27, 2021</td>
-                        <td>£75.71</td>
-                        <td>£7.57</td>
-                        <td>£68.14</td>
-                        <td class="processing" ><span>Processing</span></td>
-                        <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS3"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                        <!-- Modal -->
-                        <div class="modal fade" id="all_ORDERS3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content modal-style">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="d-flex">
-                                            <ul class="Extra-category-name">
-                                                <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                            </ul>
-                                            <ul class="ml-auto mr-150">
-                                                <h5 class="font-weight-bold">Customer Detail</h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                            </ul>
-                                        </div>
-                                        <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                        <div class="d-flex order-state">
-                                            <div class="col-lg-3">
-                                                <h5 class="font-weight-bold">Order Status
-                                                </h5>
-                                            </div>
-                                            <!-- ////////////////////////////// -->
-                                            <div class="col-lg-9 ">
-                                                <form class="col-lg-12" action="" method="">
-                                                    <select class="col-lg-12" name="" id="">
-                                                        <option > Processing </option>
-                                                        <option > Cancelled </option>
-                                                        <option > Completed </option>
-                                                        <option > Awaiting Payment </option>
-                                                        <option > Payment Received </option>
-                                                        <option > Expired </option>
-                                                        <option > Awaiting Pickup </option>
-                                                        <option > Dispatched </option>
-                                                        <option > Shipped </option>
-                                                    </select>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!-- //////////////////////////////////////////////////// -->
-                                        <hr>
-                                        <div class="mt-4 font-weight-bolder">
-                                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                            <ul>
-                                                <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                            </ul>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </tr>
                     </tbody>
                 </table>
 
@@ -1107,71 +782,13 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     <tr>
                         <td>March 3, 2021</td>
                         <td>£0.00</td>
                         <td>£0.00</td>
                     </tr>
-                    <tr>
-                        <td>March 4, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 5, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 6, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 7, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 8, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 9, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 10, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 11, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 12, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 13, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 14, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
-                    <tr>
-                        <td>March 15, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
-                    </tr>
+
 
                     </tbody>
                 </table>
@@ -1186,7 +803,7 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="CHANGE_PASSWORD" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <form>
+            <form class="resto-seeting-form ">
 
                 <h5 class=" text-capitalize mt-3"> CHANGE PASSWORD </h5>
                 <div class="row">
@@ -1258,7 +875,7 @@
         <div class="row row-30">
             <div class="col-lg-3 col-md-6 col-sm-12 ">
 
-                <div class="pr-xl-4"><a class="footer-brand" href="index.html"><h1 style="color: #ffffff;">Wagabat</h1></a>
+                <div class="pr-xl-4"><a class="footer-brand" href="index.html"><h1 style="color: #ffffff;">WAGABAT</h1></a>
                     <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
                     <img class="img-fluid img-responsive" src="/assets/photos/footer-img-300x134.png" alt="">
                     <div class=" mr-3 social">
@@ -1280,7 +897,7 @@
                     <li><a href="#">the red sea</a></li>
                 </ul>
                 <a class="about-link " href="index.html">
-                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> Wagabat </h3>
+                    <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> WAGABAT </h3>
                 </a>
 
             </div>
@@ -1308,7 +925,7 @@
                 </dl>
                 <dl class="contact-list">
                     <dt>email:</dt>
-                    <dd><a href="mailto:#">TAKE_AWAY@gmail.com</a></dd>
+                    <dd><a href="mailto:#">WAGABAT@gmail.com</a></dd>
                 </dl>
                 <dl class="contact-list">
                     <dt>phones:</dt>
@@ -1358,10 +975,8 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 <script src="/assets/js/plugins/select2.min.js"></script>
-
 <!-- main Styles -->
 <script src="/assets/js/custom.js"></script>
-<script src="/assets/js/multi select.js"></script>
 <script>
 
     $(function() {
@@ -1396,7 +1011,13 @@
 
 
 
-    x
+    
+            window.onpageshow = function() {
+                $('#select-cat').select2({
+                    allowClear: true,
+                    placeholder: 'Select a month'
+                });
+            };
 
 </script>
 
