@@ -6,7 +6,7 @@
         </button>
         <div class="collapse navbar-collapse ml-auto" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="{{route('web.home')}}" class="nav-link activelink">Home</a></li>
+                <li class="nav-item active"><a href="{{route('web.home')}}" class="nav-link ">Home</a></li>
                 <li class="nav-item"><a href="{{route('web.about')}}" class="nav-link ">about us</a></li>
                 <li class="nav-item hover-this"><a href="{{route('web.howItWork')}}" class="nav-link">How It Works</a></li>
                 <li class="nav-item hover-this"><a href="{{route('web.faqs')}}" class="nav-link">FAQS</a></li>
