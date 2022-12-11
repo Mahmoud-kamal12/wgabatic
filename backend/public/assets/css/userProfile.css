@@ -201,7 +201,7 @@ nav.sticky .navbar-brand img{
 
 }
 form .form-group label { color: #464160; }
-form .form-group input { outline: none!important;color: #FDFDFD; }
+form .form-group input { outline: none!important;color: #585555; }
 .up-file{
     background-color: transparent;
     border: 1px solid #000;
@@ -275,7 +275,10 @@ color: #313139;
 /* /////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
+.User-Seting-Form input{
+    text-transform: none!important;  
 
+}
 
 
 

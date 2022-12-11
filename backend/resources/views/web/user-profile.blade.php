@@ -480,13 +480,13 @@
                         <div class="row cart-list">
                             <table class="table text-center">
                                 <thead class="thead-light">
-                                <tr>
+
                                     <th scope="col">TRANSACTION ID</th>
                                     <th scope="col">ORDER ID</th>
                                     <th scope="col">DATE</th>
                                     <th scope="col">DETAIL</th>
                                     <th scope="col">AMOUNT</th>
-                                </tr>
+
                                 </thead>
                                 <tbody>
                                 <tr>
@@ -496,27 +496,7 @@
                                     <td> <span> order - mcdonalds   <!-- اسم المطعم و الطلب -->  </span> </td>
                                     <td><span> $54.16 </span></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row"> #6532  <!-- رقم المعامله -->  </th>
-                                    <td> 5623   <!-- رقم الطلب --></td>
-                                    <td>july 7,2020 <!-- التاريخ --> </td>
-                                    <td> <span> order - KFC-Kentucky   <!-- اسم المطعم و الطلب -->  </span> </td>
-                                    <td><span> $40.14 </span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"> #6532   <!-- رقم المعامله -->  </th>
-                                    <td> 7655   <!-- رقم الطلب --></td>
-                                    <td>july 9,2020 <!-- التاريخ --> </td>
-                                    <td> <span> order - hardees   <!-- اسم المطعم و الطلب -->  </span> </td>
-                                    <td><span> $37.56 </span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"> #1234   <!-- رقم المعامله -->  </th>
-                                    <td> 2233   <!-- رقم الطلب --></td>
-                                    <td>decamber 5,2020 <!-- التاريخ --> </td>
-                                    <td> <span> order - Domenos-pizza   <!-- اسم المطعم و الطلب -->  </span> </td>
-                                    <td><span> $30.66 </span></td>
-                                </tr>
+                               
                                 </tbody>
                             </table>
 
@@ -530,7 +510,7 @@
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Account_Setting" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <h5>ACCOUNT SETTING</h5>
-                        <form>
+                        <form class="User-Seting-Form">
                             <div class="row">
                                 <div class="col-lg-6">
 
@@ -572,23 +552,24 @@
             <h5>CHANGE PASSWORD</h5>
          
             <div id="myF" class="row">
-              <form  onSubmit="return checkform_password();" id="myForm2" action="/changePassword" method="POST">
+              <form class="User-Seting-Form"   id="myForm2" action=" " method="POST">
             <div class="col-lg-12">
+
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="Old Password" >
-                  
-                    <h4 class="mt-3" id="server_err_password" style="text-align: center;">  </h4>
-                    
+                <h4 class="mt-3" id="server_err_password" style="text-align: center;">  </h4>
               </div>
-              <div class="form-group">
-                
+
+              <div class="form-group">  
                 <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="New Password">
               </div>
+
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="Confirm Password" >
               </div>
+           
             </div>
-            <p id="warning_password"></p>
+            
               <button type="submit" class="btn btn-danger ml-3">Submit</button>
 
             </div>
