@@ -85,11 +85,11 @@
                 <div class="col-md-12 col-sm-12 text-center welcomeTexte">
                     <div class=" d-flex resturant-logo">
                         <div class=" p-3 ">
-                            <img class="" src="/assets/photos/imgs/kfc.jpg" width="80" height="80"  alt="">
+                            <img class="" src="{{asset(auth()->guard('restaurant')->user()->logo)}}" width="80" height="80"  alt="">
                         </div>
                         <div class=" p-3 text-light mt-4">
-                            <h4 class="text-left">Kfc – Kentucky</h4>
-                            <p>  <i class="fas fa-pizza-slice"></i> Hot Dogs, Pizza & Stakes</p>
+                            <h4 class="text-left">{{auth()->guard('restaurant')->user()->name}}</h4>
+                            <p>  <i class="fas fa-pizza-slice"></i> Hot Dogs, Pizza & Stakes </p>
                         </div>
                     </div>
                 </div>
@@ -289,47 +289,49 @@
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="MY_RESTAURANT" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
             <h5 class="modal-title text-uppercase">Restaurant Settings</h5>
-            <form class="form mt-5 resto-seeting-form " >
+            <form class="form mt-5 resto-seeting-form "  action="{{route('web.restaurantProfile.update')}}" method="post" enctype="multipart/form-data">
+                @method('POST')
+                @csrf
                 <div class=" form-row mt-5 ">
                     <!-- ////////////////////////// -->
                     <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                        <img class="img-fluid" src="/assets/photos/imgs/kfc-1-1.png" id="defultImg" alt="" width="180" height="180" >
+                        <img class="img-fluid" src="{{(asset(auth()->guard('restaurant')->user()->logo))}}" id="defultImg" alt="" width="180" height="180" >
                         <p>choose logo photo</p>
-                        <input style="width: 100%;" class="   up-file" type="file"  id="inpUpload">
+                        <input style="width: 100%;" name="logo" class="up-file" type="file"  id="inpUpload">
                     </div>
                     <!-- ////////////////////////// -->
 
                     <!-- ////////////////////////// -->
                     <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                        <img class="img-fluid" src="/assets/photos/kfc-meal.png" id="defultImg2" alt="" width="180" height="180" >
+                        <img class="img-fluid" src="{{(asset(auth()->guard('restaurant')->user()->cover))}}" id="defultImg2" alt="" width="180" height="180" >
                         <p>choose cover photo</p>
-                        <input style="width: 100%;" class="    up-file" type="file"  id="inpUpload2">
+                        <input style="width: 100%;" class="up-file" type="file" name="cover"  id="inpUpload2">
                     </div>
                     <!-- ////////////////////////// -->
 
                     <!-- ////////////////////////// -->
                     <div class=" col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
-                        <input type="email" class="col-lg-12 p-2" id="validationCustom" value=""  placeholder="Restaurant name *">
+                        <input type="text" class="col-lg-12 p-2" name="name" id="validationCustom" value="{{(auth()->guard('restaurant')->user()->name)}}"  placeholder="Restaurant name *">
                     </div>
                     <!-- ////////////////////////// -->
 
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                        <input type="text" class="col-lg-12 p-2" id="validationCustom" value=""  placeholder="Restaurant phone">
+                        <input type="text" class="col-lg-12 p-2" id="validationCustom" name="phone" value="{{(auth()->guard('restaurant')->user()->phone)}}"  placeholder="Restaurant phone">
                     </div>
                     <!-- ////////////////////////// -->
 
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                        <input type="text" class="col-lg-12 p-2" id="validationCustom" value=""  placeholder="Manager Name">
+                        <input type="text" class="col-lg-12 p-2" id="validationCustom" name="m_name" value="{{(auth()->guard('restaurant')->user()->m_name)}}"  placeholder="Manager Name">
                     </div>
                     <!-- ////////////////////////// -->
 
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Manager Contact phone">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="m_phone" value="{{(auth()->guard('restaurant')->user()->m_phone)}}"  placeholder="Manager Contact phone">
                     </div>
                     <!-- ////////////////////////// -->
 
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="email" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Contact Email">
+                        <input type="email" class="col-lg-12 p-2 mb-3" id="validationCustom" name="contact_email" value="{{(auth()->guard('restaurant')->user()->contact_email)}}"  placeholder="Contact Email">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
@@ -343,32 +345,32 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="pickup fee">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="pickup_fee" value="{{(auth()->guard('restaurant')->user()->pickup_fee)}}"  placeholder="pickup fee">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="pickup time">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="pickup_time" value="{{(auth()->guard('restaurant')->user()->pickup_time)}}"  placeholder="pickup time">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="contry">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="country" value="{{(auth()->guard('restaurant')->user()->country)}}"  placeholder="contry">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="state city">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="city" value="{{(auth()->guard('restaurant')->user()->city)}}"  placeholder="state city">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Latitude ">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="Latitude" value="{{(auth()->guard('restaurant')->user()->Latitude)}}"  placeholder="Latitude ">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Longitude">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="Latitude" value="{{(auth()->guard('restaurant')->user()->Latitude)}}"  placeholder="Longitude">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
@@ -413,7 +415,7 @@
                     <!-- ////////////////////////////////////////// -->
 
                     <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                        <textarea class="col-lg-12 p-2" name="" id="" cols="30" rows="10"></textarea>
+                        <textarea class="col-lg-12 p-2"  id="" cols="30" rows="10" name="description">{{(auth()->guard('restaurant')->user()->description)}}</textarea>
                     </div>
                     <!-- ////////////////////////// -->
                 </div>
@@ -455,45 +457,28 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="">
+                                        <form action="{{route('web.restaurantProfile.menuadd')}}" method="post">
+                                            @method('POST')
+                                            @csrf
+
                                             <div class="form-row">
-                                                <!-- ////////////////////////////////////////// -->
-                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                                                    <select id="select-cat"  class=" col-lg-12 p-2 mb-3" >
-                                                        <option value="0" selected="selected" > select meal category</option>
-                                                        <option value="1" > pizza</option>
-                                                        <option value="2" > Pasta</option>
-                                                        <option value="3" > stakes</option>
-                                                        <option value="4">burgger</option>
-                                                        <option value="5" > Beef Roast</option>
-                                                        <option value="6" >Cheese Burger</option>
-                                                        <option value="7">Chicken </option>
-                                                        <option value="8">Chicken Roast</option>
-                                                        <option value="9">Chines Soup</option>
-                                                        <option value="10">apple pie  </option>
-                                                        <option value="11" > apple juice</option>
-                                                        <option value="12">Carrot Juice</option>
-                                                        <option value="13">coffee</option>
 
-                                                    </select>
-                                                </div>
-                                                <!-- ////////////////////////// -->
                                                 <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal name">
+                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="name"  placeholder="meal name">
 
                                                 </div>
                                                 <!-- ////////////////////////// -->
                                                 <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal price">
+                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal price" name="price">
                                                 </div>
                                                 <!-- ////////////////////////// -->
                                                 <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal description">
+                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal description" name="description">
                                                 </div>
                                                 <!-- ////////////////////////// -->
                                             </div>
                                             <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
-                                            <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add all </button>
+
 
                                             <hr>
                                         </form>
@@ -508,87 +493,69 @@
                     <!-- /////////////////////////// -->
                     <ul class="category-crud mt-5">
 
-                        <li class="category-row">
+                        @foreach(auth()->user()->meals as $meal)
 
-                            <div class="d-flex">
-                                <div class="font-weight-bolder Extra-category-name">the meal Name </div>
-                                <div class="ml-auto  Required-text">
+                            <li class="category-row">
 
-                                    <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit" ></i>
+                                <div class="d-flex">
+                                    <div class="font-weight-bolder Extra-category-name">{{$meal->name}}</div>
 
+                                    <div class="ml-auto  Required-text">
 
+                                        <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit{{$meal->id}}"></i>
+                                        <!-- /////////////////////////////////////// -->
+                                        <div class="modal fade" id="menu_category_Edit{{$meal->id}}" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="menu_category_Edit" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">update category</h5>
-                                                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form action="">
-                                                        <div class="form-row">
-                                                            <!-- ////////////////////////////////////////// -->
-                                                            <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                                                                <select id="select-cat"  class=" col-lg-12 p-2 mb-3" >
-                                                                    <option value="0" selected="selected" > update meal category</option>
-                                                                    <option value="1" > pizza</option>
-                                                                    <option value="2" > Pasta</option>
-                                                                    <option value="3" > stakes</option>
-                                                                    <option value="4">burgger</option>
-                                                                    <option value="5" > Beef Roast</option>
-                                                                    <option value="6" >Cheese Burger</option>
-                                                                    <option value="7">Chicken </option>
-                                                                    <option value="8">Chicken Roast</option>
-                                                                    <option value="9">Chines Soup</option>
-                                                                    <option value="10">apple pie  </option>
-                                                                    <option value="11" > apple juice</option>
-                                                                    <option value="12">Carrot Juice</option>
-                                                                    <option value="13">coffee</option>
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">update Meal</h5>
+                                                        <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('web.restaurantProfile.menuupdate' , $meal->id)}}" method="post">
+                                                            @csrf
+                                                            @method('POST')
+                                                            <div class="form-row">
 
-                                                                </select>
+                                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->name}}" name="name" placeholder="update meal name">
+
+                                                                </div>
+                                                                <!-- ////////////////////////// -->
+                                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->price}}"  placeholder="update meal price" name="price">
+                                                                </div>
+                                                                <!-- ////////////////////////// -->
+                                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->price}}"  placeholder="update meal description" name="description">
+                                                                </div>
+                                                                <!-- ////////////////////////// -->
                                                             </div>
-                                                            <!-- ////////////////////////// -->
-                                                            <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                                                <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="update meal name">
+                                                            <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
 
-                                                            </div>
-                                                            <!-- ////////////////////////// -->
-                                                            <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                                                                <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="update meal price">
-                                                            </div>
-                                                            <!-- ////////////////////////// -->
-                                                            <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                                                <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="update meal description">
-                                                            </div>
-                                                            <!-- ////////////////////////// -->
-                                                        </div>
-                                                        <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
-                                                        <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add all </button>
+                                                            <hr>
+                                                        </form>
 
-                                                        <hr>
-                                                    </form>
+                                                    </div>
 
                                                 </div>
-
                                             </div>
+
                                         </div>
+
+
+                                        <a href="{{route('web.restaurantProfile.menudelete' , $meal->id)}}"><i class=" ml-3 text-danger  fas fa-trash"></i></a>
+
                                     </div>
 
-                                    <!-- /////////////////////////////////////// -->
-
-                                    <i class=" ml-3 text-danger  fas fa-trash"></i>
-
                                 </div>
+                                <hr>
+                            </li>
 
-                            </div>
-                            <hr>
-                        </li>
-
-
+                        @endforeach
 
                     </ul>
                 </div>
@@ -597,7 +564,10 @@
             </div>
         </div>
 
-        <!-- /////////////////////////////////////////////////////////////// -->
+
+                <!-- Modal -->
+
+                <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
@@ -706,7 +676,7 @@
                         </div>
 
                     </tr>
-                  
+
 
 
 
@@ -1011,7 +981,7 @@
 
 
 
-    
+
             window.onpageshow = function() {
                 $('#select-cat').select2({
                     allowClear: true,

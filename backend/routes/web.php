@@ -49,6 +49,10 @@ Route::name('web.')->group(function(){
     Route::group(["middleware" => "auth:restaurant"],function (){
         Route::get('/logoutr', [ AuthController::class ,'logoutr'])->name('logoutr');
         Route::get('/restaurant-profile', [ ResturantController::class ,'restaurantProfile'])->name('restaurantProfile');
+        Route::post('/restaurant-profile/update', [ ResturantController::class ,'update'])->name('restaurantProfile.update');
+        Route::post('/restaurant-profile/menuadd', [ ResturantController::class ,'menuadd'])->name('restaurantProfile.menuadd');
+        Route::post('/restaurant-profile/menuupdate/{id}', [ ResturantController::class ,'menuupdate'])->name('restaurantProfile.menuupdate');
+        Route::get('/restaurant-profile/menudelete/{id}', [ ResturantController::class ,'menudelete'])->name('restaurantProfile.menudelete');
 
         Route::resource('/meal', MealController::class);
 

@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('Longitude')->nullable();
             $table->text('logo')->nullable();
             $table->text('cover')->nullable();
+            $table->string('description')->nullable();
             $table->string('contact_email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

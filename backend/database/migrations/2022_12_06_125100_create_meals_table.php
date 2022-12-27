@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->double('price');
-            $table->integer('category_id')->unsigned();
+            $table->integer('restaurant_id')->unsigned();
 
 
-            $table->foreign('category_id')
-                ->references('id')->on('categories')
+            $table->foreign('restaurant_id')
+                ->references('id')->on('restaurants')
                 ->onDelete('cascade');
             $table->timestamps();
         });
