@@ -39,7 +39,7 @@
             <div class=" signup-buttons  col-lg-7 col-md-10 col-sm-12 text-center">
                 <div class="container">
                     <div  class="row ">
-
+                                                                                                                                                                                                                                    
                         <div class=" signup-form col-lg-12 text-white text-center mt-3">
                             <div>
                                 <img src="/assets/photos/imgs/takeaway-catering-logo-large.png" width="100" height="100" alt="">
