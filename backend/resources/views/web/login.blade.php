@@ -52,29 +52,36 @@
                     <div  class="row ">
 
                         <!-- Nav tabs -->
-                        <div class="col-lg-12 m-auto loginTap">
+                        <div class="col-lg-12 m-auto loginTap ">
                             <ul class="nav nav-tabs text-center mt-3 col-lg-12 ">
 
                                 <li class="nav-item col-lg-6 col-md-6 col-sm-6 ">
-                                    <a  class="nav-link  mb-3" data-toggle="tab" href="#userLogin"> <img class="tab-image" style="color: white;" width="60px" height="60px"  src="../1540343379.svg" alt=""> </a>
+                                    <a  class="nav-link  mb-1 mt-3" data-toggle="tab" href="#userLogin"> 
+                                        <!-- <img class="tab-image" style="color: white;" width="60px" height="60px"  src="2257bac0e14094f.jpg" alt="">  -->
+                                         <h4> User Login </h4>
+                                    </a>
                                 </li>
                                 <!-- ////////// -->
-                                <li class="nav-item col-lg-6 col-md-6 col-sm-6 ">
-                                    <a class="nav-link text-center mb-3" data-toggle="tab" href="#restaurantLogin">  <img class="tab-image" width="60px" height="60px" src="../CookSign.svg" alt=""> </a>
+                                <li class="nav-item col-lg-6 col-md-6 col-sm-6 " style="border-left:2px solid white">
+                                    <a class="nav-link text-center mb-3 " data-toggle="tab" href="#restaurantLogin"> 
+                                        <!-- <img class="tab-image" width="60px" height="60px" src="./restu.svg" alt="">  -->
+                                        <h4> Restaurant Login </h4>
+
+                                    </a>
                                 </li>
                                 <!-- ///////// -->
 
                             </ul>
                         </div>
-                        <br>
+                        <br> 
                         <div class="tab-content ">
                             <!-- ///////////////////////////////////////////////////// -->
                             <!-- ///////////////////////////////////////////////////// -->
                             <!-- ///////////////////////////////////////////////////// -->
                             <div id="userLogin" class=" tab-pane active "><br>
                                 <div class=" login-form col-lg-12 text-white text-center">
+                                    <!-- <h2>user login</h2>                                    -->
 
-                                    <h2> user login </h2>
                                     <form class="contact-form mt-2" action="{{route('web.userLogin')}}" method="POST">
                                     @csrf
                                     @method("POST")
@@ -103,7 +110,8 @@
                             <!-- ///////////////////////////////////////////////////// -->
                             <div id="restaurantLogin" class=" tab-pane  "><br>
                                 <div class=" login-form col-lg-12 text-white text-center">
-                                    <h2> restaurant login </h2>
+                                    <!-- <h2> restaurant login </h2> -->
+
 
 
                                     <form class="contact-form" action="{{route('web.resturantLogin')}}" method="POST">
