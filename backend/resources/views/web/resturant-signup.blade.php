@@ -93,6 +93,11 @@
                                         <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
                                             <input type="password" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="retype password  *" name="password_confirmation">
                                         </div>
+                                        <!-- ////////////////////////// -->
+
+                                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
+                                            <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="kitchen  *" name="">
+                                        </div>
 
                                     </div>
                                     <!-- ////////////////////////////////////////// -->
