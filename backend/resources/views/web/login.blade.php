@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-12 col-sm-12 text-center welcomeTexte mb-2">
-                <h1 class="text-light">Log in To TAKEAWAY</h1>
+                <h1 class="text-light">Log in To WAGABAT</h1>
                 <span class="login-header-span "> <a class="text-light" href="{{route('web.home')}}"> <i class=" fas fa-home mr-2"></i> BACK TO HOME</a></span>
             </div>
             <div class=" login-buttons  col-lg-5 col-md-8 col-sm-12 text-center">

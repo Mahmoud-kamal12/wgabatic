@@ -12,7 +12,7 @@
                 <li class="nav-item hover-this"><a href="{{route('web.faqs')}}" class="nav-link">FAQS</a></li>
                 <li class="nav-item hover-this"><a href="{{route('web.contact')}}" class="nav-link">Contact</a></li>
 
-                @if(auth()->guard('web')->user()))
+                @if(auth()->guard('web')->user())
                 <li class="nav-item hover-this"><a href="{{route('web.logout')}}" class="nav-link "> logout </a></li>
                 <li class="nav-item hover-this"><a href="{{route('web.userProfile')}}" class="nav-link "> Profile </a></li>
                 @elseif(auth()->guard('restaurant')->user())

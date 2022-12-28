@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-12 col-sm-12 text-center welcomeTexte mb-2">
-                <h1 class="text-light">Make An Account to USe  TAKEAWAY </h1>
+                <h1 class="text-light">Make An Account to USE  WAGABAT </h1>
                 <span class="signup-header-span "> <a class="text-light" href="{{route('web.home')}}"> <i class=" fas fa-home mr-2"></i> BACK TO HOME</a></span>
             </div>
             <div class=" signup-buttons  col-lg-7 col-md-10 col-sm-12 text-center">
