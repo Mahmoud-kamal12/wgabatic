@@ -280,7 +280,7 @@
         <div class="text-center">
             <img  src="/assets/photos/divider.png" alt="">
             <h1 class="text-center  text-title">  Meet our team </h1>
-            <p>el matfeen </p>
+            <p> team of developer  </p>
         </div>
 
         <div class="row p-0 m-0">
@@ -549,7 +549,7 @@
                 </dl>
                 <dl class="contact-list">
                     <dt>email:</dt>
-                    <dd><a href="mailto:#">TAKE_AWAY@gmail.com</a></dd>
+                    <dd><a href="mailto:#">wagabat@gmail.com</a></dd>
                 </dl>
                 <dl class="contact-list">
                     <dt>phones:</dt>
@@ -563,7 +563,7 @@
 
         <hr style="background-color: rgb(255, 255, 255);">
         <div class="row p-3">
-            <h6 class="mt-3 ml-3 ">Copyright ©2020 All rights reserved | This template is  made  by <a href="https://www.facebook.com/mostafa.emadgomaa">HTI STUDENT </a>  </h6>
+            <h6 class="mt-3 ml-3 ">Copyright ©2020 All rights reserved | This template is  made  by <a href="!#">TIBA STUDENT </a>  </h6>
             <span class="ml-auto mr-3" class="socials">
           <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-twitter"></i></a>
           <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-facebook"></i></a>
