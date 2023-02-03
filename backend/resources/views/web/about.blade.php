@@ -286,7 +286,7 @@
         <div class="row p-0 m-0">
             <!-- ///////////////////////////// -->
             <div style="background-color: #284159;" class="col-lg-3 col-md-6 col-sm-12 team-data team-data1">
-                <h4 class="text-light mt-5">luay elzieny</h4>
+                <!-- <h4 class="text-light mt-5">luay elzieny</h4> -->
                 <h5 class="text-light mt-3">back end developer </h5>
                 <p class="text-light mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Doloribus sunt perferendis officia. Iusto, deserunt magni?</p>
@@ -295,11 +295,12 @@
                 </div>
             </div>
             <!-- ///////////////////////////// -->
-            <div style="background-image: url(/assets/photos/team/luay-res.png);" class="col-lg-3 col-md-6 col-sm-12 team-img team-img1 "></div>
+            <!-- style="background-image: url(/assets/photos/team/luay-res.png); team-img1" -->
+            <div  class="col-lg-3 col-md-6 col-sm-12 team-img  "></div>
             <!-- ///////////////////////////// -->
             <div style="background-color: #5368A1;" class="col-lg-3 col-md-6 col-sm-12 team-data team-data2">
 
-                <h4 class="text-light mt-5">mohamed ahmed menia</h4>
+                <!-- <h4 class="text-light mt-5">mohamed ahmed menia</h4> -->
                 <h5 class="text-light mt-3">back end developer </h5>
                 <p class="text-light mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Doloribus sunt perferendis officia. Iusto, deserunt magni?</p>
@@ -308,18 +309,20 @@
                 </div>
             </div>
             <!-- ///////////////////////////// -->
-            <div style="background-image: url(/assets/photos/team/mania-1-res.png);" class="col-lg-3 col-md-6 col-sm-12 team-img team-img2 "></div>
+            <!-- style="background-image: url(/assets/photos/team/mania-1-res.png);"  -->
+            <div class="col-lg-3 col-md-6 col-sm-12 team-img team-img2 "></div>
             <!-- /////////////////////////////// -->
             <!-- ////////////////////////////////////////////// -->
             <!-- ////////////////////////////////////////////// -->
             <!-- ////////////////////////////////////////////// -->
             <!-- ///////////////////////////// -->
-            <div style="background-image: url(/assets/photos/team/yousef-res.png);" class="col-lg-3 col-md-6 col-sm-12 team-img team-img3"></div>
+            <!-- style="background-image: url(/assets/photos/team/yousef-res.png);" -->
+            <div  class="col-lg-3 col-md-6 col-sm-12 team-img team-img3"></div>
             <!-- ///////////////////////////// -->
             <!-- ///////////////////////////// -->
             <div style="  background-color: #849cd6;" class="col-lg-3 col-md-6 col-sm-12 team-data team-data3">
                 <div style="color: rgb(253, 229, 229)!important;" class="">
-                    <h4 class=" mt-5">yousef ahmed reda</h4>
+                    <!-- <h4 class=" mt-5">yousef ahmed reda</h4> -->
                     <h5 class=" mt-3">back end developer </h5>
                     <p class=" mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Doloribus sunt perferendis officia. Iusto, deserunt magni?</p>
@@ -330,11 +333,12 @@
             </div>
             <!-- ///////////////////////////// -->
             <!-- ///////////////////////////// -->
-            <div style="background-image: url(/assets/photos/team/darsh-res.png);" class="col-lg-3 col-md-6 col-sm-12 team-img team-img4"></div>
+            <!-- style="background-image: url(/assets/photos/team/darsh-res.png); -->
+            <div " class="col-lg-3 col-md-6 col-sm-12 team-img team-img4"></div>
             <!-- ///////////////////////////// -->
             <!-- ///////////////////////////// -->
             <div style="background-color: #242020;" class="col-lg-3 col-md-6 col-sm-12 team-data team-data4">
-                <h4 class="text-light mt-5">mostafa emad gomaa</h4>
+                <!-- <h4 class="text-light mt-5">mostafa emad gomaa</h4> -->
                 <h5 class="text-light mt-3">front end developer </h5>
                 <p class="text-light mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Doloribus sunt perferendis officia. Iusto, deserunt magni?</p>

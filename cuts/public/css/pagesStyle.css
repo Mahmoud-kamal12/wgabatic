@@ -102,7 +102,7 @@ nav.sticky .navbar-brand img{
 .team-img{
     width: 100%;
     height: 350px;
-    background: url(../photos/team/luay-res.png) no-repeat center ;
+    /* background: url(../photos/team/luay-res.png) no-repeat center ; */
     background-size: cover;
 }
 .fa-long-arrow-alt-right,

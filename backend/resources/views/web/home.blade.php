@@ -87,7 +87,7 @@
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
                 <a href="#!">
                     <i class="flaticon-take-away-1"></i>
-                    <h5>Take aWAGABATway</h5>
+                    <h5>WAGABAT</h5>
                 </a>
             </div>
             <!-- /////////////////////////////////////////// -->
