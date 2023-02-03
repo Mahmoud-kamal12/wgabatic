@@ -41,7 +41,7 @@ class AuthController extends Controller
     public function resturantLogin(Request $request){
         $credentials = $request->only('email', 'password');
         if (Auth::guard('restaurant')->attempt($credentials)){
-            return redirect()->route('web.home');
+            return redirect()->route('web.restaurantProfile');
         }else{
             return redirect()->route('web.login');
         }

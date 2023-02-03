@@ -74,9 +74,7 @@
         <br>
         <div class="row">
             <!-- //////////////// -->
-            <div  class="col-lg-5 p-2 howto-about-img ">
-
-            </div>
+            <div  class="col-lg-5 p-2 howto-about-img "> </div>
             <!-- //////////////// -->
             <!-- //////////////// -->
             <div class="col-lg-7 pl-5  about-text">

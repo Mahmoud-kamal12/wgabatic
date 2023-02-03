@@ -18,26 +18,26 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        $categories = [
-            "pizza",
-            "Pasta",
-            "stakes",
-            "burgger",
-            "Beef Roast",
-            "Cheese Burger",
-            "Chicken",
-            "Chicken Roast",
-            "Chines Soup",
-            "apple pie",
-            "apple juice",
-            "Carrot Juice",
-            "coffee",
-        ];
-        foreach ($categories as $category){
-            \App\Models\Category::insert([
-                'name' => $category,
-            ]);
-        }
+        // $categories = [
+        //     "pizza",
+        //     "Pasta",
+        //     "stakes",
+        //     "burgger",
+        //     "Beef Roast",
+        //     "Cheese Burger",
+        //     "Chicken",
+        //     "Chicken Roast",
+        //     "Chines Soup",
+        //     "apple pie",
+        //     "apple juice",
+        //     "Carrot Juice",
+        //     "coffee",
+        // ];
+        // foreach ($categories as $category){
+        //     \App\Models\Category::insert([
+        //         'name' => $category,
+        //     ]);
+        // }
 
         User::create([
             "first_name" => "Admin",

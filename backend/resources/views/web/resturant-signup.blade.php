@@ -45,7 +45,7 @@
                                 <img src="/assets/photos/imgs/takeaway-catering-logo-large.png" width="100" height="100" alt="">
                             </div>
 
-                            <form class="form-signup action="{{route('web.resturantSignUpReq')}}" method="POST" >
+                            <form class="form-signup" action="{{route('web.resturantSignUpReq')}}" method="POST" >
                                 @csrf
                                 @method("POST")
                                 <div style="    text-transform: none!important;" class=" text-center ">

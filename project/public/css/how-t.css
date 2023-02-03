@@ -59,8 +59,8 @@ nav.sticky .navbar-brand img{
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 .howto-about-img{
     width: 100%;
-    height: 400px;
-    background: url( ../photos/new/blogs-food-bakery-13-1-1.jpg ) no-repeat  center ;
+    height: 800px !important;
+    background: url(../photos/new/home-slide-1-1920x800.jpg) no-repeat  center ;
     background-size: contain;  
     border-radius: 5px;
 }

@@ -530,7 +530,7 @@
                                                                 </div>
                                                                 <!-- ////////////////////////// -->
                                                                 <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->price}}"  placeholder="update meal description" name="description">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->description}}"  placeholder="update meal description" name="description">
                                                                 </div>
                                                                 <!-- ////////////////////////// -->
                                                             </div>
