@@ -787,8 +787,8 @@
             // { src: 'photos/24044795.jpg'},
             // { src: 'photos/banner (1).jpg'},
             // { src: 'photos/banner (2).jpg'},
-            // { src: 'photos/banner (3).jpg'},
-            { src: '/assets/photos/imgs/banner (3).jpg'}
+            // { src: 'photos/header-img1'},
+            { src: '/assets/photos/imgs/bg_img2.jpg'}
 
         ]
     });
