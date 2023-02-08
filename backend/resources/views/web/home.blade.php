@@ -136,128 +136,6 @@
 
 
 </section>
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<section class="About" id="About">
-    <br><br><br><br>
-    <div class="container">
-        <div class="text-center">
-            <img  src="/assets/photos/divider.png" alt="">
-            <h1 class="text-center  text-title">ABOUT US </h1>
-        </div>
-        <br>
-        <div class="row">
-            <!-- //////////////// -->
-            <div class="col-lg-6 p-2 about-img "> </div>
-            <!-- //////////////// -->
-            <!-- //////////////// -->
-            <div class="col-lg-6 pl-5  about-text">
-                <br><br>
-                <h2>About Wagabat </h2>
-                <h4>our mission :</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sapiente natus autem cupiditate aut repudiandae dolor quia laboriosam, quisquam inventore ipsa ratione, ullam odio consectetur blanditiis officia deserunt, in at!</p>
-                <button class=" about-btun ">  ABOUT Wagabat  </button>
-                <br><br><br>
-                <a class="about-link" href="{{route('web.home')}}"> <h3 style="font-family: 'La Belle Aurore', cursive!important;"> WAGABAT.COM </h3> </a>
-            </div>
-            <!-- //////////////// -->
-        </div>
-    </div>
-
-    <div class="element">
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-    </div>
-
-</section>
-<br><br>
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<section class="how" id="how">
-    <br><br>
-    <div class="container">
-        <div class="text-center">
-            <img  src="/assets/photos/divider.png" alt="">
-            <h1 class="text-center  text-title">HOW IT WORKS </h1>
-            <p>Easy 3 Step Orders</p>
-        </div>
-        <br>
-
-        <div class="row p-4 justify-content-center align-items-center">
-            <!-- ///////////////////////// -->
-            <div class=" col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5">
-                <i class="flaticon-restaurant"></i>
-                <h4>Choose A Restaurant</h4>
-                <p>We make it simple to find the food you crave. Enter your address and let us do the rest.</p>
-                <hr>
-                <span class=" h3 border border-danger  d-inline-block p-1">1</span>
-            </div>
-            <!-- ///////////////////////// -->
-            <div class="col-lg-1">
-                <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>
-            </div>  
-            <!-- ///////////////////////// -->
-            <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
-                <i class="flaticon-choose"></i>
-                <h4>Choose A Tasty Dish</h4>
-                <p>When you order Eat Street, we'll hook you up with exclusive coupons, specials and rewards.</p>
-                <hr>
-                <span class=" h3 border border-danger  d-inline-block p-1">2 </span>
-            </div>
-            <!-- ///////////////////////// -->
-            <div class="col-lg-1">
-                <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>
-            </div>
-            <!-- ///////////////////////// -->
-            <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
-                <i class="flaticon-take-away"></i>
-                <h4>Pick Up your meal</h4>
-                <p>We make food ordering fast, reliable , simple and free - no matter if you order online or cash.</p>
-                <hr>
-                <span class=" h3 border border-danger  d-inline-block p-1">3</span>
-            </div>
-            <!-- ///////////////////////// -->
-
-        </div>
-
-    </div>
-
-
-    <div class="element">
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-
-    </div>
-
-</section>
-
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-
-
-
-<!-- blog -->
-<!-- blog -->
-<!-- blog -->
-<!-- blog -->
-<!-- blog -->
-
-
 
 
 <!-- ///////////////////////////////////////////////////////////////////////// -->
@@ -499,6 +377,135 @@
     </div>
 
 </section>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+
+<section class="how" id="how">
+    <br><br>
+    <div class="container">
+        <div class="text-center">
+            <img  src="/assets/photos/divider.png" alt="">
+            <h1 class="text-center  text-title">HOW IT WORKS </h1>
+            <p>Easy 3 Step Orders</p>
+        </div>
+        <br>
+
+        <div class="row p-4 justify-content-center align-items-center">
+            <!-- ///////////////////////// -->
+            <div class=" col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5">
+                <i class="flaticon-restaurant"></i>
+                <h4>Choose A Restaurant</h4>
+                <p>We make it simple to find the food you crave. Enter your address and let us do the rest.</p>
+                <hr>
+                <span class=" h3 border border-danger  d-inline-block p-1">1</span>
+            </div>
+            <!-- ///////////////////////// -->
+            <div class="col-lg-1">
+                <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>
+            </div>  
+            <!-- ///////////////////////// -->
+            <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
+                <i class="flaticon-choose"></i>
+                <h4>Choose A Tasty Dish</h4>
+                <p>When you order Eat Street, we'll hook you up with exclusive coupons, specials and rewards.</p>
+                <hr>
+                <span class=" h3 border border-danger  d-inline-block p-1">2 </span>
+            </div>
+            <!-- ///////////////////////// -->
+            <div class="col-lg-1">
+                <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>
+            </div>
+            <!-- ///////////////////////// -->
+            <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
+                <i class="flaticon-take-away"></i>
+                <h4>Pick Up your meal</h4>
+                <p>We make food ordering fast, reliable , simple and free - no matter if you order online or cash.</p>
+                <hr>
+                <span class=" h3 border border-danger  d-inline-block p-1">3</span>
+            </div>
+            <!-- ///////////////////////// -->
+
+        </div>
+
+    </div>
+
+
+    <div class="element">
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+
+</section>
+
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+
+
+<section class="About" id="About">
+    <br><br><br><br>
+    <div class="container">
+        <div class="text-center">
+            <img  src="/assets/photos/divider.png" alt="">
+            <h1 class="text-center  text-title">ABOUT US </h1>
+        </div>
+        <br>
+        <div class="row">
+            <!-- //////////////// -->
+            <div class="col-lg-6 p-2 about-img "> </div>
+            <!-- //////////////// -->
+            <!-- //////////////// -->
+            <div class="col-lg-6 pl-5  about-text">
+                <br><br>
+                <h2>About Wagabat </h2>
+                <h4>our mission :</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sapiente natus autem cupiditate aut repudiandae dolor quia laboriosam, quisquam inventore ipsa ratione, ullam odio consectetur blanditiis officia deserunt, in at!</p>
+                <button class=" about-btun ">  ABOUT Wagabat  </button>
+                <br><br><br>
+                <a class="about-link" href="{{route('web.home')}}"> <h3 style="font-family: 'La Belle Aurore', cursive!important;"> WAGABAT.COM </h3> </a>
+            </div>
+            <!-- //////////////// -->
+        </div>
+    </div>
+
+    <div class="element">
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+
+</section>
+<br><br>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- blog -->
+<!-- blog -->
+<!-- blog -->
+<!-- blog -->
+<!-- blog -->
+
+
+
+
+
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
