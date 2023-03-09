@@ -122,6 +122,9 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#MENU_BUILDER" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-elementor mr-3 "></i>  MENU BUILDER</span></a>
                     <hr class="p-0 m-0">
+                    <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Tables" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-table mr-3 "></i>  Tables</span></a>
+                    <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#ORDERS" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  ORDERS</span></a>
                     <hr class="p-0 m-0">
@@ -186,97 +189,13 @@
                         <!-- //////////////////////////////////////////////////// -->
                         <!-- //////////////////////////////////////////////////// -->
 
-                        <h4>RECENT ORDERS</h4>
-                        <div class="row tab-text  cart-list">
+                        <div class="">
                             <table class="table scroll-x-table text-center">
-                                <thead class="thead-light">
-                                    <th scope="col"> ORDER ID</th>
-                                    <th scope="col">DATE</th>
-                                    <th scope="col">TOTAL PRICE</th>
-                                    <th scope="col">CHARGES	</th>
-                                    <th scope="col">RECEIVED</th>
-                                    <th scope="col">STATUS</th>
-                                    <th scope="col">DETAIL</th>
-                                </thead>
+                              
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>12-3-2020</td>
-                                    <td>£77.97</td>
-                                    <td>£7.80	</td>
-                                    <td>£70.17</td>
-                                    <td class="processing"> <span>processing</span> </td>
-                                    <td><button  type="button" data-toggle="modal" data-target="#RECENT_ORDERS"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="RECENT_ORDERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content modal-style">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="d-flex">
-                                                        <ul class="Extra-category-name">
-                                                            <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                            <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                                        </ul>
-                                                        <ul class="ml-auto mr-150">
-                                                            <h5 class="font-weight-bold">Customer Detail</h5>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                            <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                                        </ul>
-                                                    </div>
-                                                    <hr>
-                                                    <!-- //////////////////////////////////////////////////////////// -->
-                                                    <div class="d-flex order-state">
-                                                        <div class="col-lg-3">
-                                                            <h5 class="font-weight-bold">Order Status
-                                                            </h5>
-                                                        </div>
-                                                        <!-- ////////////////////////////// -->
-                                                        <div class="col-lg-9 ">
-                                                            <form class="col-lg-12" action="" method="">
-                                                                <select class="col-lg-12" name="" id="">
-                                                                    <option > Processing </option>
-                                                                    <option > Cancelled </option>
-                                                                    <option > Completed </option>
-                                                                    <option > Awaiting Payment </option>
-                                                                    <option > Payment Received </option>
-                                                                    <option > Expired </option>
-                                                                    <option > Awaiting Pickup </option>
-                                                                    <option > Dispatched </option>
-                                                                    <option > Shipped </option>
-                                                                </select>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                    <!-- //////////////////////////////////////////////////// -->
-                                                    <hr>
-                                                    <div class="mt-4 font-weight-bolder">
-                                                        <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                                        <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                                        </ul>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                        </div>
-                        </tr>
-
+                                
+                                
+                            </div>
                 </tbody>
                 </table>
             </div>
@@ -430,11 +349,6 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="MENU_BUILDER" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -564,19 +478,41 @@
             </div>
         </div>
 
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Tables" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <form class="resto-seeting-form ">
 
-                <!-- Modal -->
+                <h5 class=" text-capitalize mt-3"> table reservations </h5>
+                <div class="row">
 
-                <!-- /////////////////////////////////////////////////////////////// -->
+                        <div class="form-group col-lg-6">
+                            <input type="number" class="form-control col-lg-12" id="" placeholder="Table Numbers" required>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="number" class="form-control col-lg-12" id="" placeholder=" Table Capacity " required>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            
+                            <div class="col-lg-12 row">
+                                <span class="col-lg-6"> From : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
+                                <span class="col-lg-6"> To : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-danger ml-3 col-lg-3">save</button>
+                        </div>
+
+                </div>
+            </form>
+        </div>
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// --><!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="ORDERS" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -592,8 +528,6 @@
                         <th scope="col">DATE</th>
                         <th scope="col">TOTAL PRICE</th>
                         <th scope="col">CHARGES</th>
-                        <th scope="col">RECEIVED</th>
-                        <th scope="col">STATUS</th>
                         <th scope="col">DETAIL</th>
                     </tr>
                     </thead>
@@ -604,8 +538,6 @@
                         <td>	March 27, 2021</td>
                         <td>£75.71</td>
                         <td>£7.57</td>
-                        <td>£68.14</td>
-                        <td class="processing" ><span>Processing</span></td>
                         <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS1"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
                         <!-- Modal -->
                         <div class="modal fade" id="all_ORDERS1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -617,60 +549,63 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="d-flex">
-                                            <ul class="Extra-category-name">
-                                                <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                            </ul>
-                                            <ul class="ml-auto mr-150">
-                                                <h5 class="font-weight-bold">Customer Detail</h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                            </ul>
-                                        </div>
-                                        <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                        <div class="d-flex order-state">
-                                            <div class="col-lg-3">
-                                                <h5 class="font-weight-bold">Order Status
-                                                </h5>
-                                            </div>
-                                            <!-- ////////////////////////////// -->
-                                            <div class="col-lg-9 ">
-                                                <form class="col-lg-12" action="" method="">
-                                                    <select class="col-lg-12" name="" id="">
-                                                        <option > Processing </option>
-                                                        <option > Cancelled </option>
-                                                        <option > Completed </option>
-                                                        <option > Awaiting Payment </option>
-                                                        <option > Payment Received </option>
-                                                        <option > Expired </option>
-                                                        <option > Awaiting Pickup </option>
-                                                        <option > Dispatched </option>
-                                                        <option > Shipped </option>
-                                                    </select>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!-- //////////////////////////////////////////////////// -->
-                                        <hr>
-                                        <div class="mt-4 font-weight-bolder">
-                                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                            <ul>
-                                                <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
-                                            </ul>
-                                        </div>
 
+
+                                    <div class="modal-body">
+                                        <form class="col-lg-12" action="" method="">
+                                            <div class="d-flex">
+                                                <ul class="Extra-category-name">
+                                                    <h5 class="font-weight-bold">Kfc – Kentucky </h5>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> <input type="text" placeholder="Enter PICK UP TIME " > </span></li>
+                                                </ul>
+                                                <ul class="ml-auto mr-150">
+                                                    <h5 class="font-weight-bold">Customer Detail</h5>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        <!-- //////////////////////////////////////////////////////////// -->
+                                            <div class="d-flex order-state">
+                                                <div class="col-lg-3">
+                                                    <h5 class="font-weight-bold">Order Status
+                                                    </h5>
+                                                </div>
+                                            <!-- ////////////////////////////// -->
+                                                <div class="col-lg-9 ">
+                                                        <select class="col-lg-9" name="" id="">
+                                                            <option > Processing </option>
+                                                            <option > Cancelled </option>
+                                                            <option > Completed </option>
+                                                            <option > Awaiting Payment </option>
+                                                            <option > Payment Received </option>
+                                                            <option > Expired </option>
+                                                            <option > Awaiting Pickup </option>
+                                                            <option > Dispatched </option>
+                                                            <option > Shipped </option>
+                                                        </select>
+                                                        <input class="col-lg-2" type="submit" value="submit" >
+                                                    
+                                                </div>
+                                            </div>
+                                        <!-- //////////////////////////////////////////////////// -->
+                                            <hr>
+                                            <div class="mt-4 font-weight-bolder">
+                                                <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
+                                                <ul>
+                                                    <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
+                                                    <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
+                                                    <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
+                                                    <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
+                                                </ul>
+                                            </div>
+                                        </form>
                                     </div>
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -686,15 +621,7 @@
 
             </div>
         </div>
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
-        <!-- /////////////////////////////////////////////////////////////// -->
+
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
@@ -703,7 +630,35 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="WITHDRAWALS" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-            <h1>Pending</h1>
+            <h3> WITHDRAWALS </h3>
+
+            <div class="row tab-text  cart-list">
+
+                <table class="table table-striped  text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">ORDER ID</th>
+                        <th scope="col">DATE</th>
+                        <th scope="col">TOTAL PRICE</th>
+                        <th scope="col">state</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>Order-25567</td>
+                        <td>	March 27, 2021</td>
+                        <td>75.71</td>
+                        <td class="cancelled"><span > canceled </span></td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                        <div class="">
+                            <h4> Totl Lose : <span>  75.71	 </span> </h4> 
+                        </div>
+            </div>
 
         </div>
 
@@ -715,26 +670,26 @@
 
                 <div class="bg-light p-3 earn-price">
 
-                    <div class="d-flex mt-3">
-                        <div class="">Earnings of this month is: </div>
-                        <div class="ml-auto font-weight-bolder "> £0.00 </div>
-                    </div>
-                    <!-- /////////////// -->
-                    <div class="d-flex mt-3">
-                        <div class="">Total Withdrawal of current month: </div>
-                        <div class="ml-auto font-weight-bolder "> £0.00 </div>
-                    </div>
-                    <!-- /////////////// -->
-                    <div class="d-flex mt-3">
-                        <div class=""> Remaining balance (After withdrawal of current month): </div>
-                        <div class="ml-auto font-weight-bolder "> £0.00 </div>
-                    </div>
-                    <!-- /////////////// -->
-                    <div class="d-flex mt-3">
-                        <div class="">Total sale price of this Month:</div>
-                        <div class="ml-auto font-weight-bolder "> £0 </div>
-                    </div>
-                    <!-- /////////////// -->
+                    <form class="resto-seeting-form ">
+
+                        <h5 class=" text-capitalize mt-3"> my money </h5>
+                        <div class="row">
+
+                                <div class="form-group col-lg-6 ">
+                                    <input type="text" class="form-control col-lg-12" id="" placeholder="Workers' wages" >
+                                </div>
+                                <div class="form-group col-lg-6 ">
+                                    <input type="text" class="form-control col-lg-12" id="" placeholder="Money for the canceled meal" >
+                                </div>
+                                <div class="form-group col-lg-6 ">
+                                    <input type="text" class="form-control col-lg-12" id="" placeholder=" government taxes " >
+                                </div>
+                                <div class="form-group col-lg-12 ">
+                                    <button type="submit" class="btn btn-danger col-lg-3  ">deduct</button>
+                                </div>
+
+                        </div>
+                    </form>
 
 
                 </div>
