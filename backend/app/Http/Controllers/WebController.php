@@ -19,6 +19,10 @@ class WebController extends Controller
     {
         return view('web.contact');
     }
+    public function ordering()
+    {
+        return view('web.ordering');
+    }
     public function faqs()
     {
         return view('web.faqs');
