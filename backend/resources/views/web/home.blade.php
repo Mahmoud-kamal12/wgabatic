@@ -151,14 +151,28 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 
-               @if(auth()->guard('web')->user())
-                    @include('web.tores')
-                @elseif(auth()->guard('restaurant')->user())
-                @else
-                    @include('web.tores')
-                @endif
+@if(!auth()->guard('restaurant')->user())
+<section class="restos" id="restos">
+    <br><br>
+    <div class="container">
+        <div class="text-center">
+            <img  src="/assets/photos/divider.png" alt="">
+            <h1 class="text-center  text-title">  TOP RESTAURANT </h1>
+            <p>All the top restaurant </p>
+        </div>
+
+        <div class="row">
 
 
+                    @foreach($restaurants as $restaurant)
+                        @include('web.singleResturant', ['restaurant' => $restaurant])
+                    @endforeach
+                    
+                    
+                </div>
+            </div>
+        </section>
+        @endif
 
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->

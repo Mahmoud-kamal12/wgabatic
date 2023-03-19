@@ -13,8 +13,8 @@ class WebController extends Controller
     }
     public function home()
     {
-        return view('web.home' , ['mahmoud' => "/assets/photos/imgs/italian-pizza.jpeg"]);
-
+        $restaurants = Restaurant::inRandomOrder()->limit(3)->get();
+        return view('web.home' , ['mahmoud' => "/assets/photos/imgs/italian-pizza.jpeg" , 'restaurants' => $restaurants]);
     }
     public function contact()
     {
@@ -23,7 +23,7 @@ class WebController extends Controller
     public function ordering($id)
     {
         $restaurant = Restaurant::where('id' , $id)->with(['meals','tables'])->first();
-//        dd($restaurant);
+    //    dd($restaurant->toArray());
         return view('web.ordering', compact(['restaurant']));
     }
     public function resturants()
