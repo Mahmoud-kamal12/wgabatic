@@ -22,7 +22,7 @@
                         <h5 class="font-weight-bolder">{{$restaurant->name}}</h5>
                         <p class="d-block" > Resturant Phone : {{$restaurant->phone}}</p>
                         <p class="d-block" > table reservation : {{$restaurant->table_res}}</p>
-                        
+
                         <!-- <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 LE </span> -->
                     </div>
                     <!-- /////////////////// -->
@@ -32,7 +32,7 @@
                             <span style="font-size: 12px;" ><span>{{$restaurant->country}}</span> , <span>{{$restaurant->city}}</span></span>
                         </div>
                         <div class="float-right ml-3">
-                            <a href="{{route("web.ordering")}}">  <button class="d-inline-block float-right resto-butn  btn text-light rounded-pill" > Order Now </button> </a>
+                            <a href="{{route("web.ordering" , $restaurant->id)}}">  <button class="d-inline-block float-right resto-butn  btn text-light rounded-pill" > Order Now </button> </a>
                         </div>
                     </div>
                 </div>

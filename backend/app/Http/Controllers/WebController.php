@@ -20,9 +20,11 @@ class WebController extends Controller
     {
         return view('web.contact');
     }
-    public function ordering()
+    public function ordering($id)
     {
-        return view('web.ordering');
+        $restaurant = Restaurant::where('id' , $id)->with(['meals','tables'])->first();
+//        dd($restaurant);
+        return view('web.ordering', compact(['restaurant']));
     }
     public function resturants()
     {

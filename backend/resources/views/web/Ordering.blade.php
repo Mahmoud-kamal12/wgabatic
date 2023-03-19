@@ -56,7 +56,7 @@
                     <div class="  col-lg-12 col-md-12 col-sm-12 ">
                       <div class=" d-flex resturant-logo">
                         <div class=" p-3 ">
-                          <img class="" src="/assets/photos/imgs/kfc.jpg" width="80" height="80"  alt=""> 
+                          <img class="" src="/assets/photos/imgs/kfc.jpg" width="80" height="80"  alt="">
                         </div>
                          <div class=" p-3 text-light">
                           <h1>Kfc – Kentucky</h1>
@@ -78,18 +78,20 @@
   <div class="container ">
     <div class="row">
       <div class="col-lg-8 menu-inner">
-        <ul class="nav nav-tabs" role="tablist"> 
+        <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item ">
             <a class="nav-link tab-a active" data-toggle="tab" href="#menu" role="tab"> <i class="fa fa-hamburger"></i> Menu</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link tab-a" data-toggle="tab" href="#Reviews" role="tab"> <i class=" fas fa-comment-dots "></i> Reviews</a>
-              
+
 
           </li>
-          <li class="nav-item ">
-            <a class="nav-link tab-a" data-toggle="tab" href="#Booking" role="tab">  <i class="fa fas fa-table"></i> Book a Table</a>
-          </li>
+            @if(auth()->guard('restaurant')->user()->table_status)
+                  <li class="nav-item ">
+                    <a class="nav-link tab-a" data-toggle="tab" href="#Booking" role="tab">  <i class="fa fas fa-table"></i> Book a Table</a>
+                  </li>
+            @endif
           <li class="nav-item ">
             <a class="nav-link tab-a" data-toggle="tab" href="#Info" role="tab">  <i class="fas fa-info-circle "></i> Restaurant Info</a>
           </li>
@@ -99,7 +101,7 @@
 
         <div class="tab-content col-lg-12 p-0 m-0">
           <div class="tab-pane p-3 active" id="menu" role="tabpanel">
-            
+
             <!-- <ul class="  text-center row" id="to-top">
               <li class=" pl-4"> <a class="text-danger" href="#pizza">pizza</a> </li>
               <li class=" pl-4"> <a class="text-danger" href="#meat">meat</a> </li>
@@ -110,25 +112,29 @@
            <hr>
            <article style="box-sizing: border-box;" class="p-1">
             <!-- <div class="menu-title" id="pizza">
-              <h4 id="pizza"> Pizza  <span> <a class="arrow-top-link" href="#to-top">   </a> </span>  </h4> 
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
+              <h4 id="pizza"> Pizza  <span> <a class="arrow-top-link" href="#to-top">   </a> </span>  </h4>
+              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>
             </div> -->
             <ul>
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                  <div class="single-menu">
-                      <img src="/assets/photos/order_img.png"  alt="">
-                      <div class="menu-content ml-3 ">
-                          <h4> Special Pizza<span>50.00</span></h4>
-                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                      </div>
-                      <div  class="pl-3">
-                        <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
-                        <!-- Button trigger modal -->  
-                      </div>
-                  </div>
-              </li>
+                @foreach($restaurant->meals as $meal)
+                    <li class="mt-4  menu ">
+                        <div class="single-menu d-flex">
+                            <img src="/assets/photos/order_img.png"  alt="">
+                            <div class="menu-content ml-3  ">
+                                <h4>{{$meal->name}}</h4>
+                                <span >{{$meal->description}}</span>
+                            </div>
+                            <div  class="pl-3 ml-auto">
+                                <span>{{$meal->price}} .LE</span> <br>
+                                <button  data-mealid="{{$meal->id}}"  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                                <!-- Button trigger modal -->
+                            </div>
+                        </div>
+                    </li>
+                @endforeach
+
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -146,7 +152,7 @@
           <!-- ////////////////////////////////////////// -->
           <!-- ////////////////////////////////////////// -->
 
-      
+
           <div class="tab-pane p-3" id="Reviews" role="tabpanel">
             <article class="p-3">
               <h5>Customer Reviews For Kfc – Kentucky</h5>
@@ -157,8 +163,9 @@
                 <div class="pl-3">
                   <h6 style="font-size:16px; font-weight: 600;">Write your own reviews</h6>
                   <form action="">
-                    <input type="text">
-                    <input value="submit" type="submit">
+                    <input type="text" name="body">
+                      <input type="hidden" name="" id="restaurant_id" value="{{$restaurant->id}}">
+                      <input value="submit" type="submit">
                   </form>
                   <p style="font-size:14px; color: #f30928;">Only customers can write reviews</p>
                 </div>
@@ -182,7 +189,7 @@
           <div class="tab-pane p-3" id="Booking" role="tabpanel">
             <article class="p-3">
               <h5 style="font-weight: 600;">Book This Restaurant</h5>
-              <p style="color: #515151;">All kinds of dining experiences are waiting to be discovered. 
+              <p style="color: #515151;">All kinds of dining experiences are waiting to be discovered.
                 Check out the best restaurants and Book Using following Form.</p>
 
 
@@ -190,29 +197,23 @@
                   <div class=" form-row mt-5 ">
                        <!-- ////////////////////////// -->
                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="first name">
+                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder=" name">
                         </div>
                   <!-- ////////////////////////// -->
 
-                       <!-- ////////////////////////// -->
-                       <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="last name">
-                        </div>
-                  <!-- ////////////////////////// -->
 
                   <!-- ////////////////////////// -->
                       <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
                           <input type="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="EMAIL">
                         </div>
                   <!-- ////////////////////////// -->
-                  
+
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
                     <select  style="font-size: 14px;" class="form-select col-lg-12 p-2" aria-label="Default select example">
-                      <option selected>Gustes</option>
-                      <option value="1">2 Gustes</option>
-                      <option value="2">4 Gustes</option>
-                      <option value="3">8 Gustes</option>
-                      <option value="3"> + 8 Gustes</option>
+                      <option selected> avilable tables </option>
+                        @foreach(auth()->guard('restaurant')->user()->tables as $meal)
+                            <option value="1"> table {{$meal->number}} capacity {{$meal->cap}} price {{$meal->price}} </option>
+                        @endforeach
 
                     </select>                    </div>
                 <!-- ////////////////////////// -->
@@ -222,24 +223,40 @@
                         </div>
                   <!-- ////////////////////////// -->
 
-                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4">                
-                      <input type="datetime-local" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="retype password">
+                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
+                        <label> reservation   day  </label>
+                        <input type="date" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="retype password">
                     </div>
 
 
                   <!-- ////////////////////////// -->
+                      <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
+                          <label> from </label>
+                          <input type="time" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder=" from  ">
+                      </div>
 
-                    <div class=" col-lg-12 col-md-12 col-sm-12 p-4">  
-                      <textarea name="" id="" class="col-lg-12 p-2 mb-3" cols="20" rows="5" required placeholder="your instructions"></textarea>              
+
+                      <!-- ////////////////////////// -->
+                      <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
+                          <label> to </label>
+                          <input type="time" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder=" to ">
+                      </div>
+
+
+                      <!-- ////////////////////////// -->
+
+
+                    <div class=" col-lg-12 col-md-12 col-sm-12 p-4">
+                      <textarea name="" id="" class="col-lg-12 p-2 mb-3" cols="20" rows="5" required placeholder="your instructions"></textarea>
                       <!-- <input type="datetime-local"  id="validationCustom" value="" required placeholder="retype password"> -->
                     </div>
 
                   </div>
                   <!-- ////////////////////////////////////////// -->
-               
+
                   <button class="btn btn-danger signup-btun  p-1 ml-3 col-lg-2 col-md-2 col-sm-2 mb-3" type="submit">Submit</button>
-        
-                </form> 
+
+                </form>
 
 
 
@@ -268,9 +285,9 @@
                   <p style="color: #515151;" >10th of ramadan egypt</p>
                   <p style="color: #515151;" > <i class="fa fa-phone-volume"></i>  +01064691587</p>
                   <p style="color: #515151;" > <i  class="fa fa-envelope"></i> <a style="color: #f30928;" href="#">Send Enquiry By Email</a></p>
-                </div>  
-                
-                
+                </div>
+
+
 
                  <!-- ////////////////////////////////// -->
             <div class="col-lg-6">
@@ -284,11 +301,11 @@
                   <li class="d-flex"><span class="days" >Saturday</span><span class="time">9:00am - 02:00pm</span></li>
                   <li class="d-flex"><span class="days" >Sunday</span><span class="time"> 11:00 am - 5:00 pm</span></li>
               </ul> -->
-        
-          
-              
-            
-        
+
+
+
+
+
           </div>
       <!-- ////////////////////////////////// -->
               </div>
@@ -308,7 +325,7 @@
         <div class="reset-body">
           <h5 class="reset-title"> <i class="fa fa-shopping-basket"></i>  Your Order </h5>
           <hr>
-          
+
           <div style="font-size: 13px; color: #999BA3;" class="p-3 bg-light mb-4">
             <p class="text-danger"> we wish tou a happy meal </p>
           </div>
@@ -318,31 +335,31 @@
       <form action="">
 
           <div class="meal-info  p-1 ">
-           
-           
+
+
             <div class=" meal mt-1">
               <div class="d-flex">
-                  <span class="days" >Special Pizza</span> 
+                  <span class="days" >Special Pizza</span>
                   <!-- <span class="space-span" style="width: 35%;"></span> -->
                   <span class="time ml-auto">50.00   <i class="ml-3 fa fa-times-circle"></i>  </span>
               </div>
             </div>
-            
+
 
 
             <p class="mt-5">type you extra here</p>
             <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
-            
-          </div> 
+
+          </div>
           <hr>
           <!-- ///////////////////////////////////////////// -->
           <!-- ///////////////////////////////////////////// -->
           <div class="mt-2">
               <div class="form-row">
-              
+
                 <!-- //////////////////// -->
                 <div class="col-lg-12 row p-3 text-center">
-                  
+
                       <p class="">add your address</p>
                       <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
                 </div>
@@ -355,10 +372,10 @@
 
             </div>
           </div>
-          
+
         </article>
       </div>
-      
+
     </form>
 
 
@@ -373,7 +390,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
-  
+
 <section class="doc-photo">
     <div class="container">
       <!-- <h1 class="text-center ">mostafa</h1> -->
@@ -383,8 +400,8 @@
       </div>
     </div>
   </section>
-  
-  
+
+
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
@@ -394,11 +411,11 @@
     <path  fill="#eb102d" fill-opacity="1" d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
   </svg>
   <footer class="pt-4 section footer-classic context-dark bg-image p-5">
-      
+
       <div class="container">
         <div class="row row-30">
-          <div class="col-lg-3 col-md-6 col-sm-12 ">    
-  
+          <div class="col-lg-3 col-md-6 col-sm-12 ">
+
             <div class="pr-xl-4"><a class="footer-brand" href="index.html"><h1 style="color: #ffffff;">Wagabat</h1></a>
               <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
             <img class="img-fluid img-responsive" src="../public/photos/footer-img-300x134.png" alt="">
@@ -407,7 +424,7 @@
               <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-facebook"></i></a>
               <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-instagram"></i></a>
             </div>
-  
+
             </div>
           </div>
         <!-- /////////////////////////////// -->
@@ -422,8 +439,8 @@
             </ul>
             <a class="about-link " href="index.html">
                <h3 class="text-light mt-2" style="font-family: 'La Belle Aurore', cursive!important;"> Wagabat </h3>
-            </a> 
-  
+            </a>
+
           </div>
             <!-- //////////////////////////// -->
                 <!-- /////////////////////////////// -->
@@ -437,8 +454,8 @@
               <li><a href="#">CONTACT</a></li>
             </ul>
             <a class="about-link " href="index.html">
-            </a> 
-  
+            </a>
+
           </div>
             <!-- //////////////////////////// -->
             <div class="col-lg-3 col-md-6 col-sm-12 ">
@@ -456,11 +473,11 @@
                 <dd><a href="tel:#">01064697587</a> <br> <span>or</span> <br> <a href="tel:#">01143067577</a>
                 </dd>
               </dl>
-            </div>      
+            </div>
             <!-- //////////////////////////// -->
         </div>
         <!-- ///////////////////////// -->
-  
+
         <hr style="background-color: rgb(255, 255, 255);">
         <div class="row p-3">
           <h6 class="mt-3 ml-3 ">Copyright ©2020 All rights reserved | This template is  made  by <a href="!#">TIBA STUDENT </a>  </h6>
@@ -470,10 +487,10 @@
             <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-google-plus"></i></a>
             <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-pinterest"></i></a>
             <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-dribbble"></i></a>
-  
+
           </span>
         </div>
-  
+
       </div>
     </footer>
   <!-- ///////////////////////////////////////////////////////////////////////// -->
@@ -499,10 +516,10 @@
 <script src="../js/plugins/jquery.timepicker.min.js"></script>
 <script src="../js/plugins/jquery.nice-select.js"></script> -->
 
-  <!-- main Styles --> 
+  <!-- main Styles -->
   <script src="/assets/js/custom.js"></script>
     <script>
-      
+
         /* 1. Preloder */
     // $(window).on('load', function () {
     //     $('#preloader-active').delay(1050).fadeOut('slow');
@@ -520,7 +537,7 @@
     }, 1000);
     event.preventDefault();
   });
-}); 
+});
 
 
 
@@ -532,7 +549,7 @@ $(function() {
     }, 1000);
     event.preventDefault();
   });
-}); 
+});
   </script>
   </body>
   </html>

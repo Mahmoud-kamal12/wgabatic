@@ -125,12 +125,14 @@
                      <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Reviews" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fas fa-comment-dots mr-3 "></i>  the given Reviews</span></a>
                     <hr class="p-0 m-0">
+                    @if(auth()->guard('restaurant')->user()->table_status)
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Tables" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-table mr-3 "></i>  Tables</span></a>
                     <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#BOOKING" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  BOOKING</span></a>
                     <hr class="p-0 m-0">
+                    @endif
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#ORDERS" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  ORDERS</span></a>
                     <hr class="p-0 m-0">
@@ -489,7 +491,7 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Tables" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            
+
 
             <div class=" col-lg-12 p-0 m-0">
 
@@ -525,8 +527,8 @@
                                                         <input type="number" class="form-control col-lg-12" id="" name="price" placeholder=" Table price " required>
                                                     </div>
                                                     <div class="form-group col-lg-6">
-                                                        
-                                                        
+
+
 
                                                     </div>
                                                     <div class="col-lg-12">
@@ -544,8 +546,8 @@
                     </div>
                     <!-- /////////////////////////// -->
                     <!-- /////////////////////////// -->
-                    
- 
+
+
             <table class="table table-striped mt-5 text-center">
                     <thead>
                     <tr>
@@ -554,7 +556,7 @@
                         <th scope="col">table  PRICE</th>
                         <th scope="col">  Edit</th>
                         <th scope="col">  Delete</th>
-                     
+
                     </tr>
                     </thead>
                     <tbody>
@@ -566,7 +568,7 @@
                         <td>{{$meal->price}}</td>
                         <td> <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit{{$meal->id}}"></i></td>
                         <td> <a href="{{route('web.restaurantProfile.tabledelete' , $meal->id)}}"><i class=" ml-3 text-danger  fas fa-trash"></i></a> </td>
-                       
+
 
                     </tr>
 
@@ -597,8 +599,8 @@
                                                                         <input type="number" class="form-control col-lg-12" id="" value="{{$meal->price}}"  name="price" placeholder=" Table price " required>
                                                                     </div>
                                                                     <div class="form-group col-lg-6">
-                                                                        
-                                                                      
+
+
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <button type="submit" class="btn btn-danger ml-3 col-lg-3">save</button>
@@ -618,7 +620,7 @@
 
 
 
-                    
+
                     </tbody>
                 </table>
 
@@ -812,18 +814,18 @@
                                                         <select class="col-lg-9" name="" id="">
                                                             <option > Cancelled </option>
                                                             <option > Completed </option>
-                                                           
+
                                                         </select>
                                                         <input class="col-lg-2" type="submit" value="submit" >
-                                                    
+
                                                 </div>
                                             </div>
                                         <!-- //////////////////////////////////////////////////// -->
-                                            
+
                                         </form>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
                         </div>

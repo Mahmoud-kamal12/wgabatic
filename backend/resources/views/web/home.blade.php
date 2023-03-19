@@ -61,9 +61,9 @@
                         <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
 
                         <button class="btn text-light submitBtn p-2 col-md-2">
-                        <a href="{{route("web.ordering")}}">search</a>    
-                        
-                             </button>                        
+                        <a href="{{route("web.resturants")}}">search</a>
+
+                             </button>
                     </div>
                 </div>
             </div>
@@ -183,7 +183,7 @@
 
         <div class="row">
             <!-- ///////////////////////////////////////////////////////////////////////// -->
-            
+
             <!-- ///////////////////////////////////////////////// -->
             <div class="col-lg-2 p-2 text-center res-rating">
                 <img src="/assets/photos/imgs/kfc-1-1.png" alt="">
@@ -409,7 +409,7 @@
             <!-- ///////////////////////// -->
             <div class="col-lg-1">
                 <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>
-            </div>  
+            </div>
             <!-- ///////////////////////// -->
             <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
                 <i class="flaticon-choose"></i>
