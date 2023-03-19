@@ -116,6 +116,9 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/string" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/guzzlehttp/uri-template" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

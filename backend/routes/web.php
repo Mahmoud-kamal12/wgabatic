@@ -39,13 +39,16 @@ Route::name('web.')->group(function(){
     Route::get('/how-it-work', [WebController::class , 'howItWork'])->name('howItWork');
     Route::get('/ordering/{id}', [WebController::class , 'ordering'])->name('ordering');
     Route::get('/resturants', [WebController::class , 'resturants'])->name('resturants');
-    Route::get('/restaurant-profile/addreview', [ ResturantController::class ,'addreview'])->name('restaurantProfile.addreview');
 
 
 
     Route::group(["middleware" => "auth:web"],function (){
         Route::get('/logout', [ AuthController::class ,'logout'])->name('logout');
         Route::get('/user-profile', [ UserController::class ,'userProfile'])->name('userProfile');
+
+        Route::get('/restaurant-profile/addreview', [ ResturantController::class ,'addreview'])->name('restaurantProfile.addreview');
+
+        Route::get('/add-order', [ OrdertController::class ,'store'])->name('addOrder');
 
     });
 

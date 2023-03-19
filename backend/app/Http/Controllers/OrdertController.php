@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrdertController extends Controller
 {
@@ -34,7 +36,9 @@ class OrdertController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $res = Auth::guard('web')->user();
+        $data = $request->all();
+        dd($data);
     }
 
     /**

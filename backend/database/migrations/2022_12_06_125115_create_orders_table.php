@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('resturant_id')->unsigned();
             $table->double('total')->unsigned();
+            $table->boolean('status')->default(0);
+            $table->string('address')->nullable();
+            $table->string('extra')->nullable();
 
 
             $table->foreign('user_id')

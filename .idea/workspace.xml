@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="be8aceed-eecc-409d-ad2f-33aec62012bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/RestaurantController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2022_12_05_185454_create_restaurants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2022_12_05_185454_create_restaurants_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/faqs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/faqs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/how-it-work.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/how-it-work.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wgabatic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wgabatic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2022_12_06_125115_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2022_12_06_125115_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +19,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -138,6 +139,9 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/uri-template" />
     </include_path>
   </component>
   <component name="ProjectId" id="2IXalpRnqlGwBL9wmfRKOqrhNty" />
@@ -145,15 +149,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="app.teamhub.trackedBranches" value="4o15v9/main" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MTHome" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -163,6 +171,8 @@
       <option name="presentableId" value="Default" />
       <updated>1670330544781</updated>
       <workItem from="1670330550046" duration="7337000" />
+      <workItem from="1679236446795" duration="18512000" />
+      <workItem from="1679269465799" duration="340000" />
     </task>
     <servers />
   </component>

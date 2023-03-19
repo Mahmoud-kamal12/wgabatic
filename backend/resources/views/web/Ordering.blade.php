@@ -350,7 +350,7 @@
 
 
             <p class="mt-5">type you extra here</p>
-            <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
+            <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="extra" id="extra" >
 
           </div>
           <hr>
@@ -363,13 +363,13 @@
                 <div class="col-lg-12 row p-3 text-center">
 
                       <p class="">add your address</p>
-                      <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
+                      <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="address" id="address" >
                 </div>
                 <!-- //////////////////// -->
               </div>
 
               <div class="text-center mt-3">
-                <button class="btn btn-danger signup-btun  p-1  col-lg-12 col-md-12 col-sm-12 " type="submit">confirm order</button>
+                <button class="btn btn-danger signup-btun  p-1  col-lg-12 col-md-12 col-sm-12 " type="submit" id="confirmbtn">confirm order</button>
               </div>
 
             </div>
@@ -517,23 +517,36 @@
 
 
 
-
-var resturant_id = document.getElementById("resturant_id").value;
-var addObj = {
-  restaurant_id: resturant_id,
-  meals:[]
-}
-
+var meals = [];
 $(document).on("click" , ".Add_meal",function () {
-  addObj.meals.push($(this).data("mealid"))
+  meals.push($(this).data("mealid"))
 })
+
+$(document).on("click" , "#confirmbtn",function (e) {
+    e.preventDefault()
+    $.ajax({
+        type: "get",
+        url: "{{route("web.addOrder")}}",
+        data: {
+            restaurant_id: document.getElementById("resturant_id").value,
+            meals: meals,
+            address: document.getElementById("address").value,
+            extra: document.getElementById("extra").value
+        },
+        success: function (response) {
+            console.log(response)
+        }
+    });
+
+})
+
 
 
 
 // Add_meal.addEventListener('click', function(){
 //   console.log(this.dataset.mealid);
 //   // addObj.meals.push(this.dataset.mealid)
-  
+
 //   // console.log(addObj);
 // });
 
