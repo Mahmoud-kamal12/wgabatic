@@ -87,7 +87,7 @@
 
 
           </li>
-            @if(auth()->guard('restaurant')->user()->table_status)
+            @if($restaurant->table_status)
                   <li class="nav-item ">
                     <a class="nav-link tab-a" data-toggle="tab" href="#Booking" role="tab">  <i class="fa fas fa-table"></i> Book a Table</a>
                   </li>
@@ -211,7 +211,7 @@
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
                     <select  style="font-size: 14px;" class="form-select col-lg-12 p-2" aria-label="Default select example">
                       <option selected> avilable tables </option>
-                        @foreach(auth()->guard('restaurant')->user()->tables as $meal)
+                        @foreach($restaurant->tables as $meal)
                             <option value="1"> table {{$meal->number}} capacity {{$meal->cap}} price {{$meal->price}} </option>
                         @endforeach
 
