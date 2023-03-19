@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('boohings', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('phone');
             $table->string('email');
             $table->integer('user_id')->unsigned();
-            $table->integer('resturant_id')->unsigned();
-            $table->string('table_id');
+            $table->integer('restaurant_id')->unsigned();
+            $table->integer('table_id')->unsigned();
             $table->date("day");
             $table->time("from");
             $table->time("to");
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->foreign('resturant_id')
+            $table->foreign('restaurant_id')
                 ->references('id')->on('restaurants')
                 ->onDelete('cascade');
             $table->foreign('table_id')
@@ -47,6 +47,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boohings');
+        Schema::dropIfExists('bookings');
     }
 };

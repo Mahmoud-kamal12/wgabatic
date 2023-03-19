@@ -47,6 +47,7 @@ class ResturantController extends Controller
     public function tableupdate(Request $request , $id){
         $res = auth()->guard('restaurant')->user();
         $data = $request->all();
+        // dd($data , $id);
         $data['restaurant_id'] = $res->id;
         $meal = Table::where('id',$id)->first();
         $meal->update($data);

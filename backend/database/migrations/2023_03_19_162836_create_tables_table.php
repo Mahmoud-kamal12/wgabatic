@@ -14,10 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tables', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer("number");
             $table->integer("cap");
             $table->integer("price");
+            $table->integer('restaurant_id')->unsigned();
+
+                        $table->foreign('restaurant_id')
+                ->references('id')->on('restaurants')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

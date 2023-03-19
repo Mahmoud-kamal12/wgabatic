@@ -493,22 +493,9 @@
 
             <div class=" col-lg-12 p-0 m-0">
 
-<<<<<<< Updated upstream
-                        <div class="form-group col-lg-6">
-                            <input type="number" class="form-control col-lg-12" id="" placeholder="Table Numbers" required>
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <input type="number" class="form-control col-lg-12" id="" placeholder=" Table Capacity " required>
-                        </div>
-                        <div class="form-group col-lg-6">
-
-                            <div class="col-lg-12 row">
-                                <span class="col-lg-6"> From : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
-                                <span class="col-lg-6"> To : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
-=======
                 <div class="tab-pane p-3 active" id="menu_category" role="tabpanel">
                     <div class="d-flex">
-                        <div class="font-weight-bolder Extra-category-name"><span>  </span> </div>
+                        <div class="font-weight-bolder Extra-category-name"><span> table reservation </span> </div>
                         <button type="button" class="ml-auto btn btn-success p-1 rounded menu_category_btn Required-text"
                                 data-toggle="modal" data-target="#table_modal"> Add table </button>
                         <!-- Modal -->
@@ -551,7 +538,6 @@
                                     </div>
 
                                 </div>
->>>>>>> Stashed changes
                             </div>
                         </div>
 
@@ -559,18 +545,32 @@
                     <!-- /////////////////////////// -->
                     <!-- /////////////////////////// -->
                     
-                                            <ul class="category-crud mt-5">
+ 
+            <table class="table table-striped mt-5 text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">table Number</th>
+                        <th scope="col">table capacity</th>
+                        <th scope="col">table  PRICE</th>
+                        <th scope="col">  Edit</th>
+                        <th scope="col">  Delete</th>
+                     
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            @foreach(auth()->guard('restaurant')->user()->tables as $meal)
-                            <li class="category-row">
+                    @foreach(auth()->guard('restaurant')->user()->tables as $meal)
+                    <tr>
+                        <td>{{$meal->number}}</td>
+                        <td>{{$meal->cap}}</td>
+                        <td>{{$meal->price}}</td>
+                        <td> <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit{{$meal->id}}"></i></td>
+                        <td> <a href="{{route('web.restaurantProfile.tabledelete' , $meal->id)}}"><i class=" ml-3 text-danger  fas fa-trash"></i></a> </td>
+                       
 
-                                <div class="d-flex">
-                                    <div class="font-weight-bolder Extra-category-name">{{$meal->number}}</div>
+                    </tr>
 
-                                    <div class="ml-auto  Required-text">
-
-                                        <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit{{$meal->id}}"></i>
-                                        <!-- /////////////////////////////////////// -->
+                     <!-- /////////////////////////////////////// -->
                                         <div class="modal fade" id="menu_category_Edit{{$meal->id}}" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
 
                                             <div class="modal-dialog" role="document">
@@ -582,7 +582,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="{{route('web.restaurantProfile.menuupdate' , $meal->id)}}" method="post">
+                                                        <form action="{{route('web.restaurantProfile.tableupdate' , $meal->id)}}" method="post">
                                                             @csrf
                                                             @method('POST')
                                                             <div class="row">
@@ -614,18 +614,13 @@
 
                                         </div>
 
-
-                                        <a href="{{route('web.restaurantProfile.tabledelete' , $meal->id)}}"><i class=" ml-3 text-danger  fas fa-trash"></i></a>
-
-                                    </div>
-
-                                </div>
-                                <hr>
-                            </li>
-
                         @endforeach
 
-                    </ul>
+
+
+                    
+                    </tbody>
+                </table>
 
 
                 </div>

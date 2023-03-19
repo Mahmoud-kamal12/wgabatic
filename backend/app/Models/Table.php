@@ -9,7 +9,7 @@ class Table extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["number","cap",'resturant_id' , 'price'];
+    protected $fillable = ["number","cap",'restaurant_id' , 'price'];
 
     public function restaurant(){
         return $this->belongsTo(Restaurant::class);

@@ -23,6 +23,10 @@ class WebController extends Controller
     {
         return view('web.ordering');
     }
+    public function resturants()
+    {
+        return view('web.resturants');
+    }
     public function faqs()
     {
         return view('web.faqs');
