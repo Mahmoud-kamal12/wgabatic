@@ -35,4 +35,7 @@ class Restaurant extends Authenticatable
         return $this->hasMany(Meal::class);
     }
 
+    public function tables(){
+        return $this->hasMany(Table::class);
+    }
 }
