@@ -29,4 +29,117 @@
 
 
 
-                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <ul class="category-crud mt-5">
+
+                        @foreach(auth()->user()->meals as $meal)
+
+                            <li class="category-row">
+
+                                <div class="d-flex">
+                                    <div class="font-weight-bolder Extra-category-name">{{$meal->name}}</div>
+
+                                    <div class="ml-auto  Required-text">
+
+                                        <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit{{$meal->id}}"></i>
+                                        <!-- /////////////////////////////////////// -->
+                                        <div class="modal fade" id="menu_category_Edit{{$meal->id}}" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
+
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">update Meal</h5>
+                                                        <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('web.restaurantProfile.menuupdate' , $meal->id)}}" method="post">
+                                                            @csrf
+                                                            @method('POST')
+                                                            <div class="form-row">
+
+                                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->name}}" name="name" placeholder="update meal name">
+
+                                                                </div>
+                                                                <!-- ////////////////////////// -->
+                                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->price}}"  placeholder="update meal price" name="price">
+                                                                </div>
+                                                                <!-- ////////////////////////// -->
+                                                                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                                                                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="{{$meal->description}}"  placeholder="update meal description" name="description">
+                                                                </div>
+                                                                <!-- ////////////////////////// -->
+                                                            </div>
+                                                            <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
+
+                                                            <hr>
+                                                        </form>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <a href="{{route('web.restaurantProfile.menudelete' , $meal->id)}}"><i class=" ml-3 text-danger  fas fa-trash"></i></a>
+
+                                    </div>
+
+                                </div>
+                                <hr>
+                            </li>
+
+                        @endforeach
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                    <form class="resto-seeting-form ">
+
+                                                            <div class="row">
+
+                                                                    <div class="form-group col-lg-6">
+                                                                        <input type="number" class="form-control col-lg-12" id="" name="number" placeholder="Table Numbers" required>
+                                                                    </div>
+                                                                    <div class="form-group col-lg-6">
+                                                                        <input type="number" class="form-control col-lg-12" id="" name="cap" placeholder=" Table Capacity " required>
+                                                                    </div>
+                                                                    <div class="form-group col-lg-6">
+                                                                        <input type="number" class="form-control col-lg-12" id="" name="price" placeholder=" Table price " required>
+                                                                    </div>
+                                                                    <div class="form-group col-lg-6">
+                                                                        
+                                                                      
+                                                                    </div>
+                                                                    <div class="col-lg-12">
+                                                                        <button type="submit" class="btn btn-danger ml-3 col-lg-3">save</button>
+                                                                    </div>
+
+                                                            </div>
+                                                        </form>

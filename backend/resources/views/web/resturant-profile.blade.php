@@ -128,6 +128,9 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Tables" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-table mr-3 "></i>  Tables</span></a>
                     <hr class="p-0 m-0">
+                    <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#BOOKING" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  BOOKING</span></a>
+                    <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#ORDERS" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  ORDERS</span></a>
                     <hr class="p-0 m-0">
@@ -235,10 +238,10 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <select class="col-lg-12 p-2 mb-3" name="table" id="">
+                        <select class="col-lg-12 p-2 mb-3" name="table_status" id="">
                             <option  value="">booking table *</option>
-                            <option value="">yes</option>
-                            <option value="">no</option>
+                            <option value="1">yes</option>
+                            <option value="0">no</option>
                         </select>
                     </div>
 
@@ -388,7 +391,7 @@
                     <!-- /////////////////////////// -->
                     <ul class="category-crud mt-5">
 
-                        @foreach(auth()->user()->meals as $meal)
+                    @foreach(auth()->guard('restaurant')->user()->meals as $meal)
 
                             <li class="category-row">
 
@@ -486,11 +489,11 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Tables" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <form class="resto-seeting-form ">
+            
 
-                <h5 class=" text-capitalize mt-3"> table reservations </h5>
-                <div class="row">
+            <div class=" col-lg-12 p-0 m-0">
 
+<<<<<<< Updated upstream
                         <div class="form-group col-lg-6">
                             <input type="number" class="form-control col-lg-12" id="" placeholder="Table Numbers" required>
                         </div>
@@ -502,15 +505,137 @@
                             <div class="col-lg-12 row">
                                 <span class="col-lg-6"> From : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
                                 <span class="col-lg-6"> To : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
+=======
+                <div class="tab-pane p-3 active" id="menu_category" role="tabpanel">
+                    <div class="d-flex">
+                        <div class="font-weight-bolder Extra-category-name"><span>  </span> </div>
+                        <button type="button" class="ml-auto btn btn-success p-1 rounded menu_category_btn Required-text"
+                                data-toggle="modal" data-target="#table_modal"> Add table </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="table_modal" tabindex="-1" role="dialog" aria-labelledby="menu_category_modalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add meals</h5>
+                                        <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                     <form  class="resto-seeting-form " action="{{route('web.restaurantProfile.tableadd')}}" method="post">
+                                            @method('POST')
+                                            @csrf
+                                            <h5 class=" text-capitalize mt-3"> table reservations </h5>
+                                            <div class="row">
+
+                                                    <div class="form-group col-lg-6">
+                                                        <input type="number" class="form-control col-lg-12" id="" name="number" placeholder="Table Numbers" required>
+                                                    </div>
+                                                    <div class="form-group col-lg-6">
+                                                        <input type="number" class="form-control col-lg-12" id="" name="cap" placeholder=" Table Capacity " required>
+                                                    </div>
+                                                     <div class="form-group col-lg-6">
+                                                        <input type="number" class="form-control col-lg-12" id="" name="price" placeholder=" Table price " required>
+                                                    </div>
+                                                    <div class="form-group col-lg-6">
+                                                        
+                                                        
+
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <button type="submit" class="btn btn-danger ml-3 col-lg-3">save</button>
+                                                    </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+>>>>>>> Stashed changes
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <button type="submit" class="btn btn-danger ml-3 col-lg-3">save</button>
-                        </div>
+
+                    </div>
+                    <!-- /////////////////////////// -->
+                    <!-- /////////////////////////// -->
+                    
+                                            <ul class="category-crud mt-5">
+
+            @foreach(auth()->guard('restaurant')->user()->tables as $meal)
+                            <li class="category-row">
+
+                                <div class="d-flex">
+                                    <div class="font-weight-bolder Extra-category-name">{{$meal->number}}</div>
+
+                                    <div class="ml-auto  Required-text">
+
+                                        <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit{{$meal->id}}"></i>
+                                        <!-- /////////////////////////////////////// -->
+                                        <div class="modal fade" id="menu_category_Edit{{$meal->id}}" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
+
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">update Meal</h5>
+                                                        <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('web.restaurantProfile.menuupdate' , $meal->id)}}" method="post">
+                                                            @csrf
+                                                            @method('POST')
+                                                            <div class="row">
+
+                                                                    <div class="form-group col-lg-6">
+                                                                        <input type="number" class="form-control col-lg-12" id="" value="{{$meal->number}}"  name="number" placeholder="Table Numbers" required>
+                                                                    </div>
+                                                                    <div class="form-group col-lg-6">
+                                                                        <input type="number" class="form-control col-lg-12" id="" value="{{$meal->cap}}"  name="cap" placeholder=" Table Capacity " required>
+                                                                    </div>
+                                                                    <div class="form-group col-lg-6">
+                                                                        <input type="number" class="form-control col-lg-12" id="" value="{{$meal->price}}"  name="price" placeholder=" Table price " required>
+                                                                    </div>
+                                                                    <div class="form-group col-lg-6">
+                                                                        
+                                                                      
+                                                                    </div>
+                                                                    <div class="col-lg-12">
+                                                                        <button type="submit" class="btn btn-danger ml-3 col-lg-3">save</button>
+                                                                    </div>
+
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <a href="{{route('web.restaurantProfile.tabledelete' , $meal->id)}}"><i class=" ml-3 text-danger  fas fa-trash"></i></a>
+
+                                    </div>
+
+                                </div>
+                                <hr>
+                            </li>
+
+                        @endforeach
+
+                    </ul>
+
 
                 </div>
-            </form>
+
+
+            </div>
         </div>
+
+
+
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
@@ -607,6 +732,103 @@
                                     </div>
 
 
+                                </div>
+                            </div>
+                        </div>
+
+                    </tr>
+
+
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+
+        <div class="tab-pane fade shadow rounded bg-white show  p-5" id="BOOKING" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+            <h3> booking </h3>
+
+            <div class="row tab-text  cart-list">
+
+                <table class="table table-striped  text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name </th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone </th>
+                        <th scope="col">DETAIL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>Order-25567</td>
+                        <td>	March 27, 2021</td>
+                        <td>75.71</td>
+                        <td>7.57</td>
+                        <td><button  type="button" data-toggle="modal" data-target="#all_tables"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                        <!-- Modal -->
+                        <div class="modal fade mt-5" id="all_tables" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content modal-style">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+                                        <form class="col-lg-12" action="" method="">
+                                            <div class="d-flex">
+                                                <ul class="Extra-category-name">
+                                                    <h5 class="font-weight-bold">Kfc – Kentucky </h5>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >table number:</span><span class="restu-detals-span2">  25504  </span></li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >day:</span><span class="restu-detals-span2">    </span></li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" > TIME:</span> <span > from  :   </span> <span>  to :  </span> </li>
+                                                </ul>
+                                                <ul class="ml-auto mr-150">
+                                                    <h5 class="font-weight-bold">Customer Detail</h5>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        <!-- //////////////////////////////////////////////////////////// -->
+                                            <div class="d-flex order-state">
+                                                <div class="col-lg-3">
+                                                    <h5 class="font-weight-bold">Order Status
+                                                    </h5>
+                                                </div>
+                                            <!-- ////////////////////////////// -->
+                                                <div class="col-lg-9 ">
+                                                        <select class="col-lg-9" name="" id="">
+                                                            <option > Cancelled </option>
+                                                            <option > Completed </option>
+                                                           
+                                                        </select>
+                                                        <input class="col-lg-2" type="submit" value="submit" >
+                                                    
+                                                </div>
+                                            </div>
+                                        <!-- //////////////////////////////////////////////////// -->
+                                            
+                                        </form>
+                                    </div>
+
+                                    
                                 </div>
                             </div>
                         </div>

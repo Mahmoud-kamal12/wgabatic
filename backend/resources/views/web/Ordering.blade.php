@@ -331,7 +331,7 @@
 
 
             <p class="mt-5">type you extra here</p>
-            <input style="font-size: 12px; padding: 10px;" type="text"  name="" id="" >
+            <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
             
           </div> 
           <hr>
@@ -341,9 +341,10 @@
               <div class="form-row">
               
                 <!-- //////////////////// -->
-                <div class="col-lg-6 row text-center">
+                <div class="col-lg-12 row p-3 text-center">
                   
-                  <h5 class="pl-2 ml-5 " style="margin-top: 20px;" > <i class="fa fa-coins ml-2"></i> <br> cash</h5>
+                      <p class="">add your address</p>
+                      <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
                 </div>
                 <!-- //////////////////// -->
               </div>
