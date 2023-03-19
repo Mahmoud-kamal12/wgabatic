@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -25,7 +26,8 @@ class WebController extends Controller
     }
     public function resturants()
     {
-        return view('web.resturants');
+        $restaurants = Restaurant::all();
+        return view('web.resturants',compact(['restaurants']));
     }
     public function faqs()
     {

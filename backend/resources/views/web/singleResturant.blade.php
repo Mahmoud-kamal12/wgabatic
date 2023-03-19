@@ -26,7 +26,7 @@
                 <div>
                     <div class="card-body bg-white  ">
                         <br><br>
-                        <h5 class="font-weight-bolder">Italian Pizza House</h5>
+                        <h5 class="font-weight-bolder">{{$restaurant->name}}</h5>
                         <p style="font-size: 15px;">Drum Stick, Pizza, Potato Fries</p>
                         <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 LE </span>
                     </div>

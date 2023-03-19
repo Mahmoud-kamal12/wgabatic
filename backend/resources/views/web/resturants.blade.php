@@ -76,10 +76,13 @@
         </div>
 
         <div class="row">
-                @include('web.singleResturant')
- 
+            @foreach($restaurants as $restaurant)
+                @include('web.singleResturant', ['restaurant' => $restaurant])
+            @endforeach
 
-            
+
+
+
         </div>
     </div>
 
