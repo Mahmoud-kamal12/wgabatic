@@ -162,7 +162,7 @@
                 </div>
                 <div class="pl-3">
                   <h6 style="font-size:16px; font-weight: 600;">Write your own reviews</h6>
-                  <form action="">
+                  <form action="{{route('web.restaurantProfile.addreview')}}">
                     <input type="text" name="body">
                       <input type="hidden" name="resturant_id" id="resturant_id" value="{{$restaurant->id}}">
                       <input value="submit" type="submit">

@@ -63,7 +63,7 @@ Route::name('web.')->group(function(){
         Route::post('/restaurant-profile/tableupdate/{id}', [ ResturantController::class ,'tableupdate'])->name('restaurantProfile.tableupdate');
         Route::get('/restaurant-profile/tabledelete/{id}', [ ResturantController::class ,'tabledelete'])->name('restaurantProfile.tabledelete');
 //        Review
-        Route::get('/restaurant-profile/addreview/{id}', [ ResturantController::class ,'addreview'])->name('restaurantProfile.addreview');
+        Route::get('/restaurant-profile/addreview', [ ResturantController::class ,'addreview'])->name('restaurantProfile.addreview');
 
 
         Route::resource('/meal', MealController::class);
