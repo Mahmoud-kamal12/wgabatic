@@ -326,12 +326,12 @@
                                                                 <span class="font-weight-bolder">Pizza</span>
                                                                 <ul>
                                                                     <li>Foodbakery Special Pizza</li>
-                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> £3.00 </span> </li>
-                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li>
+                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> 1.00 </span> </li>
+                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> 0.00 </span> </li>
+                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> 0.00 </span> </li>
+                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> 3.00 </span> </li>
+                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> 1.00 </span> </li>
+                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> 2.00 </span> </li>
                                                                 </ul>
                                                             </td>
                                                             <td class="font-weight-bolder">50$</td>
@@ -346,10 +346,10 @@
                                                     <div class="mt-4">
                                                         <h5 class="text-uppercase">Order Total</h5>
                                                         <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
+                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
+                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
+                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
+                                                            <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -433,12 +433,12 @@
                                                                 <span class="font-weight-bolder">Pizza</span>
                                                                 <ul>
                                                                     <li>Foodbakery Special Pizza</li>
-                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> £0.00 </span> </li>
-                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> £3.00 </span> </li>
-                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> £1.00 </span> </li>
-                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li>
+                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> 1.00 </span> </li>
+                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> 0.00 </span> </li>
+                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> 0.00 </span> </li>
+                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> 3.00 </span> </li>
+                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> 1.00 </span> </li>
+                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> 2.00 </span> </li>
                                                                 </ul>
                                                             </td>
                                                             <td class="font-weight-bolder">50$</td>
@@ -453,10 +453,10 @@
                                                     <div class="mt-4">
                                                         <h5 class="text-uppercase">Order Total</h5>
                                                         <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
+                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
+                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
+                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
+                                                            <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>

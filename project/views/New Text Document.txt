@@ -3,7 +3,7 @@
     <div class="single-menu">
       <img src="../public/photos/menu/pizza-1.png"  alt="">
       <div class="menu-content ml-auto ">
-          <h4> Special Pizza<span>£50.00</span></h4>
+          <h4> Special Pizza<span>50.00</span></h4>
           <span>Cheese, tomatoes, tuna fish,   </span>  
         </div>
         <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn float-right"> <i class="fa fa-plus text-danger"></i> </button>

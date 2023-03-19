@@ -122,6 +122,9 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#MENU_BUILDER" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-elementor mr-3 "></i>  MENU BUILDER</span></a>
                     <hr class="p-0 m-0">
+                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Reviews" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fas fa-comment-dots mr-3 "></i>  the given Reviews</span></a>
+                    <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Tables" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-table mr-3 "></i>  Tables</span></a>
                     <hr class="p-0 m-0">
@@ -351,6 +354,7 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
+        
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="MENU_BUILDER" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
             <div class=" col-lg-12 p-0 m-0">
@@ -477,6 +481,26 @@
 
             </div>
         </div>
+        
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+
+        <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h5 class="">REVIEW GIVEN <span style="font-size: 10px;" class=" text-danger"> number of Reviews </span></h5>
+            <div class="d-flex">
+                <!-- if no reviews display this  -->
+                <!-- <div class="mt-3"><h6> ther is no reviews yet </h6></div> -->
+            </div>
+            <br>
+            <div class="">
+                <p class="p-in-review">review date display here</p>
+                <h5 class="h5-in-review">review display here </h5>
+            </div>
+        </div>
 
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
@@ -536,8 +560,8 @@
                     <tr>
                         <td>Order-25567</td>
                         <td>	March 27, 2021</td>
-                        <td>£75.71</td>
-                        <td>£7.57</td>
+                        <td>75.71</td>
+                        <td>7.57</td>
                         <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS1"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
                         <!-- Modal -->
                         <div class="modal fade" id="all_ORDERS1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -596,10 +620,10 @@
                                             <div class="mt-4 font-weight-bolder">
                                                 <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
                                                 <ul>
-                                                    <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                                    <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                                    <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                                    <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li>
+                                                    <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
+                                                    <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
+                                                    <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
+                                                    <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
                                                 </ul>
                                             </div>
                                         </form>
@@ -710,8 +734,8 @@
 
                     <tr>
                         <td>March 3, 2021</td>
-                        <td>£0.00</td>
-                        <td>£0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
                     </tr>
 
 

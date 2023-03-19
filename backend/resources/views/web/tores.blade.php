@@ -38,7 +38,7 @@
                         <br><br>
                         <h5 class="font-weight-bolder">Italian Pizza House</h5>
                         <p style="font-size: 15px;">Drum Stick, Pizza, Potato Fries</p>
-                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 $</span>
+                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 LE </span>
                     </div>
                     <!-- /////////////////// -->
                     <div style="height: 68px;" class="card-body d-block  bg-light p-2  ">
@@ -86,7 +86,7 @@
                         <br><br>
                         <h5 class="font-weight-bolder">McDonalds</h5>
                         <p style="font-size: 15px;">Chines Soup, Cold Coffee, Drum Stick, Ice Cream</p>
-                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">10.00 $</span>
+                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">10.00 LE </span>
                     </div>
                     <!-- /////////////////// -->
                     <div style="height: 68px;" class="card-body d-block  bg-light p-2  ">
@@ -134,7 +134,7 @@
                         <br><br>
                         <h5 class="font-weight-bolder">Kentucky</h5>
                         <p style="font-size: 15px;">Magi, Noodles, Potato Fries, Prawns</p>
-                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 $</span>
+                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 LE</span>
                     </div>
                     <!-- /////////////////// -->
                     <div style="height: 68px;" class="card-body d-block  bg-light p-2  ">
@@ -191,7 +191,7 @@
                         <br><br>
                         <h5 class="font-weight-bolder">dominos Pizza </h5>
                         <p style="font-size: 15px;">Pizza, Potato </p>
-                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 $</span>
+                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 LE</span>
                     </div>
                     <!-- /////////////////// -->
                     <div style="height: 68px;" class="card-body d-block  bg-light p-2  ">
@@ -238,7 +238,7 @@
 
                         <h5 class="font-weight-bolder">Hardees</h5>
                         <p style="font-size: 15px;">Apple Juice, BB.Q, Carrot Juice, Chicken Roast</p>
-                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">10.00 $</span>
+                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">10.00 LE</span>
                     </div>
                     <!-- /////////////////// -->
                     <div style="height: 68px;" class="card-body d-block  bg-light p-2  ">
@@ -284,7 +284,7 @@
                         <br><br>
                         <h5 class="font-weight-bolder">Dragon Express</h5>
                         <p style="font-size: 15px;">Magi, Noodles, Potato Fries, Prawns</p>
-                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 $</span>
+                        <p class="d-inline-block">Min Order</p> <span class="h4 ml-3 font-weight-bolder ">15.00 LE</span>
                     </div>
                     <!-- /////////////////// -->
                     <div style="height: 68px;" class="card-body d-block  bg-light p-2  ">
