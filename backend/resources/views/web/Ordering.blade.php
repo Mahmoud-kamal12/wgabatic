@@ -164,7 +164,7 @@
                   <h6 style="font-size:16px; font-weight: 600;">Write your own reviews</h6>
                   <form action="">
                     <input type="text" name="body">
-                      <input type="hidden" name="" id="restaurant_id" value="{{$restaurant->id}}">
+                      <input type="hidden" name="resturant_id" id="resturant_id" value="{{$restaurant->id}}">
                       <input value="submit" type="submit">
                   </form>
                   <p style="font-size:14px; color: #f30928;">Only customers can write reviews</p>

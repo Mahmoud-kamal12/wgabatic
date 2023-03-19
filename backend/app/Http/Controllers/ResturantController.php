@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meal;
+use App\Models\Review;
 use App\Models\Table;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ResturantController extends Controller
@@ -18,6 +20,13 @@ class ResturantController extends Controller
         $data = $request->all();
         $data['restaurant_id'] = $res->id;
         $meal = Meal::create($data);
+        return redirect()->back();
+    }
+    public function addreview(Request $request){
+        $res = Auth::guard('web')->user();
+        $data = $request->all();
+        $data['user_id'] = $res->id;
+        $meal = Review::create($data);
         return redirect()->back();
     }
 
