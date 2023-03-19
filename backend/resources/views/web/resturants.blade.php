@@ -24,9 +24,8 @@
     <link rel="stylesheet" href="/assets/font/flaticon.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/colors/color.css">
-    <link rel="stylesheet" href="/assets/css/how-t.css">
     <link rel="stylesheet" href="/assets/css/new-preloader.css">
-    <title> | FAQ`S| </title>
+    <title> | All Resturants| </title>
     <style>
         body {background-color: #EEE!important;}
     </style>

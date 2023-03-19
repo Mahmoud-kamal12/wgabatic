@@ -240,8 +240,8 @@
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
                         <select class="col-lg-12 p-2 mb-3" name="table_status" id="">
                             <option  value="">booking table *</option>
-                            <option value="1">yes</option>
-                            <option value="0">no</option>
+                            <option value="1" @if(auth()->guard('restaurant')->user()->table_status == 1) selected @endif >yes</option>
+                            <option value="0" @if(auth()->guard('restaurant')->user()->table_status == 0) selected @endif>no</option>
                         </select>
                     </div>
 

@@ -18,6 +18,8 @@ class Restaurant extends Authenticatable
         'remember_token',
     ];
 
+     protected $appends = ['table_res'];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -38,4 +40,12 @@ class Restaurant extends Authenticatable
     public function tables(){
         return $this->hasMany(Table::class);
     }
+
+    public function gettableResAttribute()
+{
+
+    return $this->table_status ? "yes":"no";
+
+}
+
 }

@@ -27,7 +27,7 @@ class WebController extends Controller
     public function resturants()
     {
         $restaurants = Restaurant::all();
-//        dd($restaurants[0]);
+    //    dd($restaurants[0]->toArray());
         return view('web.resturants',compact(['restaurants']));
     }
     public function faqs()
