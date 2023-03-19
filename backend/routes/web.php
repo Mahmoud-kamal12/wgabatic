@@ -37,6 +37,7 @@ Route::name('web.')->group(function(){
     Route::get('/contact', [WebController::class , 'contact'])->name('contact');
     Route::get('/faqs', [WebController::class , 'faqs'])->name('faqs');
     Route::get('/how-it-work', [WebController::class , 'howItWork'])->name('howItWork');
+    Route::get('/ordering', [WebController::class , 'ordering'])->name('ordering');
 
 
 

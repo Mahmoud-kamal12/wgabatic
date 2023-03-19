@@ -6,11 +6,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
     <!-- <link rel="icon" type="image/png" sizes="36x36" href="/images/favicon.png"> -->
     <!-- fontawsome -->
-    <link rel="stylesheet" href="public/css/fontawsome/fontawesome.min.css">
-    <link rel="stylesheet" href="public/css/fontawsome/solid.min.css">
-    <link rel="stylesheet" href="public/css/fontawsome/brands.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawsome/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawsome/solid.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawsome/brands.min.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="public/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!-- plugins -->
@@ -22,11 +22,11 @@
     <!-- google fonts -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Chango&family=Griffy&display=swap" rel="stylesheet"> -->
     <!-- main Styles -->
-    <link rel="stylesheet" href="public/font/flaticon.css">
-    <link rel="stylesheet" href="public/css/colors/color.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/feature.css">
-    <link rel="stylesheet" href="public/css/new-preloader.css">
+    <link rel="stylesheet" href="/assets/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/colors/color.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/feature.css">
+    <link rel="stylesheet" href="/assets/css/new-preloader.css">
     <title> | order | </title>
 
 </head>
@@ -46,28 +46,8 @@
 
 
 <section class="ordaring-page-header">
-    <nav class=" col-lg-12 navbar navbar-expand-lg navbar-dark ftco_navbar p-2  position-fixed ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"><img src="../public/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> <i class="fa fa-bars"></i> </span> 
-          </button>
-          <div class="collapse navbar-collapse ml-auto" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active"><a href="index.html" class="nav-link ">Home</a></li>
-              <li class="nav-item"><a href="about.html" class="nav-link ">about us</a></li>
-              <li class="nav-item"><a href="how it work.html" class="nav-link  ">How It Works</a></li>
-              <li class="nav-item"><a href="faqs.html" class="nav-link ">FAQS</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link  ">Contact us</a></li>
-              <li class="nav-item"><a href="new login.html" class="nav-link  "> logIn/signUp </a></li>
 
-              <li class="nav-item ml-5 ">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+    @include('web.nav')
 
       <div>
         <div class="container">
@@ -76,7 +56,7 @@
                     <div class="  col-lg-12 col-md-12 col-sm-12 ">
                       <div class=" d-flex resturant-logo">
                         <div class=" p-3 ">
-                          <img class="" src="../public/photos/imgs/kfc.jpg" width="80" height="80"  alt=""> 
+                          <img class="" src="/assets/photos/imgs/kfc.jpg" width="80" height="80"  alt=""> 
                         </div>
                          <div class=" p-3 text-light">
                           <h1>Kfc – Kentucky</h1>
@@ -138,7 +118,7 @@
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <li class="mt-4 d-flex menu ">
                   <div class="single-menu">
-                      <img src="public/assets/photos/order_img.png"  alt="">
+                      <img src="/assets/photos/order_img.png"  alt="">
                       <div class="menu-content ml-3 ">
                           <h4> Special Pizza<span>50.00</span></h4>
                           <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
@@ -500,13 +480,13 @@
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- bootstrap -->
-<script src="public/js/bootstrap/jquery-3.5.1.js"></script>
-<script src="public/js/bootstrap/popper.min.js"></script>
-<script src="public/js/bootstrap/bootstrap.min.js"></script>
+<script src="/assets/js/bootstrap/jquery-3.5.1.js"></script>
+<script src="/assets/js/bootstrap/popper.min.js"></script>
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
 <!-- fontawsome -->
-<script src="public/js/fontawsome/fontawesome.min.js"></script>
-<script src="public/js/fontawsome/solid.min.js"></script>
-<script src="public/js/fontawsome/brands.min.js"></script>
+<script src="/assets/js/fontawsome/fontawesome.min.js"></script>
+<script src="/assets/js/fontawsome/solid.min.js"></script>
+<script src="/assets/js/fontawsome/brands.min.js"></script>
 <!-- plugins -->
 <!-- <script src="../js/plugins/vegas.js"></script>
 <script src="../js/plugins/owl.carousel.min.js"></script>
@@ -519,7 +499,7 @@
 <script src="../js/plugins/jquery.nice-select.js"></script> -->
 
   <!-- main Styles --> 
-  <script src="public/js/custom.js"></script>
+  <script src="/assets/js/custom.js"></script>
     <script>
       
         /* 1. Preloder */

@@ -60,7 +60,10 @@
                         <h1>WELCOME TO WAGABAT</h1>
                         <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
 
-                        <button class="btn text-light submitBtn p-2 col-md-2"> search </button>                        
+                        <button class="btn text-light submitBtn p-2 col-md-2">
+                        <a href="{{route("web.ordering")}}">search</a>    
+                        
+                             </button>                        
                     </div>
                 </div>
             </div>

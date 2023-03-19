@@ -140,29 +140,6 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#CHANGE_PASSWORD" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  CHANGE PASSWORD</span></a>
                     <hr class="p-0 m-0">
-                    <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#DELETE-profile" id="v-pills-settings-tab"href="#delete_profile" role="tab">
-                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i>  DELETE PROFILE</span></a>
-                    <!-- ///////////////////////////////////////////////// -->
-                    <!-- Modal -->
-                    <div class="modal fade" id="DELETE-profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog pop-up-body " role="document">
-                            <div class="modal-content">
-                                <div class="modal-body text-center">
-                                    <i class="fas fa-frown-open"></i>
-                                    <h4 class="delete-message mt-3">You Want To Delete?!!</h4>
-                                    <div class="row justify-content-center align-items-center">
-                                        <button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button>
-                                        <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancle </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ////////////////////////////////////////////////// -->
-                    <hr class="p-0 m-0">
-                    <a class="  nav-link py-2 p-2  " href="#!"  id="v-pills-settings-tab"  aria-controls="v-pills-settings" aria-selected="false">
-                        <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i>  SIGN OUT</span></a>
 
                 </div>
             </div>
@@ -258,7 +235,7 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <select class="col-lg-12 p-2 mb-3" name="" id="">
+                        <select class="col-lg-12 p-2 mb-3" name="table" id="">
                             <option  value="">booking table *</option>
                             <option value="">yes</option>
                             <option value="">no</option>
@@ -296,7 +273,7 @@
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
-                    <h6 class="p-2"> if you need to find the addres of your resturant with Longitude and   Latitude click here <a class="text-danger" href="https://www.latlong.net/convert-address-to-lat-long.html"> LatLong.net  </a> </h6>
+                    <h6 class="p-2"> if you need to find the addres of your resturant with Longitude and   Latitude click here <a class="text-danger" target="_blank" href="https://www.latlong.net/convert-address-to-lat-long.html"> LatLong.net  </a> </h6>
                     <!-- <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
                         <label for="">Specials</label>
                         <br>
@@ -312,7 +289,7 @@
 
                     <!-- ////////////////////////////////////////// -->
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
                         <label for="">Categories * </label>
                         <br>
                         <select id="select-cat" style="width: 80%!important;color: #9097a1;" class="mul-select p-3 mt-1 mb-3" multiple="true">
@@ -332,7 +309,7 @@
                             <option value="13">coffee</option>
 
                         </select>
-                    </div>
+                    </div> -->
 
                     <!-- ////////////////////////////////////////// -->
 
@@ -497,7 +474,7 @@
             </div>
             <br>
             <div class="">
-                <p class="p-in-review">review date display here</p>
+                <p class="p-in-review"> person that make review</p>
                 <h5 class="h5-in-review">review display here </h5>
             </div>
         </div>
