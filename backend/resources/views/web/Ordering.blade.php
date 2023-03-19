@@ -6,27 +6,27 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
     <!-- <link rel="icon" type="image/png" sizes="36x36" href="/images/favicon.png"> -->
     <!-- fontawsome -->
-    <link rel="stylesheet" href="../public/css/fontawsome/fontawesome.min.css">
-    <link rel="stylesheet" href="../public/css/fontawsome/solid.min.css">
-    <link rel="stylesheet" href="../public/css/fontawsome/brands.min.css">
+    <link rel="stylesheet" href="public/css/fontawsome/fontawesome.min.css">
+    <link rel="stylesheet" href="public/css/fontawsome/solid.min.css">
+    <link rel="stylesheet" href="public/css/fontawsome/brands.min.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="../public/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!-- plugins -->
-    <!-- <link rel="stylesheet" href="../public/css/plugins/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../public/css/plugins/jquery.timepicker.css">
-    <link rel="stylesheet" href="../public/css/plugins/nice-select.css"> -->
+    <!-- <link rel="stylesheet" href="public/css/plugins/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="public/css/plugins/jquery.timepicker.css">
+    <link rel="stylesheet" href="public/css/plugins/nice-select.css"> -->
 
     <!-- <link rel="stylesheet" href="css/plugins/owl.theme.default.min.css"> -->
     <!-- google fonts -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Chango&family=Griffy&display=swap" rel="stylesheet"> -->
     <!-- main Styles -->
-    <link rel="stylesheet" href="../public/font/flaticon.css">
-    <link rel="stylesheet" href="../public/css/colors/color.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/feature.css">
-    <link rel="stylesheet" href="../public/css/new-preloader.css">
+    <link rel="stylesheet" href="public/font/flaticon.css">
+    <link rel="stylesheet" href="public/css/colors/color.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/feature.css">
+    <link rel="stylesheet" href="public/css/new-preloader.css">
     <title> | order | </title>
 
 </head>
@@ -138,7 +138,7 @@
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <li class="mt-4 d-flex menu ">
                   <div class="single-menu">
-                      <img src="../../../public/assets/photos/order_img.png"  alt="">
+                      <img src="public/assets/photos/order_img.png"  alt="">
                       <div class="menu-content ml-3 ">
                           <h4> Special Pizza<span>50.00</span></h4>
                           <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
@@ -500,13 +500,13 @@
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- bootstrap -->
-<script src="../public/js/bootstrap/jquery-3.5.1.js"></script>
-<script src="../public/js/bootstrap/popper.min.js"></script>
-<script src="../public/js/bootstrap/bootstrap.min.js"></script>
+<script src="public/js/bootstrap/jquery-3.5.1.js"></script>
+<script src="public/js/bootstrap/popper.min.js"></script>
+<script src="public/js/bootstrap/bootstrap.min.js"></script>
 <!-- fontawsome -->
-<script src="../public/js/fontawsome/fontawesome.min.js"></script>
-<script src="../public/js/fontawsome/solid.min.js"></script>
-<script src="../public/js/fontawsome/brands.min.js"></script>
+<script src="public/js/fontawsome/fontawesome.min.js"></script>
+<script src="public/js/fontawsome/solid.min.js"></script>
+<script src="public/js/fontawsome/brands.min.js"></script>
 <!-- plugins -->
 <!-- <script src="../js/plugins/vegas.js"></script>
 <script src="../js/plugins/owl.carousel.min.js"></script>
@@ -519,7 +519,7 @@
 <script src="../js/plugins/jquery.nice-select.js"></script> -->
 
   <!-- main Styles --> 
-  <script src="../public/js/custom.js"></script>
+  <script src="public/js/custom.js"></script>
     <script>
       
         /* 1. Preloder */
