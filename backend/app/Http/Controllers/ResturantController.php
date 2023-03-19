@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meal;
+use App\Models\Table;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -35,19 +36,42 @@ class ResturantController extends Controller
         return redirect()->back();
     }
 
+    public function tableadd(Request $request){
+        $res = auth()->guard('restaurant')->user();
+        $data = $request->all();
+        $data['restaurant_id'] = $res->id;
+        $meal = Table::create($data);
+        return redirect()->back();
+    }
+
+    public function tableupdate(Request $request , $id){
+        $res = auth()->guard('restaurant')->user();
+        $data = $request->all();
+        $data['restaurant_id'] = $res->id;
+        $meal = Table::where('id',$id)->first();
+        $meal->update($data);
+        return redirect()->back();
+    }
+
+    public function tabledelete(Request $request , $id){
+        $meal = Table::where('id',$id)->first();
+        $meal->delete();
+        return redirect()->back();
+    }
+
     public function update(Request $request){
         $res = auth()->guard('restaurant')->user();
         $data = $request->all();
         if ($request->has('logo') && $request->file('logo')){
             $data['logo'] = 'uploads/'.Storage::disk('public')->putFile('media',$request->file('logo'));
         }else{
-            $data['logo'] = null;
+            unset($data['logo']);
         }
 
         if ($request->has('cover') && $request->file('cover')){
             $data['cover'] = 'uploads/'.Storage::disk('public')->putFile('media',$request->file('cover'));
         }else{
-            $data['cover'] = null;
+            unset($data['cover']);
         }
         $res->update($data);
         return redirect()->back();

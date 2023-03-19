@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('contact_email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean("table_status")->default(0);
 
             $table->timestamps();
         });

@@ -194,10 +194,10 @@
 
                         <div class="">
                             <table class="table scroll-x-table text-center">
-                              
+
                                 <tbody>
-                                
-                                
+
+
                             </div>
                 </tbody>
                 </table>
@@ -354,7 +354,7 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
-        
+
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="MENU_BUILDER" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
             <div class=" col-lg-12 p-0 m-0">
@@ -481,7 +481,7 @@
 
             </div>
         </div>
-        
+
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
@@ -521,7 +521,7 @@
                             <input type="number" class="form-control col-lg-12" id="" placeholder=" Table Capacity " required>
                         </div>
                         <div class="form-group col-lg-6">
-                            
+
                             <div class="col-lg-12 row">
                                 <span class="col-lg-6"> From : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
                                 <span class="col-lg-6"> To : <input type="date" class="form-control " id="" placeholder=" " required>  </span>
@@ -612,7 +612,7 @@
                                                             <option > Shipped </option>
                                                         </select>
                                                         <input class="col-lg-2" type="submit" value="submit" >
-                                                    
+
                                                 </div>
                                             </div>
                                         <!-- //////////////////////////////////////////////////// -->
@@ -629,7 +629,7 @@
                                         </form>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -680,7 +680,7 @@
                     </tbody>
                 </table>
                         <div class="">
-                            <h4> Totl Lose : <span>  75.71	 </span> </h4> 
+                            <h4> Totl Lose : <span>  75.71	 </span> </h4>
                         </div>
             </div>
 
