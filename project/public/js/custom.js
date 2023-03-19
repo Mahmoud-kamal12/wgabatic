@@ -1,8 +1,5 @@
 
-// /////////////////////////////////////////
-$(document).ready(function() {
-  $('select').niceSelect();
-});
+
 // /////////////////////////////////////////
 window.addEventListener("scroll" , function () {
         
@@ -10,23 +7,23 @@ window.addEventListener("scroll" , function () {
   navbar.classList.toggle("sticky",window.scrollY >50);
 })
 // /////////////////////////////////////////////////////////////
-$('.book_date').datepicker({
-  'format': 'm/d/yyyy',
-  'autoclose': true
-});
-$('.book_time').timepicker();
+// $('.book_date').datepicker({
+//   'format': 'm/d/yyyy',
+//   'autoclose': true
+// });
+// $('.book_time').timepicker();
 
 
-(function ($)
-  { "use strict"
+// (function ($)
+//   { "use strict"
   
-  /* 1. Preloder */
-      $(window).on('load', function () {
-        $('#preloader-active').delay(1050).fadeOut('slow');
-        $('body').delay(850).css({
-          'overflow': 'visible'
-        });
-      });
+//   /* 1. Preloder */
+//       $(window).on('load', function () {
+//         $('#preloader-active').delay(1050).fadeOut('slow');
+//         $('body').delay(850).css({
+//           'overflow': 'visible'
+//         });
+//       });
   
   /* 2. sticky And Scroll UP */
     //   $(window).on('scroll', function () {
@@ -53,48 +50,9 @@ $('.book_time').timepicker();
 
   	
   
-  })(jQuery);
   
 
   
-  $(function () {
-    $('#datetimepicker2').datetimepicker({
-        locale: 'ru'
-    });
-});
-
-
-
-var theMaxHeight = 0;
-$('.order-step').each(function () {
-  
-  if ($(this).height() > theMaxHeight) {
-    theMaxHeight = $(this).height();
-  }
-
-});
-$('.order-step ').height(theMaxHeight);
-
-// /////////////////////////////////////////////
-// /////////////////////////////////////////////
-// /////////////////////////////////////////////
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-// /////////////////////////////////////////////
-// /////////////////////////////////////////////
-// /////////////////////////////////////////////
-
-
-
-var cursor = document.querySelector(".cursor");
-var cursor2 = document.querySelector(".cursor2");
-document.addEventListener("mousemove",function(e){
-  cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-});
-
-
-
 
 
 

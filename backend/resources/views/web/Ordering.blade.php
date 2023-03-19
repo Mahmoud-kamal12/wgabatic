@@ -128,7 +128,7 @@
                             </div>
                             <div  class="pl-3 ml-auto">
                                 <span>{{$meal->price}} .LE</span> <br>
-                                <button  data-mealid="{{$meal->id}}"  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                                <button  data-mealid="{{$meal->id}}" id=""  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn Add_meal "> <i class="fa fa-plus text-danger"></i> </button>
                                 <!-- Button trigger modal -->
                             </div>
                         </div>
@@ -508,65 +508,45 @@
 <script src="/assets/js/fontawsome/solid.min.js"></script>
 <script src="/assets/js/fontawsome/brands.min.js"></script>
 <!-- plugins -->
-<!-- <script src="../js/plugins/vegas.js"></script>
-<script src="../js/plugins/owl.carousel.min.js"></script>
-<script src="../js/scrollax.min.js"></script>
-<script src="../js/plugins/magicscroll.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-<!-- <script src="../js/plugins/bootstrap-datepicker.js"></script>
-<script src="../js/plugins/jquery.timepicker.min.js"></script>
-<script src="../js/plugins/jquery.nice-select.js"></script> -->
 
   <!-- main Styles -->
-  <script src="/assets/js/custom.js"></script>
+  <!-- <script src="/assets/js/custom.js"></script> -->
     <script>
 
-        /* 1. Preloder */
-    // $(window).on('load', function () {
-    //     $('#preloader-active').delay(1050).fadeOut('slow');
-    //     $('body').delay(850).css({
-    //       'overflow': 'visible'
-    //     });
-    //   });
-
-
-    $(function() {
-  $('.tab-pane ul li a').bind('click', function(event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top - 49
-    }, 1000);
-    event.preventDefault();
-  });
-});
 
 
 
-$(function() {
-  $('.menu-title h4 span a').bind('click', function(event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top - 49
-    }, 1000);
-    event.preventDefault();
-  });
-<<<<<<< Updated upstream
-});
-=======
-}); 
 
 
-
-let addObj = {
-  res_id: ""
-  melas : []
-
+var resturant_id = document.getElementById("resturant_id").value;
+var addObj = {
+  restaurant_id: resturant_id,
+  meals:[]
 }
 
+$(document).on("click" , ".Add_meal",function () {
+  addObj.meals.push($(this).data("mealid"))
+})
 
 
->>>>>>> Stashed changes
+
+// Add_meal.addEventListener('click', function(){
+//   console.log(this.dataset.mealid);
+//   // addObj.meals.push(this.dataset.mealid)
+  
+//   // console.log(addObj);
+// });
+
+
+
+
+// fetch("",{})
+
+
+
+
+
+
   </script>
   </body>
   </html>
