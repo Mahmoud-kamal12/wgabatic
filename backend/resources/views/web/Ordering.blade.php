@@ -342,7 +342,9 @@
                   <span class="days" >Special Pizza</span>
                   <!-- <span class="space-span" style="width: 35%;"></span> -->
                   <span class="time ml-auto">50.00   <i class="ml-3 fa fa-times-circle"></i>  </span>
-              </div>
+
+                </div>
+                <span class="mt-3"> total price : 50</span>
             </div>
 
 
@@ -549,7 +551,22 @@ $(function() {
     }, 1000);
     event.preventDefault();
   });
+<<<<<<< Updated upstream
 });
+=======
+}); 
+
+
+
+let addObj = {
+  res_id: ""
+  melas : []
+
+}
+
+
+
+>>>>>>> Stashed changes
   </script>
   </body>
   </html>
