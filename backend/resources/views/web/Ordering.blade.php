@@ -270,21 +270,19 @@
           <div class="tab-pane p-3" id="Info" role="tabpanel">
             <article class="p-3">
               <h5 style="font-weight: 600;" >Overview Kfc – Kentucky</h5>
-              <p style="color: #515151;" class="mt-4">Base prepared fresh daily. Extra toppings are available in choose extra
-                Choose you sauce: Go for BBQ sauce or piri piri sauce on your pizza base for no extra cost.
-                Choose your cut: Triangular, square, fingers or Un cut on any size pizza</p>
+              <p style="color: #515151;" class="mt-4">{{$restaurant->description}}</p>
 
-              <div>
+              <!-- <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d440907.121796829!2d31.1893790616218!3d30.30582012946876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1457fc022cc67e9f%3A0x37cd2c63453c420c!2sKFC!5e0!3m2!1sen!2seg!4v1611834877746!5m2!1sen!2seg"
                  width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-              </div>
+              </div> -->
 
               <div class="row mt-5" >
                 <div class="col-lg-6">
-                  <h5 class="mb-3" style="font-weight: 600;" >Overview Kfc – Kentucky</h5>
-                  <p style="color: #515151;" >10th of ramadan egypt</p>
-                  <p style="color: #515151;" > <i class="fa fa-phone-volume"></i>  +01064691587</p>
-                  <p style="color: #515151;" > <i  class="fa fa-envelope"></i> <a style="color: #f30928;" href="#">Send Enquiry By Email</a></p>
+                  <h5 class="mb-3" style="font-weight: 600;" >{{$restaurant->name}}</h5>
+                  <p style="color: #515151;" >{{$restaurant->description}}</p>
+                  <p style="color: #515151;" > <i class="fa fa-phone-volume"></i>  {{$restaurant->phone}}</p>
+                  <p style="color: #515151;" > <i  class="fa fa-envelope"></i> <a style="color: #f30928;" href="#">{{$restaurant->email}}</a></p>
                 </div>
 
 
@@ -350,7 +348,7 @@
 
 
             <p class="mt-5">type you extra here</p>
-            <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name="" id="" >
+            <input style="font-size: 12px; padding: 7px; width: 100%;" type="text"  name=".." id="" >
 
           </div>
           <hr>
@@ -510,7 +508,7 @@
 <!-- plugins -->
 
   <!-- main Styles -->
-  <!-- <script src="/assets/js/custom.js"></script> -->
+  <script src="/assets/js/custom.js"></script>
     <script>
 
 
