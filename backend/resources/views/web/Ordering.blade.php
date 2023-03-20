@@ -532,28 +532,10 @@ $(document).on("click" , "#confirmbtn",function (e) {
             extra: document.getElementById("extra").value
         },
         success: function (response) {
-            console.log(response)
-        }
+            // اظهرهله اى رساله تقوله انه نجح باى طريقه تعجبك الرت او اى بعبوص
+        },
     });
-
 })
-
-
-
-
-// Add_meal.addEventListener('click', function(){
-//   console.log(this.dataset.mealid);
-//   // addObj.meals.push(this.dataset.mealid)
-
-//   // console.log(addObj);
-// });
-
-
-
-
-// fetch("",{})
-
-
 
 
 

@@ -57,5 +57,8 @@ class DatabaseSeeder extends Seeder
             "password" => "123456789",
         ]);
 
+        $this->call([
+            RestaurantSeeder::class,
+        ]);
     }
 }

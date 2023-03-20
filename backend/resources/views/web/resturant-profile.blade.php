@@ -648,92 +648,88 @@
                     <thead>
                     <tr>
                         <th scope="col">ORDER ID</th>
+                        <th scope="col">Customer Name</th>
                         <th scope="col">DATE</th>
                         <th scope="col">TOTAL PRICE</th>
-                        <th scope="col">CHARGES</th>
                         <th scope="col">DETAIL</th>
                     </tr>
                     </thead>
                     <tbody>
 
-                    <tr>
-                        <td>Order-25567</td>
-                        <td>	March 27, 2021</td>
-                        <td>75.71</td>
-                        <td>7.57</td>
-                        <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS1"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                        <!-- Modal -->
-                        <div class="modal fade" id="all_ORDERS1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content modal-style">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
+                    @foreach(auth()->guard('restaurant')->user()->orders as $order)
+                        <tr>
+                            <td>Order-{{$order->id}}</td>
+                            <td>{{$order->user->first_name . " " . $order->user->last_name}}</td>
+                            <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
+                            <td>{{$order->total}}</td>
+                            <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS{{$order->id}}"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                            <!-- Modal -->
+                            <div class="modal fade" id="all_ORDERS{{$order->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content modal-style">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
 
 
-                                    <div class="modal-body">
-                                        <form class="col-lg-12" action="" method="">
-                                            <div class="d-flex">
-                                                <ul class="Extra-category-name">
-                                                    <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> <input type="text" placeholder="Enter PICK UP TIME " > </span></li>
-                                                </ul>
-                                                <ul class="ml-auto mr-150">
-                                                    <h5 class="font-weight-bold">Customer Detail</h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                            <div class="d-flex order-state">
-                                                <div class="col-lg-3">
-                                                    <h5 class="font-weight-bold">Order Status
-                                                    </h5>
+                                        <div class="modal-body">
+                                            <form class="col-lg-12" action="{{route("web.updateOrder" , $order->id)}}">
+                                                <div class="d-flex">
+                                                    <ul class="Extra-category-name">
+                                                        <h5 class="font-weight-bold">Kfc – Kentucky </h5>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> <input type="text" placeholder="Enter PICK UP TIME " > </span></li>
+                                                    </ul>
+                                                    <ul class="ml-auto mr-150">
+                                                        <h5 class="font-weight-bold">Customer Detail</h5>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
+                                                    </ul>
                                                 </div>
-                                            <!-- ////////////////////////////// -->
-                                                <div class="col-lg-9 ">
-                                                        <select class="col-lg-9" name="" id="">
-                                                            <option > Processing </option>
-                                                            <option > Cancelled </option>
-                                                            <option > Completed </option>
-                                                            <option > Awaiting Payment </option>
-                                                            <option > Payment Received </option>
-                                                            <option > Expired </option>
-                                                            <option > Awaiting Pickup </option>
-                                                            <option > Dispatched </option>
-                                                            <option > Shipped </option>
+                                                <hr>
+                                                <!-- //////////////////////////////////////////////////////////// -->
+                                                <div class="d-flex order-state">
+                                                    <div class="col-lg-3">
+                                                        <h5 class="font-weight-bold">Order Status
+                                                        </h5>
+                                                    </div>
+                                                    <!-- ////////////////////////////// -->
+                                                    <div class="col-lg-9 ">
+                                                        <select class="col-lg-9" name="status" id="status">
+                                                            <option value="0" @if($order->status == 0) selected @endif> Cancelled </option>
+                                                            <option value="1" @if($order->status == 1) selected @endif> Completed </option>
                                                         </select>
                                                         <input class="col-lg-2" type="submit" value="submit" >
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        <!-- //////////////////////////////////////////////////// -->
-                                            <hr>
-                                            <div class="mt-4 font-weight-bolder">
-                                                <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                                <ul>
-                                                    <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
-                                                    <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
-                                                    <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
-                                                    <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
-                                                </ul>
-                                            </div>
-                                        </form>
+                                                <!-- //////////////////////////////////////////////////// -->
+                                                <hr>
+                                                <div class="mt-4 font-weight-bolder">
+                                                    <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
+                                                    <ul>
+                                                        <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
+                                                        <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
+                                                        <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
+                                                        <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
+                                                    </ul>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
                                     </div>
-
-
                                 </div>
                             </div>
-                        </div>
 
-                    </tr>
+                        </tr>
+                    @endforeach
+
 
 
 
@@ -864,19 +860,21 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach(auth()->guard('restaurant')->user()->orders->where('status' , 0) as $order)
+                        <tr>
+                            <td>Order-{{$order->id}}</td>
+                            <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
+                            <td>{{$order->total}}</td>
+                            <td class="cancelled"><span > canceled </span></td>
+                        </tr>
 
-                    <tr>
-                        <td>Order-25567</td>
-                        <td>	March 27, 2021</td>
-                        <td>75.71</td>
-                        <td class="cancelled"><span > canceled </span></td>
-                    </tr>
+                    @endforeach
 
 
                     </tbody>
                 </table>
                         <div class="">
-                            <h4> Totl Lose : <span>  75.71	 </span> </h4>
+                            <h4> Totl Lose : <span> {{auth()->guard('restaurant')->user()->orders->where('status' , 0)->sum("total")}}	 </span> </h4>
                         </div>
             </div>
 

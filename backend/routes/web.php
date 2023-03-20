@@ -71,6 +71,9 @@ Route::name('web.')->group(function(){
 
         Route::resource('/meal', MealController::class);
 
+//        Order
+        Route::get('/update-order/{id}', [ OrdertController::class ,'update'])->name('updateOrder');
+
     });
 
 

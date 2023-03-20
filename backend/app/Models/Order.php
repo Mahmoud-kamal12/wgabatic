@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id','resturant_id','total' , 'status' , '' , '' ];
+    protected $fillable = ['user_id','resturant_id','total' , 'status' , 'extra' , 'address' ];
 
     public function items(){
         return $this->hasMany(OrderItem::class);
@@ -19,7 +19,7 @@ class Order extends Model
     }
 
     public function restaurant(){
-        return $this->belongsTo(Restaurant::class);
+        return $this->belongsTo(Restaurant::class , 'resturant_id');
     }
 
 }
