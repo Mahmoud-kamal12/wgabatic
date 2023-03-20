@@ -120,19 +120,18 @@
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
                 @foreach($restaurant->meals as $meal)
                     <li class="mt-4  menu ">
-                        <div class="single-menu d-flex">
-                            <img src="/assets/photos/order_img.png"  alt="">
-                            <div class="menu-content ml-3  ">
-                                <h4>{{$meal->name}}</h4>
-                                <span >{{$meal->description}}</span>
-                            </div>
-                            <div  class="pl-3 ml-auto">
-                                <span>{{$meal->price}} .LE</span> <br>
-                                <button  data-mealid="{{$meal->id}}" id=""  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn Add_meal "> <i class="fa fa-plus text-danger"></i> </button>
-                                <!-- Button trigger modal -->
-                            </div>
-                        </div>
-                    </li>
+                      <div class="single-menu d-flex">
+                          <img src="/assets/photos/order_img.png"  alt="">
+                          <div class="menu-content ml-3  ">
+                              <h4 class="meal_name">{{$meal->name}}</h4>
+                              <span >{{$meal->description}}</span>
+                          </div>
+                          <div  class="pl-3 ml-auto">
+                              <span class="meal_price">{{$meal->price}} .LE</span> <br>
+                              <button data-mealid="{{$meal->id}}" id="" type="button" data-toggle="modal" data-target="#orderExtra-modal" class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                          </div>
+                      </div>
+                  </li>
                 @endforeach
 
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
@@ -334,16 +333,10 @@
 
           <div class="meal-info  p-1 ">
 
+                  <div id="meals-container">  </div>
+                  <div id="total-price">Total price: 0.00 LE</div>
 
-            <div class=" meal mt-1">
-              <div class="d-flex">
-                  <span class="days" >Special Pizza</span>
-                  <!-- <span class="space-span" style="width: 35%;"></span> -->
-                  <span class="time ml-auto">50.00   <i class="ml-3 fa fa-times-circle"></i>  </span>
-
-                </div>
-                <span class="mt-3"> total price : 50</span>
-            </div>
+            
 
 
 
@@ -514,26 +507,63 @@
 
 
 
+                    
+  // Initialize the total price variable
+  let totalPrice = 0;
+
+  // Get all "Add_meal" buttons
+  const addMealButtons = document.querySelectorAll(".Add_meal");
+
+  // Add event listener to each button
+  addMealButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Get the meal name and price
+      const mealName = button.parentNode.parentNode.querySelector(".meal_name").textContent;
+      const mealPrice = button.parentNode.querySelector(".meal_price").textContent;
+
+      // Create a new meal element with the name and price
+      const mealElement = document.createElement("div");
+      mealElement.classList.add("meal", "mt-1");
+      mealElement.innerHTML = `
+        <div class="d-flex">
+          <span class="mealname">${mealName}</span>
+          <span class="mealPrice ml-auto">${mealPrice}</span>
+          <i class="ml-3 fa fa-times-circle"></i>
+        </div>
+        <span class="mt-3"> total price : ${mealPrice}</span>
+      `;
+
+      // Add the new meal element to the container
+      const mealsContainer = document.getElementById("meals-container");
+      mealsContainer.appendChild(mealElement);
+
+      // Update the total price
+      const price = parseFloat(mealPrice);
+      totalPrice += price;
+      const totalPriceElement = document.getElementById("total-price");
+      totalPriceElement.textContent = `Total price: ${totalPrice.toFixed(2)} LE`;
+    });
+  });
 
 
-var resturant_id = document.getElementById("resturant_id").value;
-var addObj = {
-  restaurant_id: resturant_id,
-  meals:[]
-}
-
-$(document).on("click" , ".Add_meal",function () {
-  addObj.meals.push($(this).data("mealid"))
-})
 
 
 
-// Add_meal.addEventListener('click', function(){
-//   console.log(this.dataset.mealid);
-//   // addObj.meals.push(this.dataset.mealid)
-  
-//   // console.log(addObj);
-// });
+
+
+// var resturant_id = document.getElementById("resturant_id").value;
+// var addObj = {
+//   restaurant_id: resturant_id,
+//   meals:[]
+// }
+
+// $(document).on("click" , ".Add_meal",function () {
+//   addObj.meals.push($(this).data("mealid"))
+// })
+
+
+
+
 
 
 
