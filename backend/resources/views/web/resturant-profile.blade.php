@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/assets/css/fontawsome/fontawesome.min.css">
     <link rel="stylesheet" href="/assets/css/fontawsome/solid.min.css">
     <link rel="stylesheet" href="/assets/css/fontawsome/brands.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- bootstrap -->
     <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -130,7 +133,7 @@
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-table mr-3 "></i>  Tables</span></a>
                     <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#BOOKING" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i> Table  BOOKING</span></a>
+                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-list mr-3  "></i>  Table  BOOKING</span></a>
                     <hr class="p-0 m-0">
                     @endif
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#ORDERS" role="tab" aria-controls="v-pills-messages" aria-selected="false">
@@ -656,7 +659,7 @@
                     </thead>
                     <tbody>
 
-                    @foreach(auth()->guard('restaurant')->user()->orders as $order)
+                    @foreach(auth()->guard('restaurant')->user()->orders()->whereNull("status")->Where("status",1)->get() as $order)
                         <tr>
                             <td>Order-{{$order->id}}</td>
                             <td>{{$order->user->first_name . " " . $order->user->last_name}}</td>
@@ -680,15 +683,15 @@
                                                 <div class="d-flex">
                                                     <ul class="Extra-category-name">
                                                         <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> <input type="text" placeholder="Enter PICK UP TIME " > </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  {{$order->id}}  </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> <input type="text" placeholder="Enter PICK UP TIME " > 20 min </span></li>
                                                     </ul>
                                                     <ul class="ml-auto mr-150">
                                                         <h5 class="font-weight-bold">Customer Detail</h5>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  {{$order->user->first_name . " " . $order->user->last_name}} </span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> {{$order->user->phone}}</span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">{{$order->user->email}}</span> </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">{{$order->address}}</span> </li>
                                                     </ul>
                                                 </div>
                                                 <hr>
@@ -713,10 +716,8 @@
                                                 <div class="mt-4 font-weight-bolder">
                                                     <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
                                                     <ul>
-                                                        <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
-                                                        <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
-                                                        <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
-                                                        <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
+                                                       
+                                                        <li><span> TOTAL: </span>   <span class=" price-span ">{{$order->total}}</span></li>
                                                     </ul>
                                                 </div>
                                             </form>
@@ -860,7 +861,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach(auth()->guard('restaurant')->user()->orders->where('status' , 0) as $order)
+                    @foreach(auth()->guard('restaurant')->user()->orders()->whereNotNull('status')->where("status",0) as $order)
                         <tr>
                             <td>Order-{{$order->id}}</td>
                             <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
@@ -874,7 +875,7 @@
                     </tbody>
                 </table>
                         <div class="">
-                            <h4> Totl Lose : <span> {{auth()->guard('restaurant')->user()->orders->where('status' , 0)->sum("total")}}	 </span> </h4>
+                            <h4> Totl Lose : <span> {{auth()->guard('restaurant')->user()->orders->whereNotNull('status')->where('status' , 0)->sum("total")}}	 </span> </h4>
                         </div>
             </div>
 
@@ -888,7 +889,7 @@
 
                 <div class="bg-light p-3 earn-price">
 
-                        <form class="resto-seeting-form" action="">
+                        <!-- <form class="resto-seeting-form" action="">
                     
                                 <div class="form-row p-3">
                                     <div class="form-group col-lg-5 ">
@@ -909,34 +910,33 @@
                                 </div>
                         
 
-                         </form>
+                         </form> -->
 
 
-                    <form class="resto-seeting-form ">
+                    <!-- <form class="resto-seeting-form ">
 
                         <h5 class=" text-capitalize mt-3"> my money </h5>
                         <div class="row">
 
                                 <div class="form-group col-lg-6 ">
-                                    <input type="text" class="form-control col-lg-12" id="" placeholder="Workers' wages" >
+                                    <input type="text" class="form-control col-lg-12 wages " id="" placeholder="Workers' wages" >
                                 </div>
                                 <div class="form-group col-lg-6 ">
-                                    <input type="text" class="form-control col-lg-12" id="" placeholder="Money for the canceled meal" >
+                                    <input type="text" class="form-control col-lg-12 withdrawls " id="" placeholder="Money for the canceled meal" >
                                 </div>
                                 <div class="form-group col-lg-6 ">
-                                    <input type="text" class="form-control col-lg-12" id="" placeholder=" government taxes " >
+                                    <input type="text" class="form-control col-lg-12 taxes " id="" placeholder=" government taxes " >
                                 </div>
                                 <br><br>
-                                <
+                                
                         
                                 <div class="form-group col-lg-12 ">
-                                    <button type="submit" class="btn btn-danger col-lg-3  ">deduct</button>
+                                    <button type="submit" class="btn btn-danger col-lg-3 deduct ">deduct</button>
                                 </div>
                         </div>
-                    </form>
+                    </form> -->
 
 
-                    
 
                      
 
@@ -959,8 +959,8 @@
 
                     <tr>
                         <td>March 3, 2021</td>
-                        <td>0.00</td>
-                        <td>0.00</td>
+                        <td>{{auth()->guard('restaurant')->user()->orders->sum("total")}} </td>
+                        <td>{{auth()->guard('restaurant')->user()->orders->sum("total") - auth()->guard('restaurant')->user()->orders->where('status' , 0)->sum("total") }}</td>
                     </tr>
 
 

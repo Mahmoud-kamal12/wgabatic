@@ -234,20 +234,15 @@
                     <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <h5 class="">REVIEW GIVEN <span style="font-size: 10px;" class=" text-danger"> number of Reviews </span></h5>
                         <div class="d-flex">
-                            <div class="mt-3"><h6>post dose not exist . </h6></div>
-                            <div class="mt-3">
-                                <i style=" right:100px; color: rgb(221, 252, 47);  " class="fa fa-star"></i>
-                                <i style=" right: 80px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                                <i style=" right: 60px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                                <i style=" right: 40px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                                <i style=" right: 20px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                            </div>
+                            <!-- if no reviews display this  -->
+                            <!-- <div class="mt-3"><h6> ther is no reviews yet </h6></div> -->
                         </div>
                         <br>
                         <div class="">
-                            <p class="p-in-review">2 monthes ago</p>
-                            <h5 class="h5-in-review"> awesome delicious foody experience!  </h5>
+                            <p class="p-in-review"> resturant name that i make recview on it display here</p>
+                            <h5 class="h5-in-review">review display here </h5>
                         </div>
+                        
                     </div>
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
@@ -269,14 +264,15 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
                                         <p class="p-in-review">Feb 10,2021 11:46 AM</p>
                                     </div>
-                                    <button  type="button" data-toggle="modal" data-target="#staticBackdrop" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
+                                    <button  type="button" data-toggle="modal" data-target="#staticBackdrop" class=" order_Details_btn  bg-success rounded-pill text-white"> ORDER DETAILS  </button>
+                                    <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel order  </button>
                                     <!-- Button trigger modal -->
 
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal fade category-crud" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-xl">
-                                            <div class="modal-content orderD-modal-content ">
+                                            <div class="modal-content orderD-modal-content modal-style ">
                                                 <div class="modal-header">
                                                     <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -363,109 +359,7 @@
                             <!-- //////////////////////////////////////////// -->
                             <!-- //////////////////////////////////////////// -->
                             <!-- //////////////////////////////////////////// -->
-                            <div class="col-lg-6 p-3">
-                                <div class=" p-3 order-border">
-                                    <div class="d-flex">
-                                        <div class=""><img class=" " src="/assets/photos/imgs/kfc-1-1.png" width="50px" height="50px" alt=""></div>
-                                        <div class="ml-3 mt-1"><strong> kentucky </strong>  <br> <p class="p-in-order"> dinner-takeaway </p></div>
-                                        <div class=" text-danger"><p class="ml-5"> $20.89 </p></div>
-                                    </div>
-
-                                    <hr>
-                                    <div class="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
-                                        <p class="p-in-review">Feb 28,2021 1:55 AM</p>
-                                    </div>
-                                    <button  type="button" data-toggle="modal" data-target="#staticBackdrop2" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
-                                    <!-- Button trigger modal -->
-
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content orderD-modal-content ">
-                                                <div class="modal-header">
-                                                    <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <hr>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                                <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id EX 25543))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PICK UP TIME :</span>
-                                                            <span class="ml-1 second-span">((time of preparing order Ex :40 Minutes   ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">DELIVERY DATE :</span>
-                                                            <span class="ml-1 second-span">((date and time EX Mar 19, 2021 04:15 PM ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PAYMENT STATUS :</span>
-                                                            <span class="ml-1 second-span">((state of order price Ex Pending ))</span>
-                                                        </li >
-                                                    </ul>
-
-                                                    <div class="text-left mt-5 w-100">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                                    </div>
-
-                                                    <hr>
-
-                                                    <h4 class="  model-name text-uppercase mt-2" >Food Menu</h4>
-                                                    <table class="table ">
-                                                        <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">PRODUCTS</th>
-                                                            <th scope="col">PRICE PER</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <span class="font-weight-bolder">Pizza</span>
-                                                                <ul>
-                                                                    <li>Foodbakery Special Pizza</li>
-                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> 1.00 </span> </li>
-                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> 0.00 </span> </li>
-                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> 0.00 </span> </li>
-                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> 3.00 </span> </li>
-                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> 1.00 </span> </li>
-                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> 2.00 </span> </li>
-                                                                </ul>
-                                                            </td>
-                                                            <td class="font-weight-bolder">50$</td>
-
-                                                        </tr>
-
-
-                                                        </tbody>
-                                                    </table>
-
-                                                    <hr>
-                                                    <div class="mt-4">
-                                                        <h5 class="text-uppercase">Order Total</h5>
-                                                        <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
 
 

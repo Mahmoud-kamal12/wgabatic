@@ -501,19 +501,18 @@
 <!-- plugins -->
 
   <!-- main Styles -->
-  <script src="/assets/js/custom.js"></script>
+  <!-- <script src="/assets/js/custom.js"></script> -->
     <script>
 
 
 
 
-                    
-  // Initialize the total price variable
-  let totalPrice = 0;
+
 
 var meals = [];
 $(document).on("click" , ".Add_meal",function () {
   meals.push($(this).data("mealid"))
+  console.log(meals);
 })
 
 $(document).on("click" , "#confirmbtn",function (e) {
@@ -527,8 +526,27 @@ $(document).on("click" , "#confirmbtn",function (e) {
             address: document.getElementById("address").value,
             extra: document.getElementById("extra").value
         },
+        beforeSend:function(){
+          $('#confirmbtn').text('')
+          $('#confirmbtn').prop('disabled', true);
+          $('#confirmbtn').append(`
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          `)
+        },
         success: function (response) {
             alert("success")
         },
+        error: function(data){
+          console.error(JSON.parse(data));                    
+        },
+        complete:function(){
+          $('#confirmbtn').text('')
+          $('#confirmbtn').prop('disabled', false);
+          $('#confirmbtn').text('confirm order')
+        },
     });
 })
+
+</script>

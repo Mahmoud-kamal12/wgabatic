@@ -241,6 +241,7 @@ color: #313139;
     height: 690px;
     overflow: scroll;
     overflow-x: hidden;
+
     
 
 }
@@ -270,6 +271,15 @@ color: #313139;
 .price-span{
     margin-left:10px!important;
     color: #777777;
+}
+
+
+
+
+.modal-style{
+    background:linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)),
+    url(../photos/new3/imgaya\ \(13\).jpg) no-repeat center ;
+    background-size: cover;
 }
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
