@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be8aceed-eecc-409d-ad2f-33aec62012bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/OrderItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2022_12_06_125115_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2022_12_06_125115_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/resturant-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/resturant-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +167,7 @@
       <workItem from="1670330550046" duration="7337000" />
       <workItem from="1679236446795" duration="18512000" />
       <workItem from="1679269465799" duration="5663000" />
+      <workItem from="1679312658786" duration="97000" />
     </task>
     <servers />
   </component>
