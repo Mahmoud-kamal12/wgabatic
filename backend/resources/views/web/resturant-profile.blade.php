@@ -675,7 +675,6 @@
                                         </div>
 
 
-<<<<<<< Updated upstream
                                         <div class="modal-body">
                                             <form class="col-lg-12" action="{{route("web.updateOrder" , $order->id)}}">
                                                 <div class="d-flex">
@@ -691,29 +690,6 @@
                                                         <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
                                                         <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
                                                     </ul>
-=======
-                                    <div class="modal-body">
-                                        <form class="col-lg-12" action="" method="">
-                                            <div class="d-flex">
-                                                <ul class="Extra-category-name">
-                                                    <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> <input type="text" placeholder="Enter PICK UP TIME " > </span></li>
-                                                </ul>
-                                                <ul class="ml-auto mr-150">
-                                                    <h5 class="font-weight-bold">Customer Detail</h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                            <div class="d-flex order-state">
-                                                <div class="col-lg-3">
-                                                    <h5 class="font-weight-bold"> Order Status </h5>
->>>>>>> Stashed changes
                                                 </div>
                                                 <hr>
                                                 <!-- //////////////////////////////////////////////////////////// -->

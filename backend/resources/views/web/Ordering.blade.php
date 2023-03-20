@@ -511,7 +511,6 @@
   // Initialize the total price variable
   let totalPrice = 0;
 
-<<<<<<< HEAD
 var meals = [];
 $(document).on("click" , ".Add_meal",function () {
   meals.push($(this).data("mealid"))
@@ -529,76 +528,7 @@ $(document).on("click" , "#confirmbtn",function (e) {
             extra: document.getElementById("extra").value
         },
         success: function (response) {
-            // اظهرهله اى رساله تقوله انه نجح باى طريقه تعجبك الرت او اى بعبوص
+            alert("success")
         },
     });
 })
-=======
-  // Get all "Add_meal" buttons
-  const addMealButtons = document.querySelectorAll(".Add_meal");
-
-  // Add event listener to each button
-  addMealButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      // Get the meal name and price
-      const mealName = button.parentNode.parentNode.querySelector(".meal_name").textContent;
-      const mealPrice = button.parentNode.querySelector(".meal_price").textContent;
-
-      // Create a new meal element with the name and price
-      const mealElement = document.createElement("div");
-      mealElement.classList.add("meal", "mt-1");
-      mealElement.innerHTML = `
-        <div class="d-flex">
-          <span class="mealname">${mealName}</span>
-          <span class="mealPrice ml-auto">${mealPrice}</span>
-          <i class="ml-3 fa fa-times-circle"></i>
-        </div>
-        <span class="mt-3"> total price : ${mealPrice}</span>
-      `;
-
-      // Add the new meal element to the container
-      const mealsContainer = document.getElementById("meals-container");
-      mealsContainer.appendChild(mealElement);
-
-      // Update the total price
-      const price = parseFloat(mealPrice);
-      totalPrice += price;
-      const totalPriceElement = document.getElementById("total-price");
-      totalPriceElement.textContent = `Total price: ${totalPrice.toFixed(2)} LE`;
-    });
-  });
-
-
-
-
-
-
-
-// var resturant_id = document.getElementById("resturant_id").value;
-// var addObj = {
-//   restaurant_id: resturant_id,
-//   meals:[]
-// }
-
-// $(document).on("click" , ".Add_meal",function () {
-//   addObj.meals.push($(this).data("mealid"))
-// })
-
-
-
-
-
-
-
-
-// fetch("",{})
-
-
->>>>>>> 15b6511fa1165cd5fdff27a7846c076469298fed
-
-
-
-
-  </script>
-  </body>
-  </html>
