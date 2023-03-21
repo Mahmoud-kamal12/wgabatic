@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Restaurant>
@@ -23,7 +24,7 @@ class RestaurantFactory extends Factory
             'm_name' => fake()->firstName,
             'm_phone' => fake()->phoneNumber,
             'contact_email' => fake()->unique()->email,
-            'password'  => bcrypt("123456789"),
+            'password'  => Hash::make("123456789"),
             'cover' => str_replace('public/','' , fake()->image('public/uploads',640,480, null, true)),
             'logo'  => str_replace('public/','' , fake()->image('public/uploads',640,480, null, true)),
             'pickup_fee' => fake()->numberBetween(10,2),

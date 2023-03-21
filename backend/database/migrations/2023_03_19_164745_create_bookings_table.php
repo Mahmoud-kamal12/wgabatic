@@ -18,12 +18,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('email');
+            $table->string('extra')->nullable();
+            $table->integer('status')->default(2);
             $table->integer('user_id')->unsigned();
             $table->integer('restaurant_id')->unsigned();
             $table->integer('table_id')->unsigned();
-            $table->date("day");
-            $table->time("from");
-            $table->time("to");
+            $table->date("day")->nullable();
+            $table->time("from")->nullable();
+            $table->time("to")->nullable();
 
 
             $table->foreign('user_id')

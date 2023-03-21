@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none!important;
-    text-transform: capitalize!important;  
+    text-transform: capitalize!important;
     outline: none!important;
     /* font-family: 'Reem Kufi', sans-serif; */
 }
@@ -27,7 +27,7 @@ body{
 .navbar-brand img{
     border-radius: 50%;
 }
-.navbar{ 
+.navbar{
     background: transparent ;
     background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9))!important ;
 
@@ -95,14 +95,14 @@ nav.sticky .navbar-brand img{
 .department .nav-link  {
      background-color: transparent!important;
      color: #EEE!important;
-   
+
 }
 
 
 #v-pills-tabContent{
     border:1px solid #E5E5E5 ;
     background-color: white!important;
-   
+
 }
 
 .order-btn{
@@ -120,6 +120,18 @@ nav.sticky .navbar-brand img{
 }
 .cancelled span{
     background-color:#ff0000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+.newstat span{
+    background-color:green;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+.completestat span{
+    background-color:#363f7f;
     color: #fff;
     padding: 5px;
     border-radius: 10px;
@@ -148,56 +160,56 @@ nav.sticky .navbar-brand img{
 .cart-list::-webkit-scrollbar {
     width: 7px;
   }
-  
+
   /* Track */
 .cart-list::-webkit-scrollbar-track {
       background-color: white;
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
   }
-   
+
   /* Handle */
 .cart-list::-webkit-scrollbar-thumb {
-    background: #dddddd; 
+    background: #dddddd;
     border-radius: 7px;
   }
-  
+
   /* Handle on hover */
 .cart-list::-webkit-scrollbar-thumb:hover {
-    background: #777777; 
+    background: #777777;
   }
 
-.pop-up-body{  
+.pop-up-body{
    margin-top: 250px;
 }
  .fa-frown-open{color:#999999;font-size: 80px;}
  .delete-message{ color: #575757;}
  .yes-del{
     background-color: #eb102d;
-    border: 0.5px solid #eb102d; 
-    color: #fffefe; 
+    border: 0.5px solid #eb102d;
+    color: #fffefe;
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
 }
 
 .cancle-del{
     background-color: #D0D0D0;
-    border: 0.5px solid #D0D0D0; 
-    color: #fffefe; 
+    border: 0.5px solid #D0D0D0;
+    color: #fffefe;
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
 
 }
 .yes-del:hover{
     background-color: transparent;
-    border: 0.5px solid #eb102d; 
-    color: #eb102d; 
+    border: 0.5px solid #eb102d;
+    color: #eb102d;
 
 }
 .cancle-del:hover{
     background-color: transparent;
-    border: 0.5px solid #D0D0D0; 
-    color: #D0D0D0; 
+    border: 0.5px solid #D0D0D0;
+    color: #D0D0D0;
 
 }
 form .form-group label { color: #464160; }
@@ -205,7 +217,7 @@ form .form-group input { outline: none!important;color: #585555; }
 .up-file{
     background-color: transparent;
     border: 1px solid #000;
-    
+
 }
 #exampleModal-order-1 {
     margin-top: 50px!important;
@@ -241,30 +253,30 @@ color: #313139;
     height: 690px;
     overflow: scroll;
     overflow-x: hidden;
-    
+
 
 }
 
 .orderD-modal-content::-webkit-scrollbar {
     width: 10px;
   }
-  
+
   /* Track */
   .orderD-modal-content::-webkit-scrollbar-track {
       background-color: white;
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
   }
-   
+
   /* Handle */
   .orderD-modal-content::-webkit-scrollbar-thumb {
-    background: #dddddd; 
+    background: #dddddd;
     border-radius: 7px;
   }
-  
+
   /* Handle on hover */
   .orderD-modal-content::-webkit-scrollbar-thumb:hover {
-    background: #777777; 
+    background: #777777;
   }
 
 .price-span{
@@ -276,7 +288,7 @@ color: #313139;
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
 .User-Seting-Form input{
-    text-transform: none!important;  
+    text-transform: none!important;
 
 }
 
@@ -287,19 +299,19 @@ color: #313139;
 /* responsive *//* responsive */
 /* responsive *//* responsive */
 /* responsive *//* responsive */
-@media screen and (max-width: 1357px) {     
-    
+@media screen and (max-width: 1357px) {
+
     .links-ul li {
         width: 50%!important;
         padding: 5px!important;
-    
-        } 
-   
+
+        }
+
 
 }
 
-@media screen and (max-width: 1199px) {     
-    
+@media screen and (max-width: 1199px) {
+
     .navbar-brand{
         padding: 5px!important;
     }
@@ -310,15 +322,15 @@ color: #313139;
     }
     .navbar-nav li{
         width: 100%;
-        padding: 5px!important; 
+        padding: 5px!important;
     }
-    
+
 
 }
 
 
 @media screen and (max-width: 991px) {
-  
+
     .welcomeTexte h1{
         font-size: 40px!important;
         transition: 0.4s;
@@ -331,14 +343,14 @@ color: #313139;
     .links-ul li {
         width: 100%!important;
         padding: 5px!important;
-    
+
         }
         /* .order_Details_btn{
             width: 50px!important;
         } */
 }
 
-@media screen and (max-width: 767px) { 
+@media screen and (max-width: 767px) {
     .welcomeTexte {
         margin-top: 200px!important;
         transition: 1s;
@@ -349,15 +361,15 @@ color: #313139;
     .welcomeTexte h2{
         font-size: 20px;
     }
-    
+
 }
 
 @media screen and (max-width: 575px) {
-     
+
 }
 
 @media screen and (max-width: 350px) {
-  
+
 }
 
 

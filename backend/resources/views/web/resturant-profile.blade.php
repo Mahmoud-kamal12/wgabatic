@@ -653,17 +653,19 @@
                         <th scope="col">ORDER ID</th>
                         <th scope="col">Customer Name</th>
                         <th scope="col">DATE</th>
+                        <th scope="col">STATUS</th>
                         <th scope="col">TOTAL PRICE</th>
                         <th scope="col">DETAIL</th>
                     </tr>
                     </thead>
                     <tbody>
 
-                    @foreach(auth()->guard('restaurant')->user()->orders()->whereNull("status")->Where("status",1)->get() as $order)
+                    @foreach(auth()->guard('restaurant')->user()->orders()->whereIn("status",[1,2])->get() as $order)
                         <tr>
                             <td>Order-{{$order->id}}</td>
                             <td>{{$order->user->first_name . " " . $order->user->last_name}}</td>
                             <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
+                            <td class="{{$order->status == 2 ? 'newstat':'completestat'}}"><span > {{$order->status == 2 ? 'new':'complete'}} </span></td>
                             <td>{{$order->total}}</td>
                             <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS{{$order->id}}"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
                             <!-- Modal -->
@@ -716,7 +718,7 @@
                                                 <div class="mt-4 font-weight-bolder">
                                                     <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
                                                     <ul>
-                                                       
+
                                                         <li><span> TOTAL: </span>   <span class=" price-span ">{{$order->total}}</span></li>
                                                     </ul>
                                                 </div>
@@ -765,49 +767,53 @@
                     </thead>
                     <tbody>
 
-                    <tr>
-                        <td>Order-25567</td>
-                        <td>	March 27, 2021</td>
-                        <td>75.71</td>
-                        <td>7.57</td>
-                        <td><button  type="button" data-toggle="modal" data-target="#all_tables"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                        <!-- Modal -->
-                        <div class="modal fade mt-5" id="all_tables" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content modal-style">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
+                    @foreach(auth()->guard('restaurant')->user()->bookings()->whereIn("status",[1,2])->get() as $order)
+                        <tr>
+                            <td>Order-{{$order->id}}</td>
+                            <td>{{$order->name}}</td>
+                            <td>{{\Carbon\Carbon::parse($order->day)->format("M d Y")}}</td>
+                            <td class="{{$order->status == 2 ? 'newstat':'completestat'}}"><span > {{$order->status == 2 ? 'new':'complete'}} </span></td>
+                            <td>{{$order->total}}</td>
 
 
-                                    <div class="modal-body">
-                                        <form class="col-lg-12" action="" method="">
-                                            <div class="d-flex">
-                                                <ul class="Extra-category-name">
-                                                    <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >table number:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >day:</span><span class="restu-detals-span2">    </span></li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" > TIME:</span> <span > from  :   </span> <span>  to :  </span> </li>
-                                                </ul>
-                                                <ul class="ml-auto mr-150">
-                                                    <h5 class="font-weight-bold">Customer Detail</h5>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                        <!-- //////////////////////////////////////////////////////////// -->
-                                            <div class="d-flex order-state">
-                                                <div class="col-lg-3">
-                                                    <h5 class="font-weight-bold">Order Status
-                                                    </h5>
+                            <td><button  type="button" data-toggle="modal" data-target="#all_tables{{$order->id}}"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                            <!-- Modal -->
+                            <div class="modal fade mt-5" id="all_tables{{$order->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content modal-style">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+
+                                        <div class="modal-body">
+                                            <form class="col-lg-12" action="{{route("web.updateBooking" , $order->id)}}">
+                                                <div class = "d-flex">
+                                                    <ul class="Extra-category-name">
+                                                        <h5 class="font-weight-bold">Kfc – Kentucky </h5>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >table number:</span><span class="restu-detals-span2">  25504  </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >day:</span><span class="restu-detals-span2">    </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" > TIME:</span> <span > from  :   </span> <span>  to :  </span> </li>
+                                                    </ul>
+                                                    <ul class="ml-auto mr-150">
+                                                        <h5 class="font-weight-bold">Customer Detail</h5>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
+                                                    </ul>
                                                 </div>
-                                            <!-- ////////////////////////////// -->
-                                                <div class="col-lg-9 ">
+                                                <hr>
+                                                <!-- //////////////////////////////////////////////////////////// -->
+                                                <div class="d-flex order-state">
+                                                    <div class="col-lg-3">
+                                                        <h5 class="font-weight-bold">Order Status
+                                                        </h5>
+                                                    </div>
+                                                    <!-- ////////////////////////////// -->
+                                                    <div class="col-lg-9 ">
                                                         <select class="col-lg-9" name="" id="">
                                                             <option > Cancelled </option>
                                                             <option > Completed </option>
@@ -815,19 +821,21 @@
                                                         </select>
                                                         <input class="col-lg-2" type="submit" value="submit" >
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        <!-- //////////////////////////////////////////////////// -->
+                                                <!-- //////////////////////////////////////////////////// -->
 
-                                        </form>
+                                            </form>
+                                        </div>
+
+
                                     </div>
-
-
                                 </div>
                             </div>
-                        </div>
 
-                    </tr>
+                        </tr>
+                    @endforeach
+
 
 
 
@@ -861,7 +869,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach(auth()->guard('restaurant')->user()->orders()->whereNotNull('status')->where("status",0) as $order)
+                    @foreach(auth()->guard('restaurant')->user()->orders()->where("status",0)->get() as $order)
                         <tr>
                             <td>Order-{{$order->id}}</td>
                             <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
@@ -875,7 +883,7 @@
                     </tbody>
                 </table>
                         <div class="">
-                            <h4> Totl Lose : <span> {{auth()->guard('restaurant')->user()->orders->whereNotNull('status')->where('status' , 0)->sum("total")}}	 </span> </h4>
+                            <h4> Totl Lose : <span> {{auth()->guard('restaurant')->user()->orders()->where('status' , 0)->sum("total")}}	 </span> </h4>
                         </div>
             </div>
 
@@ -890,7 +898,7 @@
                 <div class="bg-light p-3 earn-price">
 
                         <!-- <form class="resto-seeting-form" action="">
-                    
+
                                 <div class="form-row p-3">
                                     <div class="form-group col-lg-5 ">
                                         <label> From </label>
@@ -906,9 +914,9 @@
                                         <label for=""></label>
                                         <button type="submit" class="btn btn-danger col-lg-12  mt-2 ">get </button>
                                     </div>
-                                    
+
                                 </div>
-                        
+
 
                          </form> -->
 
@@ -928,8 +936,8 @@
                                     <input type="text" class="form-control col-lg-12 taxes " id="" placeholder=" government taxes " >
                                 </div>
                                 <br><br>
-                                
-                        
+
+
                                 <div class="form-group col-lg-12 ">
                                     <button type="submit" class="btn btn-danger col-lg-3 deduct ">deduct</button>
                                 </div>
@@ -938,7 +946,7 @@
 
 
 
-                     
+
 
 
                 </div>
@@ -959,8 +967,8 @@
 
                     <tr>
                         <td>March 3, 2021</td>
-                        <td>{{auth()->guard('restaurant')->user()->orders->sum("total")}} </td>
-                        <td>{{auth()->guard('restaurant')->user()->orders->sum("total") - auth()->guard('restaurant')->user()->orders->where('status' , 0)->sum("total") }}</td>
+                        <td>{{auth()->guard('restaurant')->user()->orders()->where("status",1)->sum("total")}} </td>
+                        <td>{{auth()->guard('restaurant')->user()->orders()->where("status",1)->sum("total") - auth()->guard('restaurant')->user()->orders->where('status' , 0)->sum("total") }}</td>
                     </tr>
 
 
@@ -977,20 +985,21 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="CHANGE_PASSWORD" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <form class="resto-seeting-form ">
-
+            <form class="resto-seeting-form " action="{{route("web.resetpassrest")}}" method="POST">
+                @method("POST")
+                @csrf
                 <h5 class=" text-capitalize mt-3"> CHANGE PASSWORD </h5>
                 <div class="row">
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <input type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required>
+                            <input name="old_password" type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control col-lg-12" id="exampleInputPassword2" placeholder="new password" required>
+                            <input name="password" type="password" class="form-control col-lg-12" id="exampleInputPassword2" placeholder="new password" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control col-lg-12" id="exampleInputPassword3" placeholder="confirm password" required>
+                            <input name="password_confirmation" type="password" class="form-control col-lg-12" id="exampleInputPassword3" placeholder="confirm password" required>
                         </div>
                     </div>
 

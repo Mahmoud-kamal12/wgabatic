@@ -7,7 +7,7 @@ use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\MealController;
 use \App\Http\Controllers\ResturantController;
 use \App\Http\Controllers\OrdertController;
-
+use \App\Http\Controllers\BookingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +49,7 @@ Route::name('web.')->group(function(){
         Route::get('/restaurant-profile/addreview', [ ResturantController::class ,'addreview'])->name('restaurantProfile.addreview');
 
         Route::get('/add-order', [ OrdertController::class ,'store'])->name('addOrder');
+        Route::get('/add-booking', [ BookingController::class ,'store'])->name('addBooking');
 
     });
 
@@ -73,6 +74,9 @@ Route::name('web.')->group(function(){
 
 //        Order
         Route::get('/update-order/{id}', [ OrdertController::class ,'update'])->name('updateOrder');
+        Route::get('/update-booking/{id}', [ BookingController::class ,'update'])->name('updateBooking');
+
+        Route::post('/resetpassrest', [ AuthController::class ,'resetpassrest'])->name('resetpassrest');
 
     });
 

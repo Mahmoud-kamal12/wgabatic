@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class ResturantController extends Controller
 {
     public function restaurantProfile(){
+
         return view('web.resturant-profile');
     }
 

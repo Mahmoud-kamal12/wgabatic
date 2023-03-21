@@ -146,6 +146,18 @@ nav.sticky .navbar-brand img{
     padding: 5px;
     border-radius: 10px;
 }
+.newstat span{
+    background-color:green;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+.completestat span{
+    background-color:#363f7f;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
 .p-in-review{color: #C9CCD6;font-size: 14px;}
 .h5-in-review{color: #676167;font-size: 16px;}
 .order-border{

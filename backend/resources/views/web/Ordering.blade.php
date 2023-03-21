@@ -192,53 +192,53 @@
                 Check out the best restaurants and Book Using following Form.</p>
 
 
-                <form class="form mt-5" >
+                <form class="form mt-5" id="bookingform">
                   <div class=" form-row mt-5 ">
                        <!-- ////////////////////////// -->
                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder=" name">
+                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder=" name" name="name">
                         </div>
                   <!-- ////////////////////////// -->
 
 
                   <!-- ////////////////////////// -->
                       <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="EMAIL">
+                          <input type="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="EMAIL" name="email">
                         </div>
                   <!-- ////////////////////////// -->
 
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                    <select  style="font-size: 14px;" class="form-select col-lg-12 p-2" aria-label="Default select example">
+                    <select required style="font-size: 14px;" class="form-select col-lg-12 p-2" aria-label="Default select example" name="table_id">
                       <option selected> avilable tables </option>
                         @foreach($restaurant->tables as $meal)
-                            <option value="1"> table {{$meal->number}} capacity {{$meal->cap}} price {{$meal->price}} </option>
+                            <option value="{{$meal->id}}"> table {{$meal->number}} capacity {{$meal->cap}} price {{$meal->price}} </option>
                         @endforeach
 
                     </select>                    </div>
                 <!-- ////////////////////////// -->
 
                         <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="phone">
+                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="phone" name="phone">
                         </div>
                   <!-- ////////////////////////// -->
 
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
                         <label> reservation   day  </label>
-                        <input type="date" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="retype password">
+                        <input type="date" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="retype " name="day">
                     </div>
 
 
                   <!-- ////////////////////////// -->
                       <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
                           <label> from </label>
-                          <input type="time" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder=" from  ">
+                          <input type="time" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder=" from " name="from">
                       </div>
 
 
                       <!-- ////////////////////////// -->
                       <div class=" col-lg-6 col-md-6 col-sm-12 p-4">
                           <label> to </label>
-                          <input type="time" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder=" to ">
+                          <input type="time" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder=" to " name="to">
                       </div>
 
 
@@ -246,14 +246,14 @@
 
 
                     <div class=" col-lg-12 col-md-12 col-sm-12 p-4">
-                      <textarea name="" id="" class="col-lg-12 p-2 mb-3" cols="20" rows="5" required placeholder="your instructions"></textarea>
+                      <textarea name="extra" id="" class="col-lg-12 p-2 mb-3" cols="20" rows="5" required placeholder="your instructions" ></textarea>
                       <!-- <input type="datetime-local"  id="validationCustom" value="" required placeholder="retype password"> -->
                     </div>
 
                   </div>
                   <!-- ////////////////////////////////////////// -->
 
-                  <button class="btn btn-danger signup-btun  p-1 ml-3 col-lg-2 col-md-2 col-sm-2 mb-3" type="submit">Submit</button>
+                  <button class="btn btn-danger signup-btun  p-1 ml-3 col-lg-2 col-md-2 col-sm-2 mb-3 " id="bookingbtn" type="submit">Submit</button>
 
                 </form>
 
@@ -336,7 +336,7 @@
                   <div id="meals-container">  </div>
                   <div id="total-price">Total price: 0.00 LE</div>
 
-            
+
 
 
 
@@ -501,7 +501,7 @@
 <!-- plugins -->
 
   <!-- main Styles -->
-  <!-- <script src="/assets/js/custom.js"></script> -->
+<script src="/assets/js/custom.js"></script>
     <script>
 
 
@@ -517,6 +517,7 @@ $(document).on("click" , ".Add_meal",function () {
 
 $(document).on("click" , "#confirmbtn",function (e) {
     e.preventDefault()
+
     $.ajax({
         type: "get",
         url: "{{route("web.addOrder")}}",
@@ -539,7 +540,7 @@ $(document).on("click" , "#confirmbtn",function (e) {
             alert("success")
         },
         error: function(data){
-          console.error(JSON.parse(data));                    
+          console.error(JSON.parse(data));
         },
         complete:function(){
           $('#confirmbtn').text('')
@@ -548,5 +549,42 @@ $(document).on("click" , "#confirmbtn",function (e) {
         },
     });
 })
+
+
+document.getElementById('bookingform').addEventListener('submit', (e) => {
+    e.preventDefault()
+    var data = $('#bookingform').serializeArray().reduce(function(obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+    }, {});
+    data['restaurant_id'] = document.getElementById("resturant_id").value
+    data = Object.assign({}, data);
+    console.log(data)
+    $.ajax({
+        type: "get",
+        url: "{{route("web.addBooking")}}",
+        data: data,
+        beforeSend:function(){
+            // $('#confirmbtn').text('')
+            // $('#confirmbtn').prop('disabled', true);
+            // $('#confirmbtn').append(`
+            // <div class="spinner-border" role="status">
+            //   <span class="sr-only">Loading...</span>
+            // </div>
+            // `)
+        },
+        success: function (response) {
+            alert("success")
+        },
+        error: function(data){
+            console.error(JSON.parse(data));
+        },
+        complete:function(){
+            // $('#confirmbtn').text('')
+            // $('#confirmbtn').prop('disabled', false);
+            // $('#confirmbtn').text('confirm order')
+        },
+    });
+});
 
 </script>
