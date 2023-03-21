@@ -762,6 +762,8 @@
                         <th scope="col">Name </th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone </th>
+                        <th scope="col">state</th>
+                        <th scope="col">day</th>
                         <th scope="col">DETAIL</th>
                     </tr>
                     </thead>
@@ -769,11 +771,13 @@
 
                     @foreach(auth()->guard('restaurant')->user()->bookings()->whereIn("status",[1,2])->get() as $order)
                         <tr>
-                            <td>Order-{{$order->id}}</td>
+                            <!-- <td>Order-{{$order->id}}</td> -->
                             <td>{{$order->name}}</td>
-                            <td>{{\Carbon\Carbon::parse($order->day)->format("M d Y")}}</td>
+                            <td>{{$order->email}}</td>
+                            <td>{{$order->phone}}</td>
                             <td class="{{$order->status == 2 ? 'newstat':'completestat'}}"><span > {{$order->status == 2 ? 'new':'complete'}} </span></td>
-                            <td>{{$order->total}}</td>
+                            <td>{{\Carbon\Carbon::parse($order->day)->format("M d Y")}}</td>
+                            <!-- <td>{{$order->total}}</td> -->
 
 
                             <td><button  type="button" data-toggle="modal" data-target="#all_tables{{$order->id}}"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
@@ -794,15 +798,16 @@
                                                 <div class = "d-flex">
                                                     <ul class="Extra-category-name">
                                                         <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >table number:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >day:</span><span class="restu-detals-span2">    </span></li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" > TIME:</span> <span > from  :   </span> <span>  to :  </span> </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >table number:</span><span class="restu-detals-span2">  {{$order->table_id}}  </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >day:</span><span class="restu-detals-span2">  {{$order->day}}   </span></li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" > TIME:</span> <span > from  :  {{$order->from}}   </span> <span>  to :  {{$order->to}}  </span> </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >Guest Requests : </span><span class="restu-detals-span2">  {{$order->extra}}   </span></li>
                                                     </ul>
                                                     <ul class="ml-auto mr-150">
                                                         <h5 class="font-weight-bold">Customer Detail</h5>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  {{$order->name}}   </span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> {{$order->phone}} </span>  </li>
+                                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">{{$order->email}} </span> </li>
                                                     </ul>
                                                 </div>
                                                 <hr>
@@ -814,7 +819,7 @@
                                                     </div>
                                                     <!-- ////////////////////////////// -->
                                                     <div class="col-lg-9 ">
-                                                        <select class="col-lg-9" name="" id="">
+                                                        <select class="col-lg-9" name="" id="" >
                                                             <option > Cancelled </option>
                                                             <option > Completed </option>
 

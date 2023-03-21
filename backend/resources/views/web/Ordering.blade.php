@@ -538,14 +538,20 @@ $(document).on("click" , "#confirmbtn",function (e) {
         },
         success: function (response) {
             alert("success")
+            $("#address").val("");
+            $("#extra").val("");
         },
         error: function(data){
           console.error(JSON.parse(data));
         },
         complete:function(){
+       
+
           $('#confirmbtn').text('')
           $('#confirmbtn').prop('disabled', false);
           $('#confirmbtn').text('confirm order')
+
+          
         },
     });
 })
@@ -575,6 +581,16 @@ document.getElementById('bookingform').addEventListener('submit', (e) => {
         },
         success: function (response) {
             alert("success")
+            $("input[name='name']").val("");
+            $("input[name='email']").val("");
+            $("input[name='phone']").val("");
+            $("input[name='day']").val("");
+            $("input[name='from']").val("");
+            $("input[name='to']").val("");
+            $("input[name='extra']").val("");
+
+
+
         },
         error: function(data){
             console.error(JSON.parse(data));
@@ -588,3 +604,11 @@ document.getElementById('bookingform').addEventListener('submit', (e) => {
 });
 
 </script>
+
+
+
+
+
+
+
+
