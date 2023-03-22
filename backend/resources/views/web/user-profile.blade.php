@@ -86,39 +86,13 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#My_orderd" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  My orderd</span></a>
                     <hr class="p-0 m-0">
-                    <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Statementas" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-list-alt mr-3 "></i>  Statementas</span></a>
-                    <hr class="p-0 m-0">
+                  
                     <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
                     <hr class="p-0 m-0">
                      <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#change_password" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase" id="click_password" ><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
-                    <hr class="p-0 m-0">
-                    <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
-                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i>  delete profile</span></a>
-                    <!-- ///////////////////////////////////////////////// -->
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog pop-up-body " role="document">
-                            <div class="modal-content">
-                                <div class="modal-body text-center">
-                                    <i class="fas fa-frown-open"></i>
-                                    <h4 class="delete-message mt-3">You Want To Delete?!!</h4>
-                                    <div class="row justify-content-center align-items-center">
-                                        <button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button>
-                                        <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancle </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ////////////////////////////////////////////////// -->
-                    <hr class="p-0 m-0">
-                    <a class="  nav-link py-2 p-2  " href="#!"  id="v-pills-settings-tab"  aria-controls="v-pills-settings" aria-selected="false">
-                        <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i>  Sign-out</span></a>
-
+                   
                 </div>
             </div>
             <!-- ////////////////////////////////////// -->

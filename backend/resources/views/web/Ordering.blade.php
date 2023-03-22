@@ -56,10 +56,10 @@
                     <div class="  col-lg-12 col-md-12 col-sm-12 ">
                       <div class=" d-flex resturant-logo">
                         <div class=" p-3 ">
-                          <img class="" src="/assets/photos/imgs/kfc.jpg" width="80" height="80"  alt="">
+                            <img class="" src="{{asset($restaurant->logo)}}" width="80" height="80"  alt="">
                         </div>
                          <div class=" p-3 text-light">
-                          <h1>Kfc – Kentucky</h1>
+                            <h4 class="text-left">{{$restaurant->name}}</h4>
                           <p>  <i class="fas fa-pizza-slice"></i> Hot Dogs, Pizza & Stakes</p>
                          </div>
                         </div>
@@ -123,12 +123,12 @@
                       <div class="single-menu d-flex">
                           <!-- <img src="/assets/photos/order_img.png"  alt=""> -->
                           <div class="menu-content ml-3  ">
-                              <h4 class="meal_name">{{$meal->name}}</h4>
+                              <h4 class="meal_name">{{$meal->name}}  </h4> 
                               <span >{{$meal->description}}</span>
                           </div>
                           <div  class="pl-3 ml-auto">
                               <span class="meal_price">{{$meal->price}} .LE</span> <br>
-                              <button data-mealid="{{$meal->id}}" id="" type="button" data-toggle="modal" data-target="#orderExtra-modal" class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                              <button data-mealid="{{$meal->id}}" id="" type="button" class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
                           </div>
                       </div>
                   </li>
@@ -510,10 +510,6 @@
 
 
 var meals = [];
-$(document).on("click" , ".Add_meal",function () {
-  meals.push($(this).data("mealid"))
-  console.log(meals);
-})
 
 $(document).on("click" , "#confirmbtn",function (e) {
     e.preventDefault()
@@ -621,16 +617,27 @@ const plusButtons = document.querySelectorAll('.Add_meal');
       const mealName = button.parentElement.parentElement.querySelector('.meal_name').textContent;
       const mealPrice = parseFloat(button.parentElement.querySelector('.meal_price').textContent);
 
-      const newItemHTML = `
-        <li style="list-style:none">
-          <div class="d-flex">
-            <span class="name">${mealName}</span>
-            <span class="price ml-auto">$${mealPrice.toFixed(2)} <i id="delete-${mealName}" class="ml-3 fa fa-times-circle"></i></span>
-          </div>
-        </li>
-      `;
+      const meal_id = button.dataset.mealid;
 
-      itemList.insertAdjacentHTML('beforeend', newItemHTML);
+      if(meals.indexOf(meal_id) === -1) {
+        meals.push(meal_id);
+        const newItemHTML = `
+          <li id="limealid${meal_id}" style="list-style:none">
+            <div class="d-flex">
+              <span class="name">${mealName} <span id="countid${meal_id}" data-count="1"> (1) </span> </span>
+              <span class="price ml-auto">$${mealPrice.toFixed(2)} <i data-mealid="${meal_id}" data-mealpriceid=${mealPrice} class="ml-3 fa fa-times-circle delete-meal"></i></span>
+            </div>
+          </li>
+        `;
+
+        itemList.insertAdjacentHTML('beforeend', newItemHTML);
+
+      }else{
+        let span = $(`#countid${meal_id}`);
+        let count = parseInt(span.data("count")) + 1 ;
+        span.data("count",count)
+        span.text(`(${count})`) 
+      }
 
       total += mealPrice;
       totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
@@ -641,9 +648,25 @@ const plusButtons = document.querySelectorAll('.Add_meal');
   });
 
 
+  
+$(document).on("click",".delete-meal",function(){
+      const meal_id = $(this).data("mealid");
+      const mealpriceid = $(this).data("mealpriceid");
+
+        let span = $(`#countid${meal_id}`);
+        let count = parseInt(span.data("count")) ;
 
 
+      document.getElementById(`limealid${meal_id}`).remove();
+      const index = meals.indexOf(meal_id);
+      meals.splice(index, 1);
+      console.log(count);
+      total -= (mealpriceid * count)
+     
+      totalPrice.textContent = `Total Price: $${total}`;
 
+
+})
 
 
 </script>
