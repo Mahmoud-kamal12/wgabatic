@@ -8,6 +8,7 @@ class UserController extends Controller
 {
     public function userProfile(){
         $user = auth()->guard('web')->user();
+
         return view('web.user-profile', compact('user'));
     }
 }

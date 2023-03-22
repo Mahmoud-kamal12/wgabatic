@@ -8,19 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/BookingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ResturantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ResturantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Review.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/factories/RestaurantFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/factories/RestaurantFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2022_12_06_125115_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2022_12_06_125115_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2023_03_19_164745_create_bookings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2023_03_19_164745_create_bookings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/assets/css/userProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/assets/css/userProfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/resturant-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/resturant-profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/user-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/user-profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/css/resturantProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/css/resturantProfile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +176,8 @@
       <workItem from="1679312658786" duration="720000" />
       <workItem from="1679314082073" duration="632000" />
       <workItem from="1679329265684" duration="10660000" />
+      <workItem from="1679417408209" duration="690000" />
+      <workItem from="1679510468331" duration="3523000" />
     </task>
     <servers />
   </component>

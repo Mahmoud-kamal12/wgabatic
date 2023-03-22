@@ -51,6 +51,8 @@ Route::name('web.')->group(function(){
         Route::get('/add-order', [ OrdertController::class ,'store'])->name('addOrder');
         Route::get('/add-booking', [ BookingController::class ,'store'])->name('addBooking');
 
+        Route::post('/resetpassuser', [ AuthController::class ,'resetpassuser'])->name('resetpassuser');
+
     });
 
     Route::group(["middleware" => "auth:restaurant"],function (){
@@ -77,6 +79,7 @@ Route::name('web.')->group(function(){
         Route::get('/update-booking/{id}', [ BookingController::class ,'update'])->name('updateBooking');
 
         Route::post('/resetpassrest', [ AuthController::class ,'resetpassrest'])->name('resetpassrest');
+
 
     });
 

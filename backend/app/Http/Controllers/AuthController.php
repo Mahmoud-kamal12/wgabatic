@@ -92,8 +92,7 @@ class AuthController extends Controller
         ]);
 
         $credentials = $validator->validated();
-        $user = Auth::guard('restaurant')->attempt(['email' => \auth()->guard('restaurant')->user()->email , 'password' => $credentials['old_password']]);
-
+        $user = Auth::guard('web')->attempt(['email' => \auth()->guard('web')->user()->email , 'password' => $credentials['old_password']]);
         if ($user){
             \auth()->user()->update([
                 'password' => $credentials['password'],

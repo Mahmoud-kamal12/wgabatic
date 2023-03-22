@@ -51,7 +51,7 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-12 col-sm-12 text-center welcomeTexte">
                     <div class=" text-white text-center mt-5 ">
-                        <h2 class="display-3"> Welcome Mostafa  </h2>
+                        <h2 class="display-3"> Welcome {{auth()->user()->first_name . " " . auth()->user()->last_name}}  </h2>
                     </div>
                 </div>
             </div>
@@ -86,13 +86,13 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#My_orderd" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  My orderd</span></a>
                     <hr class="p-0 m-0">
-                  
+
                     <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
                     <hr class="p-0 m-0">
                      <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#change_password" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase" id="click_password" ><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
-                   
+
                 </div>
             </div>
             <!-- ////////////////////////////////////// -->
@@ -123,24 +123,33 @@
                         <div class="row tab-text  cart-list">
                             <table class="table">
                                 <thead class="thead-dark">
-                                
+
                                     <th scope="col">#</th>
                                     <th scope="col">Resturant name</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">status</th>
                                     <th scope="col">details</th>
-                               
+
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>MCDONALDS</td>
-                                    <td>january 5,2021</td>
-                                    <td class="processing"> <span>processing</span> </td>
-                                    <td><button  type="button" data-toggle="modal" data-target="#exampleModal-order-1"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                                </tr>   
+
+                                @foreach(auth()->guard('web')->user()->booking()->get() as $booking)
+
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>{{$booking->restaurant->name}}</td>
+                                        <td>{{\Carbon\Carbon::parse($booking->Created_at)->format("M d Y")}}</td>
+                                        @if($booking->status == 2)
+                                            <td class="processing"> <span>processing</span> </td>
+                                        @elseif($booking->status == 1)
+                                            <td class="processing"> <span style="background: green">Complete</span> </td>
+                                        @else
+                                            <td class="processing"> <span style="background: red">Cancel</span> </td>
+                                        @endif
+                                        <td><button  type="button" data-toggle="modal" data-target="#exampleModal-order-{{$booking->id}}"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                                    </tr>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal-order-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal-order-{{$booking->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -151,15 +160,13 @@
                                                 </div>
 
                                                 <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
+                                                    <h4 class="  model-name text-uppercase mt-2" >{{$booking->restaurant->name}}</h4>
                                                     <ul class="ml-2">
                                                         <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id))</span>
+                                                            <span class="first-span">Booking id :{{$booking->id}}</span>
                                                         </li >
                                                         <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">Booking date :</span>
-                                                            <span class="ml-1 second-span">((date and time))</span>
+                                                            <span class="first-span">Booking date : {{\Carbon\Carbon::parse($booking->Created_at)->format("M d Y")}}</span>
                                                         </li >
                                                     </ul>
 
@@ -168,31 +175,27 @@
                                                     <h4 class=" model-name text-uppercase mt-2" >Customer Deatil</h4>
                                                     <ul class="ml-2">
                                                         <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">FIRST NAME:</span>
-                                                            <span class="ml-1 second-span">((the first person name))</span>
+                                                            <span class="first-span">NAME: {{$booking->name}}</span>
                                                         </li >
                                                         <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">LAST NAME:</span>
-                                                            <span class="ml-1 second-span">((the last name))</span>
+                                                            <span class="first-span">E-Mail: {{$booking->email}}</span>
                                                         </li >
                                                         <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span"> EMAIL:</span>
-                                                            <span class="ml-1 second-span">((the Email EX :cashitebay@gmail.com ))</span>
+                                                            <span class="first-span"> PHONE: {{$booking->phone}}</span>
                                                         </li >
                                                     </ul>
 
-                                                    <div class="text-center mt-5 ">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                                    </div>
-
 
                                                 </div>
-<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                                                <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
                                             </div>
                                         </div>
                                     </div>
-                       
-  
+
+
+
+                                @endforeach
+
                                 </tbody>
                             </table>
 
@@ -201,22 +204,27 @@
                         </div>
                     </div>
 
-     
+
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <h5 class="">REVIEW GIVEN <span style="font-size: 10px;" class=" text-danger"> number of Reviews </span></h5>
+                        <h5 class="">REVIEW GIVEN <span style="font-size: 10px;" class=" text-danger"> {{auth()->user()->reviews->count()}} </span></h5>
                         <div class="d-flex">
                             <!-- if no reviews display this  -->
                             <!-- <div class="mt-3"><h6> ther is no reviews yet </h6></div> -->
                         </div>
                         <br>
-                        <div class="">
-                            <p class="p-in-review"> resturant name that i make recview on it display here</p>
-                            <h5 class="h5-in-review">review display here </h5>
-                        </div>
-                        
+                        @foreach(auth()->user()->reviews as $reviw)
+                            <div class="">
+                                <p class="p-in-review">{{$reviw->restaurant->name}}</p>
+                                <h5 class="h5-in-review">{{$reviw->body}} </h5>
+                            </div>
+                            <hr>
+
+                        @endforeach
+
+
                     </div>
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
@@ -225,115 +233,83 @@
                         <h5 class="">MY ORDERS</h5>
                         <hr>
                         <div class="row">
-                            <div class="col-lg-6 p-3">
-                                <div class=" p-3 order-border">
-                                    <div class="d-flex">
-                                        <div class=""><img class=" " src="/assets/photos/imgs/mcdonals-1-1.png" width="50px" height="50px" alt=""></div>
-                                        <div class="ml-3 mt-1"><strong> mcdonalds </strong>  <br> <p class="p-in-order"> breakfast-takeaway </p></div>
-                                        <div class=" text-danger"><p class="ml-5"> $80.66 </p></div>
-                                    </div>
-
-                                    <hr>
-                                    <div class="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
-                                        <p class="p-in-review">Feb 10,2021 11:46 AM</p>
-                                    </div>
-                                    <button  type="button" data-toggle="modal" data-target="#staticBackdrop" class=" order_Details_btn  bg-success rounded-pill text-white"> ORDER DETAILS  </button>
-                                    <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel order  </button>
-                                    <!-- Button trigger modal -->
 
 
-                                    <!-- Modal -->
-                                    <div class="modal fade category-crud" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content orderD-modal-content modal-style ">
-                                                <div class="modal-header">
-                                                    <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <hr>
-                                                <!-- /////////////////////////////////////////////////////// -->
-                                                <div class="modal-body">
-                                                    <h4 class="  model-name text-uppercase mt-2" >RESTURANT NAME</h4>
-                                                    <ul class="ml-2">
-                                                        <li class=" mt-2 modal-order-data">
-                                                            <span class="first-span">Booking id :</span>
-                                                            <span class="ml-1 second-span">((the meal id EX 25543))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PICK UP TIME :</span>
-                                                            <span class="ml-1 second-span">((time of preparing order Ex :40 Minutes   ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">DELIVERY DATE :</span>
-                                                            <span class="ml-1 second-span">((date and time EX Mar 19, 2021 04:15 PM ))</span>
-                                                        </li >
-                                                        <li class=" mt-2  modal-order-data">
-                                                            <span class="first-span">PAYMENT STATUS :</span>
-                                                            <span class="ml-1 second-span">((state of order price Ex Pending ))</span>
-                                                        </li >
-                                                    </ul>
+                            @foreach(auth()->guard('web')->user()->orders()->get() as $order)
+                                <div class="col-lg-6 p-3">
+                                    <div class=" p-3 order-border">
+                                        <div class="d-flex">
+                                            <div class=""><img class=" " src="{{asset($order->restaurant->logo)}}" width="50px" height="50px" alt=""></div>
+                                            <div class="ml-3 mt-1"><strong> {{$order->restaurant->name}} </strong>  <br> <p class="p-in-order"> </p></div>
+                                            <div class=" text-danger"><p class="ml-5"> {{$order->total}} .LE</p></div>
+                                        </div>
 
-                                                    <div class="text-left mt-5 w-100">
-                                                        <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
+                                        <hr>
+                                        <div class="">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
+                                            <p class="p-in-review">{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</p>
+                                        </div>
+                                        <button  type="button" data-toggle="modal" data-target="#staticBackdrop{{$order->id}}" class=" order_Details_btn  bg-success rounded-pill text-white"> ORDER DETAILS  </button>
+{{--                                        <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel order  </button>--}}
+                                        <!-- Button trigger modal -->
+
+
+                                        <!-- Modal -->
+                                        <div class="modal fade category-crud" id="staticBackdrop{{$order->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content orderD-modal-content modal-style ">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
                                                     </div>
-
                                                     <hr>
+                                                    <!-- /////////////////////////////////////////////////////// -->
+                                                    <div class="modal-body">
+                                                        <h4 class="  model-name text-uppercase mt-2" >{{$order->restaurant->name}}</h4>
 
-                                                    <h4 class="  model-name text-uppercase mt-2" >Food Menu</h4>
-                                                    <table class="table ">
-                                                        <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">PRODUCTS</th>
-                                                            <th scope="col">PRICE PER</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <span class="font-weight-bolder">Pizza</span>
-                                                                <ul>
-                                                                    <li>Foodbakery Special Pizza</li>
-                                                                    <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> 1.00 </span> </li>
-                                                                    <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> 0.00 </span> </li>
-                                                                    <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> 0.00 </span> </li>
-                                                                    <li>Extra Topping - Tuna : <span class="extra_order_Price"> 3.00 </span> </li>
-                                                                    <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> 1.00 </span> </li>
-                                                                    <li> Cold Drink - Cocktail : <span class="extra_order_Price"> 2.00 </span> </li>
-                                                                </ul>
-                                                            </td>
-                                                            <td class="font-weight-bolder">50$</td>
+                                                        <table class="table ">
+                                                            <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">PRODUCTS</th>
+                                                                <th scope="col">PRICE PER</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($order->items as $item)
+                                                            <tr>
+                                                                <td>{{$item->name}}</td>
+                                                                <td class="font-weight-bolder">{{$item->price}} .LE</td>
 
-                                                        </tr>
+                                                            </tr>
+                                                            @endforeach
 
+                                                            </tbody>
+                                                        </table>
 
-                                                        </tbody>
-                                                    </table>
-
-                                                    <hr>
-                                                    <div class="mt-4">
-                                                        <h5 class="text-uppercase">Order Total</h5>
-                                                        <ul>
-                                                            <li><span> SUBTOTAL: </span>   <span class=" price-span ">57.00</span></li>
-                                                            <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00</span></li>
-                                                            <li><span> VAT (13%): </span>   <span class=" price-span ">8.71</span></li>
-                                                            <li><span> TOTAL: </span>   <span class=" price-span ">75.71</span></li>
-                                                        </ul>
+                                                        <hr>
+                                                        <div class="mt-4">
+                                                            <h5 class="text-uppercase">Order Total</h5>
+                                                            <ul>
+                                                                <li><span> TOTAL: </span>   <span class=" price-span ">{{$order->total}}</span></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
+                                                    <!-- /////////////////////////////////////////////////////// -->
                                                 </div>
-                                                <!-- /////////////////////////////////////////////////////// -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+
+
                             <!-- //////////////////////////////////////////// -->
                             <!-- //////////////////////////////////////////// -->
                             <!-- //////////////////////////////////////////// -->
                             <!-- //////////////////////////////////////////// -->
-                            
+
                         </div>
 
 
@@ -365,7 +341,7 @@
                                     <td> <span> order - mcdonalds   <!-- اسم المطعم و الطلب -->  </span> </td>
                                     <td><span> $54.16 </span></td>
                                 </tr>
-                               
+
                                 </tbody>
                             </table>
 
@@ -387,14 +363,14 @@
                                         <input value="{{$user->first_name}}"  type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter First Name" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Last Name" required>
+                                        <input value="{{$user->last_name}}" type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Last Name" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <input type="email" value="{{$user->email}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="exampleInputPhone" placeholder="Phone" required>
+                                        <input type="text" {{$user->phone}} class="form-control" id="exampleInputPhone" placeholder="Phone" required>
                                     </div>
 
 
@@ -416,30 +392,31 @@
            <!-- ///// ////////////////////////////////////////////////////////// -->
            <!-- /////////////////////////////////////////////////////////////// -->
            <!-- /////////////////////////////////////////////////////////////// -->
-         
+
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="change_password" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <h5>CHANGE PASSWORD</h5>
-         
+
             <div id="myF" class="row">
-              <form class="User-Seting-Form"   id="myForm2" action=" " method="POST">
-            <div class="col-lg-12">
+              <form class="User-Seting-Form"   id="myForm2" action="{{route("web.resetpassuser")}}" method="POST">
+                  @method("POST")
+                  @csrf
+                <div class="col-lg-12">
 
-              <div class="form-group">
-                <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="Old Password" >
-                <h4 class="mt-3" id="server_err_password" style="text-align: center;">  </h4>
-              </div>
+                      <div class="form-group">
+                          <input name="old_password" type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required>
+                      </div>
 
-              <div class="form-group">  
-                <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="New Password">
-              </div>
+                      <div class="form-group">
+                          <input name="password" type="password" class="form-control col-lg-12" id="exampleInputPassword2" placeholder="new password" required>
+                      </div>
 
-              <div class="form-group">
-                <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="Confirm Password" >
-              </div>
-           
-            </div>
-            
-              <button type="submit" class="btn btn-danger ml-3">Submit</button>
+                      <div class="form-group">
+                          <input name="password_confirmation" type="password" class="form-control col-lg-12" id="exampleInputPassword3" placeholder="confirm password" required>
+                      </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-danger ml-3">Submit</button>
 
             </div>
           </form>
