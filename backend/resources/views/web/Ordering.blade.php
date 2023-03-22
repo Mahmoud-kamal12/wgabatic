@@ -121,7 +121,7 @@
                 @foreach($restaurant->meals as $meal)
                     <li class="mt-4  menu ">
                       <div class="single-menu d-flex">
-                          <img src="/assets/photos/order_img.png"  alt="">
+                          <!-- <img src="/assets/photos/order_img.png"  alt=""> -->
                           <div class="menu-content ml-3  ">
                               <h4 class="meal_name">{{$meal->name}}</h4>
                               <span >{{$meal->description}}</span>
@@ -333,9 +333,9 @@
 
           <div class="meal-info  p-1 ">
 
-                  <div id="meals-container">  </div>
-                  <div id="total-price">Total price: 0.00 LE</div>
-
+            <ul class="item-list"></ul>
+            <div class="total-price"></div>
+               
 
 
 
@@ -602,6 +602,49 @@ document.getElementById('bookingform').addEventListener('submit', (e) => {
         },
     });
 });
+
+
+
+
+
+
+
+
+const plusButtons = document.querySelectorAll('.Add_meal');
+  const itemList = document.querySelector('.item-list');
+  const totalPrice = document.querySelector('.total-price');
+
+  let total = 0;
+
+  plusButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const mealName = button.parentElement.parentElement.querySelector('.meal_name').textContent;
+      const mealPrice = parseFloat(button.parentElement.querySelector('.meal_price').textContent);
+
+      const newItemHTML = `
+        <li style="list-style:none">
+          <div class="d-flex">
+            <span class="name">${mealName}</span>
+            <span class="price ml-auto">$${mealPrice.toFixed(2)} <i id="delete-${mealName}" class="ml-3 fa fa-times-circle"></i></span>
+          </div>
+        </li>
+      `;
+
+      itemList.insertAdjacentHTML('beforeend', newItemHTML);
+
+      total += mealPrice;
+      totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
+
+      
+     
+    });
+  });
+
+
+
+
+
+
 
 </script>
 

@@ -129,25 +129,88 @@
             </ul> -->
            <hr>
            <article style="box-sizing: border-box;" class="p-1">
-            <!-- <div class="menu-title" id="pizza">
-              <h4 id="pizza"> Pizza  <span> <a class="arrow-top-link" href="#to-top">   </a> </span>  </h4> 
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
-            </div> -->
+
+
             <ul>
+               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                  <div class="single-menu">
-                      <div class="menu-content ml-3 ">
-                          <h4> Special Pizza<span>50.00</span></h4>
+               <li class="mt-4  menu ">
+                      <div class="single-menu d-flex">
+                          <div class="menu-content ml-3  ">
+                              <h4 class="meal_name">pizz</h4>
                           <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                          </div>
+                          <div  class="pl-3 ml-auto">
+                              <span class="meal_price">20.00</span> <br>
+                              <button data-mealid="{{$meal->id}}" id="" type="button"  class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                          </div>
                       </div>
-                      <div  class="pl-3">
-                        <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
-                        <!-- Button trigger modal -->  
+                  </li>
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+                  <li class="mt-4  menu ">
+                      <div class="single-menu d-flex">
+                          <div class="menu-content ml-3  ">
+                              <h4 class="meal_name">pizz</h4>
+                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                          </div>
+                          <div  class="pl-3 ml-auto">
+                              <span class="meal_price">15.00</span> <br>
+                              <button data-mealid="{{$meal->id}}" id="" type="button"  class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                          </div>
                       </div>
-                  </div>
-              </li>
+                  </li>
+
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+                  <li class="mt-4  menu ">
+                      <div class="single-menu d-flex">
+                          <div class="menu-content ml-3  ">
+                              <h4 class="meal_name">pizz</h4>
+                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                          </div>
+                          <div  class="pl-3 ml-auto">
+                              <span class="meal_price">400.00</span> <br>
+                              <button data-mealid="{{$meal->id}}" id="" type="button"  class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                          </div>
+                      </div>
+                  </li>
+
+
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+               <li class="mt-4  menu ">
+                      <div class="single-menu d-flex">
+                          <div class="menu-content ml-3  ">
+                              <h4 class="meal_name">lc ;ds skdnlcsz</h4>
+                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                          </div>
+                          <div  class="pl-3 ml-auto">
+                              <span class="meal_price">100.00</span> <br>
+                              <button data-mealid="{{$meal->id}}" id="" type="button"  class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                          </div>
+                      </div>
+                  </li>
+
+
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+               <li class="mt-4  menu ">
+                      <div class="single-menu d-flex">
+                          <div class="menu-content ml-3  ">
+                              <h4 class="meal_name">pizz ncjbsidlc</h4>
+                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                          </div>
+                          <div  class="pl-3 ml-auto">
+                              <span class="meal_price">250.00</span> <br>
+                              <button data-mealid="{{$meal->id}}" id="" type="button"  class="order-btn Add_meal"> <i class="fa fa-plus text-danger"></i> </button>
+                          </div>
+                      </div>
+                  </li>
+
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -338,15 +401,19 @@
 
           <div class="meal-info  p-1 ">
            
-           
-            <div class=" meal mt-1">
-              <div class="d-flex">
-                  <span class="days" >Special Pizza</span> 
-                  <!-- <span class="space-span" style="width: 35%;"></span> -->
-                  <span class="time ml-auto">50.00   <i class="ml-3 fa fa-times-circle"></i>  </span>
+           <!-- <div class="cart">
+              <h2>Cart</h2>
+              <div class="item-list">
+
               </div>
-            </div>
-            
+              <div class="total">
+                <span>Total:</span>
+                <span id="total-price">0.00</span>
+              </div>
+            </div> -->
+
+            <ul class="item-list"></ul>
+            <div class="total-price"></div>
 
 
             <p class="mt-5">type you extra here</p>
@@ -519,38 +586,68 @@
 
   <!-- main Styles --> 
   <script src="../public/js/custom.js"></script>
-    <script>
       
-        /* 1. Preloder */
-    // $(window).on('load', function () {
-    //     $('#preloader-active').delay(1050).fadeOut('slow');
-    //     $('body').delay(850).css({
-    //       'overflow': 'visible'
-    //     });
-    //   });
 
 
-    $(function() {
-  $('.tab-pane ul li a').bind('click', function(event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top - 49
-    }, 1000);
-    event.preventDefault();
+
+<script>
+  const plusButtons = document.querySelectorAll('.Add_meal');
+  const itemList = document.querySelector('.item-list');
+  const totalPrice = document.querySelector('.total-price');
+
+  let total = 0;
+
+  plusButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const mealName = button.parentElement.parentElement.querySelector('.meal_name').textContent;
+      const mealPrice = parseFloat(button.parentElement.querySelector('.meal_price').textContent);
+
+      const newItemHTML = `
+        <li style="list-style:none">
+          <div class="d-flex">
+            <span class="name">${mealName}</span>
+            <span class="price ml-auto">$${mealPrice.toFixed(2)} <i id="delete-${mealName}" class="ml-3 fa fa-times-circle"></i></span>
+          </div>
+        </li>
+      `;
+
+      itemList.insertAdjacentHTML('beforeend', newItemHTML);
+
+      total += mealPrice;
+      totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
+
+      
+     
+    });
   });
-}); 
+</script>
 
 
 
-$(function() {
-  $('.menu-title h4 span a').bind('click', function(event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top - 49
-    }, 1000);
-    event.preventDefault();
-  });
-}); 
-  </script>
+
+
+
+
+
   </body>
   </html>
+
+
+                 <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+             <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- 
+              <li class="mt-4 d-flex menu ">
+                  <div class="single-menu">
+                      <div class="menu-content ml-3 ">
+                          <h4  class="meal_name"> Special Pizza<span class="meal_price">50.00</span></h4>
+                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                      </div>
+                      <div  class="pl-3">
+                        <button  type="button"   class="order-btn plus"> <i class="fa fa-plus text-danger"></i> </button>
+                      </div>
+                  </div>
+              </li> -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
