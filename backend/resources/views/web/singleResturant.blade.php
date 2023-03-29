@@ -1,7 +1,8 @@
  <!-- ///////////////////////////////////////////////// -->
             <!-- ///////////////////////////////////////////////// -->
             <div class="col-lg-4 col-md-6 mt-5 mb-5">
-                <div style="background-image: url({{(asset($restaurant->cover))}});" class="resto-img rounded-0">
+                <!-- <div style="background-image: url({{(asset($restaurant->cover))}});" class="resto-img rounded-0"> -->
+                <div style="background-image: url(/assets/photos/kfc-meal.png)" class="resto-img rounded-0">
                     <div class=" open-sight ">
                         OPEN
                         <div class="bookmarkRibbon"></div>
