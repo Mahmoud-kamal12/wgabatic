@@ -7,9 +7,6 @@
     <list default="true" id="be8aceed-eecc-409d-ad2f-33aec62012bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/OrderItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/OrderItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +174,8 @@
       <workItem from="1679510468331" duration="3858000" />
       <workItem from="1679661263042" duration="211000" />
       <workItem from="1679662288009" duration="86000" />
-      <workItem from="1680136642678" duration="1054000" />
+      <workItem from="1680136642678" duration="1208000" />
+      <workItem from="1680189505885" duration="598000" />
     </task>
     <servers />
   </component>
