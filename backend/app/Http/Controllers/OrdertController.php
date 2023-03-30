@@ -54,15 +54,16 @@ class OrdertController extends Controller
             ]);
             $total = 0;
             foreach ($data['meals'] as $id){
-                $meal = Meal::find($id);
+                $meal = Meal::find($id["id"]);
                 $item = OrderItem::create([
                     'order_id' => $order->id,
                     'meal_id' => $meal->id,
                     'price' => $meal->price,
                     'name' => $meal->name,
+                    'quantity' => $id["q"],
                     'description' => $meal->description
                 ]);
-                $total += (int)$meal->price;
+                $total += (int)$meal->price * $id["q"];
             }
             $order->total = $total;
             $order->save();

@@ -123,7 +123,7 @@
                       <div class="single-menu d-flex">
                           <!-- <img src="/assets/photos/order_img.png"  alt=""> -->
                           <div class="menu-content ml-3  ">
-                              <h4 class="meal_name">{{$meal->name}}  </h4> 
+                              <h4 class="meal_name">{{$meal->name}}  </h4>
                               <span >{{$meal->description}}</span>
                           </div>
                           <div  class="pl-3 ml-auto">
@@ -335,7 +335,7 @@
 
             <ul class="item-list"></ul>
             <div class="total-price"></div>
-               
+
 
 
 
@@ -541,13 +541,13 @@ $(document).on("click" , "#confirmbtn",function (e) {
           console.error(JSON.parse(data));
         },
         complete:function(){
-       
+
 
           $('#confirmbtn').text('')
           $('#confirmbtn').prop('disabled', false);
           $('#confirmbtn').text('confirm order')
 
-          
+
         },
     });
 })
@@ -619,8 +619,8 @@ const plusButtons = document.querySelectorAll('.Add_meal');
 
       const meal_id = button.dataset.mealid;
 
-      if(meals.indexOf(meal_id) === -1) {
-        meals.push(meal_id);
+      if(meals.findIndex((me)=> me.id === meal_id ) === -1) {
+        meals.push({id:meal_id,q:1});
         const newItemHTML = `
           <li id="limealid${meal_id}" style="list-style:none">
             <div class="d-flex">
@@ -634,21 +634,23 @@ const plusButtons = document.querySelectorAll('.Add_meal');
 
       }else{
         let span = $(`#countid${meal_id}`);
+        var iii = meals.findIndex((me)=> me.id === meal_id )
+        meals[iii].q += 1;
         let count = parseInt(span.data("count")) + 1 ;
         span.data("count",count)
-        span.text(`(${count})`) 
+        span.text(`(${count})`)
       }
 
       total += mealPrice;
       totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
 
-      
-     
+
+
     });
   });
 
 
-  
+
 $(document).on("click",".delete-meal",function(){
       const meal_id = $(this).data("mealid");
       const mealpriceid = $(this).data("mealpriceid");
@@ -658,11 +660,10 @@ $(document).on("click",".delete-meal",function(){
 
 
       document.getElementById(`limealid${meal_id}`).remove();
-      const index = meals.indexOf(meal_id);
+      const index = meals.findIndex((me)=> me.id === meal_id );
       meals.splice(index, 1);
-      console.log(count);
       total -= (mealpriceid * count)
-     
+
       totalPrice.textContent = `Total Price: $${total}`;
 
 
