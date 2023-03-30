@@ -642,7 +642,7 @@ const plusButtons = document.querySelectorAll('.Add_meal');
       }
 
       total += mealPrice;
-      totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
+      totalPrice.textContent = `Total Price: ${total.toFixed(2)} LE`;
 
 
 
