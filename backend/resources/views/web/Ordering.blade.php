@@ -121,7 +121,7 @@
                 @foreach($restaurant->meals as $meal)
                     <li class="mt-4  menu ">
                       <div class="single-menu d-flex">
-                          <!-- <img src="/assets/photos/order_img.png"  alt=""> -->
+                          <img src="/assets/photos/order_img.png"  alt="">
                           <div class="menu-content ml-3  ">
                               <h4 class="meal_name">{{$meal->name}}  </h4>
                               <span >{{$meal->description}}</span>
