@@ -125,9 +125,12 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#MENU_BUILDER" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-elementor mr-3 "></i>  MENU BUILDER</span></a>
                     <hr class="p-0 m-0">
-                     <!-- <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Reviews" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Reviews" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fas fa-comment-dots mr-3 "></i>  the given Reviews</span></a>
-                    <hr class="p-0 m-0"> -->
+                    <hr class="p-0 m-0">
+                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#HOURS" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fas fa-hourglass mr-3 "></i>  OPEN HOURS</span></a>
+                    <hr class="p-0 m-0">
                     @if(auth()->guard('restaurant')->user()->table_status)
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Tables" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-table mr-3 "></i>  Tables</span></a>
@@ -162,13 +165,14 @@
                         <div class="row tab-text">
                             <div  class="col-lg-10 ml-auto m-auto dashbord-bac text-white ">
                                 <div class="welcomed-text p-2">
-                                    <h3 class="mt-3">Welcome To Your Restaurant.</h3>
-                                    <p  class="mt-4">
-                                        Restaurant Dashboard gives you quick access
-                                        to settings and tools for managing your Account like [Change address] and [Change password] .
-                                        You can [manage Restaurant] Build Menu , Manage Orders, Bookings, Reviews, Memberships,
-                                        Withdrawals, Earnings, Statements, Change Password, Location and if you are you
-                                        Restaurant Owner can also [Manage Team].</p>
+                                    <h3 class="mt-3">Welcome To (resturant name).</h3>
+
+                                    <p>the Completed Meals : 10 </p>
+                                    <p>the cancelled Meals : 1 </p>
+                                    <p>delevery : Yes  </p>
+                                    <p>the added tax : 14 %  </p>
+                                    <p>total earning : 1478 L.E  </p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -252,7 +256,16 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="pickup_fee" value="{{(auth()->guard('restaurant')->user()->pickup_fee)}}"  placeholder="pickup fee">
+                        <select class="col-lg-12 p-2 mb-3" name="table_status" id="">
+                            <option  value="">delevery </option>
+                            <option value="">yes</option>
+                            <option value="">No</option>
+                        </select>
+                    </div>
+
+                    <!-- ////////////////////////////////////////// -->
+                    <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="pickup_fee" value="{{(auth()->guard('restaurant')->user()->pickup_fee)}}"  placeholder=" The added tax">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
@@ -262,7 +275,7 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="country" value="{{(auth()->guard('restaurant')->user()->country)}}"  placeholder="contry">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="country" value="{{(auth()->guard('restaurant')->user()->country)}}"  placeholder="country">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
@@ -483,8 +496,73 @@
             <br>
             <div class="">
                 <p class="p-in-review"> person that make review</p>
-                <h5 class="h5-in-review">review display here </h5>
+                <div class=" d-flex" >
+                    <h5 class="h5-in-review">review display here </h5>
+                    <h6 class=" ml-auto " > date of review </h6>
+                </div>
             </div>
+        </div>
+
+
+         <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+
+        <div class="tab-pane fade shadow rounded bg-white show  p-5" id="HOURS" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <form action="">
+                
+                
+                <div class="row">
+                    <div class="col-lg-8 m-auto">
+                     <h5 style="font-weight: 600;">OPEN HOURS</h5>
+                    <ul class="open-hours mt-5">
+                        <li class="d-flex w-100">
+                            <span class="days" >Monday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Tuesday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Wednesday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Thursday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Friday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Saturday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Sunday</span> 
+                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+
+                    </ul>
+                 </div>
+
+                
+
+                    
+                </div>
+           </form>
         </div>
 
         <!-- /////////////////////////////////////////////////////////////// -->
@@ -643,7 +721,10 @@
         <!-- /////////////////////////////////////////////////////////////// -->
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="ORDERS" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-            <h3> ORDERS </h3>
+              <div class="d-flex">
+                  <h3> ORDERS </h3>
+                  <span class="ml-auto p-2"> <input type="search" placeholder="search" > </span>
+              </div>
 
             <div class="row tab-text  cart-list">
 

@@ -143,3 +143,57 @@
 
                                                             </div>
                                                         </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ul class="open-hours mt-1 col-lg-12">
+                        <li class="d-flex w-100">
+                            <span class="days" >Monday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Tuesday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Wednesday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Thursday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Friday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Saturday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+                        <li class="d-flex">
+                            <span class="days" >Sunday</span> 
+                            <span class="time "> From <input type="text" name="" class="openHour" id="" > To <input type="text" name="" class="closeHour" id="" ></span>
+                        </li>
+                        <hr>
+
+                    </ul>

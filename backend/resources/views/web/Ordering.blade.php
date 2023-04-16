@@ -288,8 +288,8 @@
 
                  <!-- ////////////////////////////////// -->
             <div class="col-lg-6">
-              <!-- <h5 style="font-weight: 600;">OPEN HOURS</h5> -->
-              <!-- <ul class="open-hours mt-1">
+              <h5 style="font-weight: 600;">OPEN HOURS</h5>
+              <ul class="open-hours mt-1">
                   <li class="d-flex"><span class="days" >Monday</span><span class="time">09:00 am - 09:30 pm</span></li>
                   <li class="d-flex"><span class="days" >Tuesday</span><span class="time">09:00 am - 09:45 pm</span></li>
                   <li class="d-flex"><span class="days" >Wednesday</span><span class="time">09:00 am - 04:15 pm</span></li>
@@ -297,7 +297,7 @@
                   <li class="d-flex"><span class="days" >Friday</span><span class="time">06:00 am - 11:00 pm</span></li>
                   <li class="d-flex"><span class="days" >Saturday</span><span class="time">9:00am - 02:00pm</span></li>
                   <li class="d-flex"><span class="days" >Sunday</span><span class="time"> 11:00 am - 5:00 pm</span></li>
-              </ul> -->
+              </ul>
 
 
 

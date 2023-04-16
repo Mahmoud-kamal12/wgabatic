@@ -107,9 +107,9 @@
                             <div  class="col-lg-10 ml-auto m-auto dashbord-bac  text-white ">
                                 <div class="welcomed-text p-2">
                                     <h3 class="mt-3">welcome to your account</h3>
-                                    <p  class="mt-4">my account gives you a quick access to settings and tools for mangining your account like
-                                        [changing address] and [changing password] . you can manage orderds booking and statement and may more
-                                    </p>
+                                    <p>ordered meals : 3</p>
+                                    <p>total buying : 1235</p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,12 @@
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <div class="tab-pane fade shadow rounded bg-white show  p-5" id="My_orderd" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <h5 class="">MY ORDERS</h5>
+                       
+                        <div class="d-flex">
+                            <h5 class="">MY ORDERS</h5>
+                            <span class="ml-auto p-2"> <input type="search" placeholder="search" > </span>
+                        </div> 
+                    
                         <hr>
                         <div class="row">
 
@@ -250,7 +255,8 @@
                                             <p class="p-in-review">{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</p>
                                         </div>
                                         <button  type="button" data-toggle="modal" data-target="#staticBackdrop{{$order->id}}" class=" order_Details_btn  bg-success rounded-pill text-white"> ORDER DETAILS  </button>
-{{--                                        <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel order  </button>--}}
+                                        <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel </button>
+                                        <button  type="button"  class=" order_Details_btn bg-warning rounded-pill text-white text-uppercase mt-2"> order </button>
                                         <!-- Button trigger modal -->
 
 
@@ -316,39 +322,7 @@
 
 
                     </div>
-                    <!-- /////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////// -->
-                    <!-- /////////////////////////////////////////////////////////////// -->
-                    <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Statementas" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
-                        <h4 class="text-uppercase">Statementas</h4>
-                        <div class="row cart-list">
-                            <table class="table text-center">
-                                <thead class="thead-light">
-
-                                    <th scope="col">TRANSACTION ID</th>
-                                    <th scope="col">ORDER ID</th>
-                                    <th scope="col">DATE</th>
-                                    <th scope="col">DETAIL</th>
-                                    <th scope="col">AMOUNT</th>
-
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row"> #1234   <!-- رقم المعامله -->  </th>
-                                    <td> 2233   <!-- رقم الطلب --></td>
-                                    <td>january 5,2021 <!-- التاريخ --> </td>
-                                    <td> <span> order - mcdonalds   <!-- اسم المطعم و الطلب -->  </span> </td>
-                                    <td><span> $54.16 </span></td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-
-
-
-                        </div>
-                    </div>
+                    
 
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->

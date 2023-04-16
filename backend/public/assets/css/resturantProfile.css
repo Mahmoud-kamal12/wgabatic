@@ -310,4 +310,14 @@ font-size:15px ;
     text-transform: none!important;  
 
 }
+.Serch_form input{
+    color: #9097a1;
+    border: none;
+    border-bottom: 2px solid #a2a2a2;
+    /* border-radius: 5px; */
+}
 
+/* .openHour,
+.closeHour{
+    width: 70px;
+} */
