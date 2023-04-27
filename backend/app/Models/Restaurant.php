@@ -11,7 +11,7 @@ class Restaurant extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = ['name', 'email', 'phone', 'm_name', 'm_phone', 'contact_email', 'password' , 'cover','logo' , 'pickup_fee','pickup_time','country','city','Latitude','Longitude' , 'description' , 'table_status'];
+    protected $fillable = ['name', 'email', 'phone', 'm_name', 'm_phone', 'contact_email', 'password' , 'cover','logo' , 'pickup_fee','pickup_time','country','city','Latitude','Longitude' , 'description' , 'table_status','delevery','tax'];
 
     protected $hidden = [
         'password',
@@ -35,6 +35,10 @@ class Restaurant extends Authenticatable
 
     public function bookings(){
         return $this->hasMany(Booking::class , 'restaurant_id');
+    }
+
+    public function opendayes(){
+        return $this->hasMany(OpenTimes::class , 'restaurant_id');
     }
 
     public function meals(){

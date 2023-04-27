@@ -486,6 +486,26 @@
 
       </div>
     </footer>
+
+
+
+<div class="modal fade" id="table_modal" tabindex="-1" role="dialog" aria-labelledby="menu_category_modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 style="direction: rtl">المطعم مغلق الان</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
@@ -538,7 +558,9 @@ $(document).on("click" , "#confirmbtn",function (e) {
             $("#extra").val("");
         },
         error: function(data){
-          console.error(JSON.parse(data));
+          // console.error(JSON.parse(data));
+            $('#table_modal').modal('show');
+
         },
         complete:function(){
 
@@ -589,7 +611,7 @@ document.getElementById('bookingform').addEventListener('submit', (e) => {
 
         },
         error: function(data){
-            console.error(JSON.parse(data));
+            // console.error(JSON.parse(data));
         },
         complete:function(){
             // $('#confirmbtn').text('')
@@ -635,7 +657,7 @@ const plusButtons = document.querySelectorAll('.Add_meal');
       }else{
         let span = $(`#countid${meal_id}`);
         var iii = meals.findIndex((me)=> me.id === meal_id )
-        meals[iii].q += 1;
+        meals[iii].q += 1;آ
         let count = parseInt(span.data("count")) + 1 ;
         span.data("count",count)
         span.text(`(${count})`)

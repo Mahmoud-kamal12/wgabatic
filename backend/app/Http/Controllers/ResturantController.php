@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meal;
+use App\Models\OpenTimes;
 use App\Models\Review;
 use App\Models\Table;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -12,7 +14,6 @@ use Illuminate\Support\Facades\Storage;
 class ResturantController extends Controller
 {
     public function restaurantProfile(){
-
         return view('web.resturant-profile');
     }
 
@@ -86,5 +87,30 @@ class ResturantController extends Controller
         }
         $res->update($data);
         return redirect()->back();
+    }
+
+    public function restaurantProfileDays(Request $request){
+        $restaurant_id = \auth()->user()->id;
+        $data = $request->get("days");
+        foreach ($data as $key => $day){
+            $found = OpenTimes::where("restaurant_id" , $restaurant_id)->where("day" , $key)->first();
+            if ($found){
+                $found->update([
+                    "day" => $key,
+                    "from" => $day['f'],
+                    "to" => $day['t'],
+                    "restaurant_id" => $restaurant_id
+                ]);
+            }else{
+                OpenTimes::create([
+                    "day" => $key,
+                    "from" => $day['f'],
+                    "to" => $day['t'],
+                    "restaurant_id" => $restaurant_id
+                ]);
+            }
+
+        }
+        return back();
     }
 }

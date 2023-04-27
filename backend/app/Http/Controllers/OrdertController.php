@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meal;
+use App\Models\OpenTimes;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Restaurant;
 use App\Models\Review;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -46,6 +48,16 @@ class OrdertController extends Controller
         DB::beginTransaction();
         try {
             $restaurant = Restaurant::find($data['restaurant_id']);
+
+            $day = Carbon::now()->englishDayOfWeek;
+            $timeNow = Carbon::now()->format("H:i:s");
+            $timeRes = getFRomTo($day);
+
+            if ($timeNow < $timeRes['to'] and $timeNow > $timeRes['from']){
+            }else{
+                return response()->json(["error" => "المطعم مقفول دلوقتى"],500);
+            }
+
             $order = Order::create([
                 "address"=> $data['address'],
                 "extra"=> $data['extra'],
@@ -66,6 +78,51 @@ class OrdertController extends Controller
                 $total += (int)$meal->price * $id["q"];
             }
             $order->total = $total;
+            $order->save();
+            DB::commit();
+            return response()->json(["msg" => "success"],200);
+        }catch (\Exception $e){
+            DB::rollBack();
+            return response()->json(["error" => $e->getMessage()],500);
+        }
+
+    }
+    public function reorder(Request $request)
+    {
+        $res = Auth::guard('web')->user();
+        $data = $request->all();
+        DB::beginTransaction();
+        try {
+            $orderoldnode = Order::where('id' , $request->get('id'))->first();
+            $orderold = $orderoldnode->toArray();
+
+            $restaurant = Restaurant::find($orderold['resturant_id']);
+
+            $day = Carbon::now()->englishDayOfWeek;
+            $timeNow = Carbon::now()->format("H:i:s");
+            $timeRes = getFRomTo($day);
+
+            if ($timeNow < $timeRes['to'] and $timeNow > $timeRes['from']){
+            }else{
+                return response()->json(["error" => "المطعم مقفول دلوقتى"],500);
+            }
+            unset($orderold['updated_at']);
+            unset($orderold['created_at']);
+            unset($orderold['id']);
+            $order = Order::create($orderold);
+            $total = 0;
+            foreach ($orderoldnode->items as $meal){
+
+                $item = OrderItem::create([
+                    'order_id' => $meal->order_id,
+                    'meal_id' => $meal->meal_id,
+                    'price' => $meal->price,
+                    'name' => $meal->name,
+                    'quantity' => $meal->quantity,
+                    'description' => $meal->description
+                ]);
+            }
+            $order->total = $orderold['total'];
             $order->save();
             DB::commit();
             return response()->json(["msg" => "success"],200);

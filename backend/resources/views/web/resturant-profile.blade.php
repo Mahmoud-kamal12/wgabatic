@@ -167,12 +167,12 @@
                                 <div class="welcomed-text p-2">
                                     <h3 class="mt-3">Welcome To (resturant name).</h3>
 
-                                    <p>the Completed Meals : 10 </p>
-                                    <p>the cancelled Meals : 1 </p>
-                                    <p>delevery : Yes  </p>
-                                    <p>the added tax : 14 %  </p>
-                                    <p>total earning : 1478 L.E  </p>
-                                    
+                                    <p>the Completed Orders : {{auth()->guard('restaurant')->user()->orders()->where('status',1)->count()}} </p>
+                                    <p>the cancelled Orders : {{auth()->guard('restaurant')->user()->orders()->where('status',0)->count()}}  </p>
+                                    <p>delevery : {{auth()->guard('restaurant')->user()->delevery ? "yes":"No"}}   </p>
+                                    <p>the added tax : {{auth()->guard('restaurant')->user()->tax}} %  </p>
+                                    <p>total earning : {{auth()->guard('restaurant')->user()->orders()->where("status",1)->sum("total") - auth()->guard('restaurant')->user()->orders->where('status' , 0)->sum("total") }} L.E  </p>
+
                                 </div>
                             </div>
                         </div>
@@ -256,16 +256,16 @@
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <select class="col-lg-12 p-2 mb-3" name="table_status" id="">
+                        <select class="col-lg-12 p-2 mb-3" name="delevery" id="">
                             <option  value="">delevery </option>
-                            <option value="">yes</option>
-                            <option value="">No</option>
+                            <option value="1">yes</option>
+                            <option value="0">No</option>
                         </select>
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">
-                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="pickup_fee" value="{{(auth()->guard('restaurant')->user()->pickup_fee)}}"  placeholder=" The added tax">
+                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" name="tax" value="{{(auth()->guard('restaurant')->user()->tax)}}"  placeholder=" The added tax">
                     </div>
 
                     <!-- ////////////////////////////////////////// -->
@@ -512,55 +512,58 @@
         <!-- /////////////////////////////////////////////////////////////// -->
 
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="HOURS" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <form action="">
-                
-                
+            <form action="{{route("web.restaurantProfileDays")}}" method="POST">
+
+                @method("POST")
+                @csrf
                 <div class="row">
                     <div class="col-lg-8 m-auto">
                      <h5 style="font-weight: 600;">OPEN HOURS</h5>
                     <ul class="open-hours mt-5">
                         <li class="d-flex w-100">
-                            <span class="days" >Monday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Monday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Monday][f]" value="{{getFRomTo("Monday")['from']}}" class="openHour" id="" required > To <input type="time" name="days[Monday][t]" value="{{getFRomTo("Monday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
                         <li class="d-flex">
-                            <span class="days" >Tuesday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Tuesday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Tuesday][f]" value="{{getFRomTo("Tuesday")['from']}}"  class="openHour" id="" required > To <input type="time" name="days[Tuesday][t]" value="{{getFRomTo("Tuesday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
                         <li class="d-flex">
-                            <span class="days" >Wednesday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Wednesday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Wednesday][f]" value="{{getFRomTo("Wednesday")['from']}}" class="openHour" id="" required > To <input type="time" name="days[Wednesday][t]" value="{{getFRomTo("Wednesday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
                         <li class="d-flex">
-                            <span class="days" >Thursday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Thursday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Thursday][f]" value="{{getFRomTo("Thursday")['from']}}" class="openHour" id="" required > To <input type="time" name="days[Thursday][t]" value="{{getFRomTo("Thursday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
                         <li class="d-flex">
-                            <span class="days" >Friday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Friday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Friday][f]" value="{{getFRomTo("Friday")['from']}}" class="openHour" id="" required > To <input type="time" name="days[Friday][t]" value="{{getFRomTo("Friday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
                         <li class="d-flex">
-                            <span class="days" >Saturday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Saturday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Saturday][f]" value="{{getFRomTo("Saturday")['from']}}" class="openHour" id="" required > To <input type="time" name="days[Saturday][t]" value="{{getFRomTo("Saturday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
                         <li class="d-flex">
-                            <span class="days" >Sunday</span> 
-                            <span class="ml-auto "> From <input type="time" name="" class="openHour" id="" > To <input type="time" name="" class="closeHour" id="" ></span>
+                            <span class="days" >Sunday</span>
+                            <span class="ml-auto "> From <input type="time" name="days[Sunday][f]" value="{{getFRomTo("Sunday")['from']}}" class="openHour" id="" required > To <input type="time" name="days[Sunday][t]" value="{{getFRomTo("Sunday")['to']}}" class="closeHour" id="" required ></span>
                         </li>
                         <hr>
 
                     </ul>
                  </div>
 
-                
 
-                    
+                    <div>
+                        <input type="submit" value="Save" class="btn btn-success">
+                    </div>
+
                 </div>
            </form>
         </div>
