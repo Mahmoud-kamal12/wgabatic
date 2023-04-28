@@ -123,13 +123,11 @@
                         <div class="row tab-text  cart-list">
                             <table class="table">
                                 <thead class="thead-dark">
-
                                     <th scope="col">#</th>
                                     <th scope="col">Resturant name</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">status</th>
                                     <th scope="col">details</th>
-
                                 </thead>
                                 <tbody>
 
