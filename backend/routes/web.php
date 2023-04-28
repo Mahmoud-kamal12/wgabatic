@@ -30,6 +30,11 @@ use \App\Http\Controllers\BookingController;
 //});
 
 
+    Route::get('/close',function(){
+        return view('web.close');
+    });
+
+
 Route::name('web.')->group(function(){
     Route::get('/about', [WebController::class , 'about'])->name('about');
     Route::get('/home', [WebController::class , 'home'])->name('home');
@@ -53,6 +58,9 @@ Route::name('web.')->group(function(){
         Route::get('/add-booking', [ BookingController::class ,'store'])->name('addBooking');
 
         Route::post('/resetpassuser', [ AuthController::class ,'resetpassuser'])->name('resetpassuser');
+
+        Route::get('/cancleorder/{id}', [OrdertController::class ,'update'])->name('cancleorder');
+
 
     });
 

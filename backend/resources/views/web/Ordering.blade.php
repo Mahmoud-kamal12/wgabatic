@@ -528,7 +528,6 @@
 
 
 
-
 var meals = [];
 
 $(document).on("click" , "#confirmbtn",function (e) {

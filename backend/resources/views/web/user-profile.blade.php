@@ -86,7 +86,9 @@
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#My_orderd" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  My orderd</span></a>
                     <hr class="p-0 m-0">
-
+                    <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#WITHDRAWALS" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa far fa-frown mr-3 "></i>  WITHDRAWALS</span></a>
+                    <hr class="p-0 m-0">
                     <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
                     <hr class="p-0 m-0">
@@ -238,7 +240,7 @@
                         <div class="row">
 
 
-                            @foreach(auth()->guard('web')->user()->orders()->get() as $order)
+                            @foreach(auth()->guard('web')->user()->orders()->where('status','!=',0)->get() as $order)
                                 <div class="col-lg-6 p-3">
                                     <div class=" p-3 order-border">
                                         <div class="d-flex">
@@ -252,9 +254,10 @@
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
                                             <p class="p-in-review">{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</p>
                                         </div>
+
                                         <button  type="button" data-toggle="modal" data-target="#staticBackdrop{{$order->id}}" class=" order_Details_btn  bg-success rounded-pill text-white"> ORDER DETAILS  </button>
-                                        <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel </button>
-                                        <button  type="button"  class=" reorder order_Details_btn bg-warning rounded-pill text-white text-uppercase mt-2" data-id="{{$order->id}}"> ReOrder </button>
+                                        <a href="{{route("web.cancleorder",$order->id)}}?status=0" class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel </a>
+                                        <a  type="button"  class=" reorder order_Details_btn bg-warning rounded-pill text-white text-uppercase mt-2" data-id="{{$order->id}}"> ReOrder </a>
                                         <!-- Button trigger modal -->
 
 
@@ -322,9 +325,56 @@
                     </div>
 
 
+                    
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////////////////////////////////////// -->
+        <div class="tab-pane fade shadow rounded bg-white show  p-5" id="WITHDRAWALS" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+            <h3> WITHDRAWALS </h3>
+
+            <div class="row tab-text  cart-list">
+
+                <table class="table table-striped  text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">ORDER ID</th>
+                        <th scope="col">DATE</th>
+                        <th scope="col">TOTAL PRICE</th>
+                        <th scope="col">state</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach(auth()->guard('web')->user()->orders()->where("status",0)->get() as $order)
+                        <tr>
+                            <td>Order-{{$order->id}}</td>
+                            <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
+                            <td>{{$order->total}}</td>
+                            <td class="cancelled"><span > canceled </span></td>
+                        </tr>
+
+                    @endforeach
+
+
+                    </tbody>
+                </table>
+                
+            </div>
+
+        </div>
+
+
                     <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Account_Setting" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <h5>ACCOUNT SETTING</h5>
                         <form class="User-Seting-Form">
@@ -608,6 +658,9 @@
 
     $(document).on("click" , ".reorder",function (e) {
         e.preventDefault()
+        var thisbtn = $(this)
+        var text = thisbtn.text()
+
         let id = $(this).data('id')
         console.log(id)
         $.ajax({
@@ -617,9 +670,9 @@
                 id:id
             },
             beforeSend:function(){
-                $('#confirmbtn').text('')
-                $('#confirmbtn').prop('disabled', true);
-                $('#confirmbtn').append(`
+                thisbtn.text('')
+                thisbtn.prop('disabled', true);
+                thisbtn.append(`
           <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
           </div>
@@ -637,10 +690,11 @@
             },
             complete:function(){
 
+                window.location.reload();
 
-                $('#confirmbtn').text('')
-                $('#confirmbtn').prop('disabled', false);
-                $('#confirmbtn').text('confirm order')
+                thisbtn.text('')
+                thisbtn.prop('disabled', false);
+                thisbtn.text(text)
 
 
             },

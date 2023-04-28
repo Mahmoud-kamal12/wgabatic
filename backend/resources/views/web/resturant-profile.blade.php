@@ -739,6 +739,7 @@
                         <th scope="col">DATE</th>
                         <th scope="col">STATUS</th>
                         <th scope="col">TOTAL PRICE</th>
+                        <th scope="col">Action</th>
                         <th scope="col">DETAIL</th>
                     </tr>
                     </thead>
@@ -751,6 +752,13 @@
                             <td>{{\Carbon\Carbon::parse($order->Created_at)->format("M d Y")}}</td>
                             <td class="{{$order->status == 2 ? 'newstat':'completestat'}}"><span > {{$order->status == 2 ? 'new':'complete'}} </span></td>
                             <td>{{$order->total}}</td>
+                            
+                            <td>
+                                <a href="{{route("web.updateOrder" , $order->id)}}?status=1" > <img class="img-fluid"width="30" src="/assets/photos/controlls/co.png" alt=""> </a>
+                                <a href="{{route("web.updateOrder" , $order->id)}}?status=0" > <img class="img-fluid"width="30" src="/assets/photos/controlls/c.png" alt=""> </a> 
+                            </td>
+                            
+                            
                             <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS{{$order->id}}"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
                             <!-- Modal -->
                             <div class="modal fade" id="all_ORDERS{{$order->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -783,19 +791,9 @@
                                                 <hr>
                                                 <!-- //////////////////////////////////////////////////////////// -->
                                                 <div class="d-flex order-state">
-                                                    <div class="col-lg-3">
-                                                        <h5 class="font-weight-bold">Order Status
-                                                        </h5>
-                                                    </div>
+                                                    
                                                     <!-- ////////////////////////////// -->
-                                                    <div class="col-lg-9 ">
-                                                        <select class="col-lg-9" name="status" id="status">
-                                                            <option value="0" @if($order->status == 0) selected @endif> Cancelled </option>
-                                                            <option value="1" @if($order->status == 1) selected @endif> Completed </option>
-                                                        </select>
-                                                        <input class="col-lg-2" type="submit" value="submit" >
-
-                                                    </div>
+                                                    
                                                 </div>
                                                 <!-- //////////////////////////////////////////////////// -->
                                                 <hr>
@@ -1290,6 +1288,18 @@
                     placeholder: 'Select a month'
                 });
             };
+
+
+
+$(document).on("click" , "#confirmbtn",function (e) {
+
+
+
+
+}
+
+
+
 
 </script>
 
