@@ -109,7 +109,7 @@
                                     <h3 class="mt-3">welcome to your account</h3>
                                     <p>ordered meals : 3</p>
                                     <p>total buying : 1235</p>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -228,12 +228,12 @@
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <div class="tab-pane fade shadow rounded bg-white show  p-5" id="My_orderd" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                       
+
                         <div class="d-flex">
                             <h5 class="">MY ORDERS</h5>
                             <span class="ml-auto p-2"> <input type="search" placeholder="search" > </span>
-                        </div> 
-                    
+                        </div>
+
                         <hr>
                         <div class="row">
 
@@ -254,7 +254,7 @@
                                         </div>
                                         <button  type="button" data-toggle="modal" data-target="#staticBackdrop{{$order->id}}" class=" order_Details_btn  bg-success rounded-pill text-white"> ORDER DETAILS  </button>
                                         <button  type="button"  class=" order_Details_btn bg-danger rounded-pill text-white text-uppercase"> cancel </button>
-                                        <button  type="button"  class=" order_Details_btn bg-warning rounded-pill text-white text-uppercase mt-2"> order </button>
+                                        <button  type="button"  class=" reorder order_Details_btn bg-warning rounded-pill text-white text-uppercase mt-2" data-id="{{$order->id}}"> ReOrder </button>
                                         <!-- Button trigger modal -->
 
 
@@ -320,7 +320,7 @@
 
 
                     </div>
-                    
+
 
                     <!-- /////////////////////////////////////////////////////////////// -->
                     <!-- /////////////////////////////////////////////////////////////// -->
@@ -528,6 +528,23 @@
 
     </div>
 </footer>
+
+
+<div class="modal fade" id="table_modal" tabindex="-1" role="dialog" aria-labelledby="menu_category_modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 style="direction: rtl">المطعم مغلق الان</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
@@ -589,6 +606,46 @@
 
 
 
+    $(document).on("click" , ".reorder",function (e) {
+        e.preventDefault()
+        let id = $(this).data('id')
+        console.log(id)
+        $.ajax({
+            type: "get",
+            url: "{{route("web.readdOrder")}}",
+            data: {
+                id:id
+            },
+            beforeSend:function(){
+                $('#confirmbtn').text('')
+                $('#confirmbtn').prop('disabled', true);
+                $('#confirmbtn').append(`
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          `)
+            },
+            success: function (response) {
+                alert("success")
+                $("#address").val("");
+                $("#extra").val("");
+            },
+            error: function(data){
+                // console.error(JSON.parse(data));
+                $('#table_modal').modal('show');
+
+            },
+            complete:function(){
+
+
+                $('#confirmbtn').text('')
+                $('#confirmbtn').prop('disabled', false);
+                $('#confirmbtn').text('confirm order')
+
+
+            },
+        });
+    })
 
 
 

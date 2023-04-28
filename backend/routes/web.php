@@ -49,6 +49,7 @@ Route::name('web.')->group(function(){
         Route::get('/restaurant-profile/addreview', [ ResturantController::class ,'addreview'])->name('restaurantProfile.addreview');
 
         Route::get('/add-order', [ OrdertController::class ,'store'])->name('addOrder');
+        Route::get('/readd-order', [ OrdertController::class ,'reorder'])->name('readdOrder');
         Route::get('/add-booking', [ BookingController::class ,'store'])->name('addBooking');
 
         Route::post('/resetpassuser', [ AuthController::class ,'resetpassuser'])->name('resetpassuser');
@@ -58,6 +59,8 @@ Route::name('web.')->group(function(){
     Route::group(["middleware" => "auth:restaurant"],function (){
         Route::get('/logoutr', [ AuthController::class ,'logoutr'])->name('logoutr');
         Route::get('/restaurant-profile', [ ResturantController::class ,'restaurantProfile'])->name('restaurantProfile');
+
+        Route::post('/restaurant-profile/days', [ ResturantController::class ,'restaurantProfileDays'])->name('restaurantProfileDays');
 
 //        Menu
         Route::post('/restaurant-profile/update', [ ResturantController::class ,'update'])->name('restaurantProfile.update');
