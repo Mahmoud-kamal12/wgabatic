@@ -7,14 +7,6 @@
     <list default="true" id="be8aceed-eecc-409d-ad2f-33aec62012bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrdertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ResturantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ResturantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Restaurant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/Ordering.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/resturant-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/resturant-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/web/user-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/web/user-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +177,9 @@
       <workItem from="1680136642678" duration="1208000" />
       <workItem from="1680189505885" duration="598000" />
       <workItem from="1680207363737" duration="204000" />
-      <workItem from="1682550950805" duration="7982000" />
+      <workItem from="1682550950805" duration="8116000" />
+      <workItem from="1682638930180" duration="141000" />
+      <workItem from="1682688246487" duration="1507000" />
     </task>
     <servers />
   </component>

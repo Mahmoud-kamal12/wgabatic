@@ -109,8 +109,8 @@
                             <div  class="col-lg-10 ml-auto m-auto dashbord-bac  text-white ">
                                 <div class="welcomed-text p-2">
                                     <h3 class="mt-3">welcome to your account</h3>
-                                    <p>ordered meals : 3</p>
-                                    <p>total buying : 1235</p>
+                                    <p>ordered meals :  {{auth()->user()->orders()->where('status',1)->count()}}</p>
+                                    <p>total buying : {{auth()->user()->orders()->where("status",1)->sum("total")}}</p>
 
                                 </div>
                             </div>

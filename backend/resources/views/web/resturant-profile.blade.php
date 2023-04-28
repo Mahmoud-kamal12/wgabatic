@@ -165,7 +165,7 @@
                         <div class="row tab-text">
                             <div  class="col-lg-10 ml-auto m-auto dashbord-bac text-white ">
                                 <div class="welcomed-text p-2">
-                                    <h3 class="mt-3">Welcome To (resturant name).</h3>
+                                    <h3 class="mt-3">Welcome To ({{auth()->user()->name}}).</h3>
 
                                     <p>the Completed Orders : {{auth()->guard('restaurant')->user()->orders()->where('status',1)->count()}} </p>
                                     <p>the cancelled Orders : {{auth()->guard('restaurant')->user()->orders()->where('status',0)->count()}}  </p>
