@@ -497,8 +497,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <h1 style="direction: rtl">المطعم مغلق الان</h1>
+            <div class="modal-body bg-dark">
+                <!-- <h1 style="direction: rtl">المطعم مغلق الان</h1> -->
+               <h5 class="mt-3 text-danger">this  Resturant not open right now please comeback when open </h5>
+                
             </div>
         </div>
     </div>
@@ -560,6 +562,7 @@ $(document).on("click" , "#confirmbtn",function (e) {
           // console.error(JSON.parse(data));
             $('#table_modal').modal('show');
 
+            // window.location.replace("close.plade.php")
         },
         complete:function(){
 
@@ -656,7 +659,7 @@ const plusButtons = document.querySelectorAll('.Add_meal');
       }else{
         let span = $(`#countid${meal_id}`);
         var iii = meals.findIndex((me)=> me.id === meal_id )
-        meals[iii].q += 1;آ
+        meals[iii].q += 1;
         let count = parseInt(span.data("count")) + 1 ;
         span.data("count",count)
         span.text(`(${count})`)

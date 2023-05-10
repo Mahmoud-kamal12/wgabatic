@@ -77,9 +77,9 @@
                     <a class="  nav-link py-2 p-2   active" id="v-pills-home-tab" data-toggle="pill" href="#dashbord" role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-cog mr-3 "></i>  dashbord</span></a>
                     <hr class="p-0 m-0">
-                    <a class="  nav-link py-2 p-2  " id="v-pills-profile-tab" data-toggle="pill" href="#Mybooking" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                    <!-- <a class="  nav-link py-2 p-2  " id="v-pills-profile-tab" data-toggle="pill" href="#Mybooking" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-list mr-3  "></i>  Mybooking</span></a>
-                    <hr class="p-0 m-0">
+                    <hr class="p-0 m-0"> -->
                     <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#Reviews" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                         <span class=" text-dark font-weight-bold small text-uppercase"><i class="fas fa-comment-dots mr-3 "></i>  my Reviews</span></a>
                     <hr class="p-0 m-0">
@@ -392,19 +392,20 @@
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" {{$user->phone}} class="form-control" id="exampleInputPhone" placeholder="Phone" required>
+                                        <input type="text" value="{{$user->phone}}" class="form-control" id="exampleInputPhone" placeholder="Phone" required>
                                     </div>
 
 
                                 </div>
-                                <div class="col-lg-6">
+                                <!-- <div class="col-lg-6">
                                     <div class="p-3 row justify-content-center align-items-center">
                                         <img class="img-fluid " src="/assets/photos/avatar-icon-images-4.jpg" id="defultImg" alt="" width="180" height="180" >
                                         <input class="mt-3 ml-5  up-file" type="file"  id="inpUpload">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
+                                                <button type="submit" class="btn btn-danger ml-3">Submit</button>
 
                         </form>
                     </div>
