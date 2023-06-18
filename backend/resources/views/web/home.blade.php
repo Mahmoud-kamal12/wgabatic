@@ -58,12 +58,13 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-12 col-sm-12 text-center welcomeText">
                         <h1>WELCOME TO WAGABAT</h1>
-                        <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
 
                         <button class="btn text-light submitBtn p-2 col-md-2">
-                        <a href="{{route("web.resturants")}}">search</a>
+                            <a href="{{route("web.resturants")}}">search</a>
+                        </button>
 
-                             </button>
+                        
+
                     </div>
                 </div>
             </div>
@@ -82,63 +83,50 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
+
+<!-- 
 <section class="quickly-services " id="quickly-services">
     <div class="container  ">
         <div class="row text-center justify-content-center align-items-center  service-carry rounded ">
-            <!-- /////////////////////////////////////////// -->
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
                 <a href="#!">
                     <i class="flaticon-take-away-1"></i>
                     <h5>WAGABAT</h5>
                 </a>
             </div>
-            <!-- /////////////////////////////////////////// -->
-            <!-- /////////////////////////////////////////// -->
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service ">
                 <a href="#!">
                     <i class="flaticon-dinner-table"></i>
                     <h5>feasts</h5>
                 </a>
             </div>
-            <!-- /////////////////////////////////////////// -->
-            <!-- /////////////////////////////////////////// -->
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
                 <a href="#!">
                     <i class="flaticon-breakfast"></i>
                     <h5>BREAKFAST</h5>
                 </a>
             </div>
-            <!-- /////////////////////////////////////////// -->
-            <!-- /////////////////////////////////////////// -->
             <div class="col-lg-2 col-md-6 col-sm-6  quick_service">
                 <a href="#!">
                     <i class="flaticon-food"></i>
                     <h5>LUNCH</h5>
                 </a>
             </div>
-            <!-- /////////////////////////////////////////// -->
-            <!-- /////////////////////////////////////////// -->
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
                 <a href="#!">
                     <i class="flaticon-dinner"></i>
                     <h5>DINNER</h5>
                 </a>
             </div>
-            <!-- /////////////////////////////////////////// -->
-            <!-- /////////////////////////////////////////// -->
             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
                 <a href="#!">
                     <i class="flaticon-pizza-slice"></i>
                     <h5>NIGHTLIFE</h5>
                 </a>
             </div>
-            <!-- /////////////////////////////////////////// -->
         </div>
     </div>
-
-
-
-</section>
+</section> -->
 
 
 <!-- ///////////////////////////////////////////////////////////////////////// -->
