@@ -488,19 +488,20 @@
         <!-- /////////////////////////////////////////////////////////////// -->
 
         <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <h5 class="">REVIEW GIVEN <span style="font-size: 10px;" class=" text-danger"> number of Reviews </span></h5>
+            <h5 class="">REVIEW GIVEN <span style="font-size: 10px;" class=" text-danger">{{auth()->user()->reviews->count()}}  </span></h5>
             <div class="d-flex">
                 <!-- if no reviews display this  -->
                 <!-- <div class="mt-3"><h6> ther is no reviews yet </h6></div> -->
             </div>
             <br>
-            <div class="">
-                <p class="p-in-review"> person that make review</p>
-                <div class=" d-flex" >
-                    <h5 class="h5-in-review">review display here </h5>
-                    <h6 class=" ml-auto " > date of review </h6>
-                </div>
-            </div>
+                @foreach(auth()->user()->reviews as $reviw)
+                    <div class="">
+                        <p class="p-in-review">{{$reviw->user->first_name}}</p>
+                        <h5 class="h5-in-review">{{$reviw->body}} </h5>
+                    </div>
+                    <hr>
+
+                @endforeach
         </div>
 
 
@@ -790,9 +791,17 @@
                                                 </div>
                                                 <hr>
                                                 <!-- //////////////////////////////////////////////////////////// -->
-                                                <div class="d-flex order-state">
-                                                    
-                                                    <!-- ////////////////////////////// -->
+                                                <div class="">
+                                                    <div>
+                                                        @foreach($order->items as $item)
+                                                            <ul>
+                                                                <li>{{$item->name}}</li>
+                                                                <li class="font-weight-bolder">{{$item->price}} .LE</li>
+
+                                                            </ul>
+                                                            @endforeach
+                                                    </div>
+                                                    <!--  -->
                                                     
                                                 </div>
                                                 <!-- //////////////////////////////////////////////////// -->
@@ -894,21 +903,7 @@
                                                 </div>
                                                 <hr>
                                                 <!-- //////////////////////////////////////////////////////////// -->
-                                                <div class="d-flex order-state">
-                                                    <div class="col-lg-3">
-                                                        <h5 class="font-weight-bold">Order Status
-                                                        </h5>
-                                                    </div>
-                                                    <!-- ////////////////////////////// -->
-                                                    <div class="col-lg-9 ">
-                                                        <select class="col-lg-9" name="" id="" >
-                                                            <option > Cancelled </option>
-                                                            <option > Completed </option>
-
-                                                        </select>
-                                                        <input class="col-lg-2" type="submit" value="submit" >
-
-                                                    </div>
+                                                
                                                 </div>
                                                 <!-- //////////////////////////////////////////////////// -->
 

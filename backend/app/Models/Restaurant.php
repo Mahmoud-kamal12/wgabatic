@@ -50,10 +50,14 @@ class Restaurant extends Authenticatable
     }
 
     public function gettableResAttribute()
-{
+    {
 
-    return $this->table_status ? "yes":"no";
+        return $this->table_status ? "yes":"no";
 
-}
+    }
+
+    public function reviews(){
+        return $this->hasMany(Review::class , 'resturant_id');
+    }
 
 }
