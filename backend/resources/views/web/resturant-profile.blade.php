@@ -91,8 +91,7 @@
                             <img class="" src="{{asset(auth()->guard('restaurant')->user()->logo)}}" width="80" height="80"  alt="">
                         </div>
                         <div class=" p-3 text-light mt-4">
-                            <h4 class="text-left">{{auth()->guard('restaurant')->user()->name}}</h4>
-                            <p>  <i class="fas fa-pizza-slice"></i> Hot Dogs, Pizza & Stakes </p>
+                            <h4 class="text-left bg-danger">{{auth()->guard('restaurant')->user()->name}}</h4>
                         </div>
                     </div>
                 </div>
